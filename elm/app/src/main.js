@@ -12,13 +12,9 @@ import VueAxios from 'vue-axios'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 
-import ElementUI from 'element-ui'
-<<<<<<< HEAD
-import 'element-ui/lib/theme-chalk/index.css';
-=======
-import 'element-ui/lib/theme-chalk/index.css'
 
->>>>>>> c19b77660365778c3b11562487fa0fc1e02dca0b
+
+
 import Vuex from 'vuex'
 
 

@@ -22,7 +22,7 @@
 .heard{
     display: flex;
     justify-content: space-around;
-    font-size: 0.8rem;
+    font-size: 0.6rem;
     height: 1.95rem;
     color: white;
     background-color: #3190e8;

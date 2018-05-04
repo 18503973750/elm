@@ -19,7 +19,7 @@ export default new Router({
        {
             path: '/',
             name: 'Waimai',
-            component: Waimai,
+            component: Waimai,   
 
         },
             {

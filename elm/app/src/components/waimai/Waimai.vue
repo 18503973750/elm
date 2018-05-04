@@ -32,5 +32,7 @@
    line-height: 1.95rem;
 }
 
-
+.span1,.span2{
+    font-size: 0.6rem;
+}
 </style>

@@ -12,7 +12,7 @@
                 <span>定位不准时，请在城市列表中选择</span>
             </p>
             <p>
-                <router-link :to="{name:'city_lists', params:{id:city_lists.id}}">
+                <router-link :to="{name:'city', params:{id:dataId}}">
                     <span>{{ city_lists.name }}</span>
                     <i class="el-icon-arrow-right"></i>
                 </router-link>
@@ -29,7 +29,8 @@
         data() {
             return {
                 city_lists: [],
-                hotCity: []
+                hotCity: [],
+                dataId: 123,
             }
 
         },

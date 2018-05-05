@@ -1,109 +1,197 @@
 <template>
-    <div>
-       <ul>
-           <div class="top">
-             <div class="heard">
-                <li v-for="message in first">
+    <v-touch v-on:swipeleft="onSwipeLeft" v-on:swiperight="onSwipeRight" class="heard1">
+        <div class="top3">
+            <div class="top2">
+                <div class="oo" v-for="message in first2">
                     <div class="page1">
-                     <img :src="url+message.image_url" alt="">
+                        <img :src="url+message.image_url" alt="">
+                        <div class="text">{{message.title}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="top1">
+                <div class="oo" v-for="message in first">
+                    <div class="page1">
+                        <img :src="url+message.image_url" alt="">
+                        <div class="text">{{message.title}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="top2">
+                <div class="oo" v-for="message in first2">
+                    <div class="page1">
+                        <img :src="url+message.image_url" alt="">
+                        <div class="text">{{message.title}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="top1">
+                <div class="oo" v-for="message in first">
+                    <div class="page1">
+                        <img :src="url+message.image_url" alt="">
+                        <div class="text">{{message.title}}</div>
+                    </div>
+                </div>
+            </div>
 
-                    <div class="text">{{message.title}}</div>
-                     </div>
-                </li>
-             </div>
-               <div class="heard2">
-                   <li v-for="message in first2">
-                       <div class="page2">
-                           <img :src="url+message.image_url" alt="">
 
-                           <div class="text">{{message.title}}</div>
-                       </div>
-                   </li>
-               </div>
-           </div>
-       </ul>
-    </div>
+        </div>
+
+            <div class="DD"></div>
+            <div class="DD1"></div>
+
+
+    </v-touch>
 </template>
 
 <script>
 
-    var api='http://cangdu.org:8001/v2/index_entry'
+    var api = 'http://cangdu.org:8001/v2/index_entry'
     export default {
         name: "WaiOne",
-        data:function () {
-            return{
-                messages:[],
-               url:'https://fuss10.elemecdn.com'
+        data: function () {
+            return {
+                messages: [],
+                url: 'https://fuss10.elemecdn.com'
             }
         },
-        created(){
+        created() {
             this.$http.get(api).then((response) => {
-                this.messages=response.data;
+                this.messages = response.data;
                 // console.log(response.data)
                 // console.log(response.data[0].image_url)
-        })
+            })
         },
-        computed:{
-           first(){
-                return this.messages.slice(0,8)
+        computed: {
+            first() {
+                return this.messages.slice(0, 8)
             },
-            first2(){
-                return this.messages.slice(8,16)
+            first2() {
+                return this.messages.slice(8, 16)
             },
 
+        },
+        methods: {
+            onSwipeRight() {
+                var top3 = document.getElementsByClassName('top3')[0];
+                move(top3,375)
+
+                function move(mask, long) {
+                    var b = mask.offsetLeft;
+                    var c = long;
+                    var d = 20;
+                    var t = 0;
+                    var timer = setInterval(function () {
+                        t++
+                        mask.style.left = b + (c / d) * t + 'px'
+                        if (t >= d) {
+
+                            if (mask.offsetLeft >=0) {
+                                mask.style.left=-32+"rem";
+                            }
+                            clearInterval(timer)
+                        }
+                    }, 20)
+                }
+            },
+            onSwipeLeft() {
+                var top3 = document.getElementsByClassName('top3')[0];
+                move(top3,375)
+
+                function move(mask, long) {
+
+                    var b = mask.offsetLeft;
+                    var c = -long;
+                    var d = 20;
+                    var t = 0;
+                    var timer = setInterval(function () {
+                        t++
+                        mask.style.left = b + (c / d) * t + 'px'
+                        if (t >= d) {
+                            clearInterval(timer)
+                            if(Math.abs(mask.offsetLeft)>=Math.abs(-1118)){
+                                mask.style.left=-16+"rem";
+                            }
+
+                        }
+
+                    }, 20)
+
+
+                }
+
+            }
         }
     }
 </script>
 
 <style scoped>
-    .top,#app{
-        width: 100%;
-        overflow: hidden;
+
+    div {
+
+        font-size: 0.6rem;
+
     }
-div{
 
-    font-size: 0.6rem;
+    img {
+        width: 1.6rem;
+    }
 
-}
-img{
-    width: 1.6rem;
-}
-li{
-    float: left;
-    margin-top: 0.6rem;
-}
-.page1{
+    .oo {
+        float: left;
+        margin-top: 0.6rem;
 
-    width:3.5rem;
-    padding-left:0.5rem;
-    text-align: center;
+    }
 
-}
-.page2{
-    width:3.5rem;
-    padding-left:0.5rem;
-    text-align: center;
+    .page1 {
 
-}
-    .text{
+        width: 3.5rem;
+        padding-left: 0.5rem;
+        text-align: center;
+
+    }
+
+    .text {
         margin-top: 0.7rem;
     }
-    .heard{
 
-        border: 1px red solid;
-        height: 7.82rem;
-        width: 16.17rem;
+    .top1,.top2 {
+        width: 16rem;
+        height: 7.5rem;
+        display: inline-block;
     }
-.heard2{
-    /*border: 1px red solid;*/
-    height:7.82rem;
-    /*width: 372px;*/
-    width:16.02rem;
-/*float: left;*/
-}
-    .top{
-        width:32.5rem;
-        height: 7.82rem;
 
+    .top3 {
+        width:65.7rem;
+        height: 7.5rem;
+        position: absolute;
+        left: -16rem;
+        top: 0;
+
+
+    }
+
+    .heard1 {
+        width: 16.0rem;
+        height: 7.5rem;
+        overflow: hidden;
+        position: relative;
+        padding-bottom: 2rem;
+
+    }
+    .DD,.DD1{
+        height:0.27rem;
+        width: 0.27rem;
+        border-radius: 100%;
+        background-color: blue;
+        position: absolute;
+    }
+    .DD{
+        top:7.5rem;
+        left:7.8rem;
+    }
+    .DD1{
+        top:7.5rem;
+        left:8.8rem;
     }
 </style>

@@ -99,6 +99,7 @@
 </script>
 
 <style scoped>
+<<<<<<< HEAD
 	.out {
 		/*background-color: red;*/
 		height: 100%;
@@ -221,3 +222,14 @@
 		padding: .5rem;
 	}
 </style>
+
+    .top {
+        background:#3190e8;
+    }
+.top_one a{
+    color: red;
+
+    
+}
+</style>
+

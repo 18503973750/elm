@@ -16,8 +16,8 @@ import 'element-ui/lib/theme-chalk/index.css';
 
 
 import Vuex from 'vuex'
-
-
+var VueTouch=require('vue-touch')
+Vue.use(VueTouch, {name: 'v-touch'})
 Vue.use(VueAxios, axios);
 Vue.use(ElementUI);
 Vue.use(Vuex)

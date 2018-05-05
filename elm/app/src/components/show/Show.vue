@@ -46,7 +46,8 @@ ul li a {
     display: block;
 }
 ul li a p {
-    font-size: .55rem;
+    font-size: .56rem;
+
 }
 .head{
     position: fixed;

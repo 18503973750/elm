@@ -57,6 +57,7 @@
         },
         created() {
             this.$http.get(api).then((response) => {
+
                 this.messages = response.data;
                 // console.log(response.data)
                 // console.log(response.data[0].image_url)
@@ -121,11 +122,23 @@
                 }
 
             }
+
+
+
+
         }
     }
 </script>
 
 <style scoped>
+
+
+
+ul {
+    font-size: 0.6rem;
+    color: #333;
+    display: flex;}
+
 
     div {
 

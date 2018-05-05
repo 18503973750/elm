@@ -8,6 +8,7 @@ import Order from '@/components/order/Order'
 import Profile from '@/components/profile/Profile'
 import Waimai from '@/components/waimai/Waimai'
 import Home from '@/components/Home/home'
+import City from '@/components/City/city'
 
 Vue.use(Router)
 
@@ -45,6 +46,11 @@ export default new Router({
             path: '/home',
             name: 'Home',
             component: Home
+        },
+        {
+            path: '/city/:id',
+            name: 'City',
+            component: City
         }
 
     ]

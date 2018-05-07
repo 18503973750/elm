@@ -9,6 +9,9 @@ import Profile from '@/components/profile/Profile'
 import Waimai from '@/components/waimai/Waimai'
 import Home from '@/components/Home/home'
 import City from '@/components/City/city'
+import Login from '@/components/login'
+import Msite from '@/components/msite'
+import Forget from '@/components/forget'
 
 Vue.use(Router)
 
@@ -51,6 +54,21 @@ export default new Router({
             path: '/city/:id',
             name: 'City',
             component: City
+        },
+        {
+            path: '/login',
+            name: 'login',
+            component: Login
+        },
+        {
+            path: '/msite',
+            name: 'msite',
+            component: Msite
+        },
+        {
+            path: '/forget',
+            name: 'forget',
+            component: Forget
         }
 
     ]

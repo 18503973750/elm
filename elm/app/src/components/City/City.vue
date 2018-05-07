@@ -2,24 +2,23 @@
     <div>
         <header class="top">
             <router-link to="/home"><i class="el-icon-arrow-left"></i></router-link>
-            <span>zz</span>
+            <span>{{ cityName.name }}</span>
             <router-link to="/home" class="tabCity">
                 <span>切换城市</span>
             </router-link>
         </header>
-        <form action="" class="search-box">
-            <input v-model="name" type="text" required="required" placeholder="输入学校、商务楼、地址">
-            <input type="submit" @click="search" value="提交"/>
-            <!--<button type="button" @click="submit"></button>-->
+        <form action="" class="search-box">{{ searchTxt }}
+            <input v-model="searchTxt" type="text" required="required" placeholder="输入学校、商务楼、地址">
+            <span class="button" @click="search">提交</span>
         </form>
         <div class="search-history">
             <h3>搜索历史</h3>
             <ul>
-                <li v-for="item in list0">
-                    <a href="">
-                        <h4>{{ item.name }}</h4>
+                <li v-for="item in list">
+                    <router-link :to="{name:'msite', query:{geohash:item.geohash}}">
+                        <h4>{{ item.name }} {{ item.geohash }}</h4>
                         <div>{{ item.address }}</div>
-                    </a>
+                    </router-link>
                 </li>
             </ul>
             <div class="clear-all">清空所有</div>
@@ -28,52 +27,32 @@
 </template>
 
 <script>
-    let getCity = "http://cangdu.org:8001/v1/cities/1";
-    let search = "http://cangdu.org:8001/v1/pois?city_id=1&keyword=迪士尼&type=search"
+
+
     export default {
         name: "City",
         data(){
             return {
-                cityId: null,
-                list0:[],//原始
-                listt0:[],//处理过的
-                name:'',//搜索框内容
+                cityName: null,
+                searchTxt:null,
+                list: null
             }
         },
         created() {
             //获取id所对应的城市
-            this.$http.get(getCity).then((response) => {
-                console.log(response.data);
-                this.cityId = response.data;
+            this.$http.get(`http://cangdu.org:8001/v1/cities/${this.$route.params.id}`).then((response) => {
+                // console.log(response.data.name);
+                this.cityName = response.data;
             });
-            //搜索
-            this.$http.get(search).then((response) => {
-                console.log(response.data);
-                this.list0 = response.data;
-            });
+
         },
         methods: {
-            search:function(){//搜索
-                var _this=this;
-                var tab=this['list0'];
-                if(this.name){
-                    _this['listt0']=[];
-                    if(!isNaN(parseInt(_this.name))) {
-                        for(i in tab) {
-                            if(tab[i].sort == parseInt(_this.name)) {
-                                _this['listt0'].push(tab[i]);
-                            };
-                        };
-                    } else {
-                        for(i in tab) {
-                            if(tab[i].City.indexOf(_this.name) >= 0) {
-                                _this['listt0'].push(tab[i]);
-                            };
-                        };
-                    };
-                }else{
-                    alert('请输入筛选条件!')
-                };
+            search:function(){
+                //搜索
+                this.$http.get(`http://cangdu.org:8001/v1/pois?city_id=${this.$route.params.id}&keyword=${this.searchTxt}&type=search`).then((response) => {
+                    console.log(response.data);
+                    this.list = response.data;
+                });
             }
         }
 
@@ -125,13 +104,15 @@
         padding-left: .3rem;
         border: 1px solid #e4e4e4;
     }
-    .search-box button {
+    .search-box .button {
         background-color: #3190e8;
         font-size: .65rem;
+        text-align: center;
+        line-height: 1.4rem;
         color: #fff;
         border: 0;
     }
-    .search-box input,.search-box button {
+    .search-box input,.search-box .button {
         outline: 0;
         width: 90%;
         margin: 0 auto .4rem;

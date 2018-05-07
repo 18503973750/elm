@@ -2,7 +2,7 @@
     <div class="">
         <header class="top">
             <span>ele.me</span>
-            <router-link to="">
+            <router-link to="/login">
                 <span>登录|注册</span>
             </router-link>
         </header>
@@ -60,7 +60,7 @@
             });
             //所有城市
             this.$http.get(allCity).then((response) => {
-                console.log(response.data);
+                // console.log(response.data);
                 this.allCitys = response.data;
 
                 //所有城市按A-z顺序排列

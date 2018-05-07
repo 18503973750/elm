@@ -13,11 +13,13 @@ import VueAxios from 'vue-axios'
 import 'element-ui/lib/theme-chalk/index.css';
 
 
+
 import ElementUI from 'element-ui'
 
 
 
 import Vuex from 'vuex'
+
 var VueTouch=require('vue-touch')
 Vue.use(VueTouch, {name: 'v-touch'})
 Vue.use(VueAxios, axios);

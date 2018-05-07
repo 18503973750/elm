@@ -49,7 +49,7 @@
 
         </div>
 
-            <div :class="page==1?'DD blue':DD"></div>
+            <div :class="page==1?'DD blue':'DD'"></div>
             <div :class="page == 2?'DD1 blue': 'DD1'"></div>
 
 
@@ -88,9 +88,9 @@
         methods: {
             onSwipeRight() {
                 if(this.page==1){
-                    this.page==2
+                    this.page=2
                 }else{
-                    this.page==1
+                    this.page=1
                 }
 
                 var top3 = document.getElementsByClassName('top3')[0];
@@ -116,9 +116,9 @@
             },
             onSwipeLeft() {
                 if (this.page == 1)  {
-                    this.page ==2
+                    this.page =2
                 }else {
-                    this.page == 1
+                    this.page =1
                 }
                 var top3 = document.getElementsByClassName('top3')[0];
                 move(top3,375)

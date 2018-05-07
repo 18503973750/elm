@@ -154,11 +154,11 @@
     letter-spacing: 0.2rem;
     color: darkgray;
 transform: scale(0.8);
-    /*font-family: STkaiti;*/
+
 }
 .text3{
      font-size:0.5rem ;
-    /*font-family: STkaiti;*/
+
     transform: scale(0.8);
  }
     .text3 p:nth-child(1){
@@ -182,13 +182,13 @@ transform: scale(0.8);
     .text4 div:nth-child(1){
         position: absolute;
         top: 3rem;
-        right:3.3rem ;
+        right:2.8rem ;
         transform: scale(0.9);
     }
 .text4 div:nth-child(2){
     position: absolute;
     top: 3rem;
-    right:0.3rem ;
+    right:1.3rem ;
     transform: scale(0.9);
 }
     .block{

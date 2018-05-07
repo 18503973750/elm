@@ -10,6 +10,9 @@
             <span >{{this.$route.params.title}}</span>
             <i class="el-icon-caret-bottom"></i>
         </div>
+       <div v-show="show">
+           <Title1></Title1>
+       </div>
         <div>
             <span>排序</span>
             <i class="el-icon-caret-bottom"></i>
@@ -31,13 +34,13 @@
         components:{WaimaiTwo,Title1},
         data(){
             return{
-                plash:true,
+                show:false,
 
             }
         },
         methods:{
             plash1(){
-                this.plash=!this.plash;
+                this.show=!this.show;
             }
 
         },

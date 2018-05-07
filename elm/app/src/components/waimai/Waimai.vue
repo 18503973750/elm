@@ -6,15 +6,17 @@
 
        </div>
        <WaiOne></WaiOne>
+       <WaimaiTwo></WaimaiTwo>
    </div>
 
 </template>
 
 <script>
-    import WaiOne from './WaiOne'
+    import WaiOne from './WaiOne';
+    import WaimaiTwo from './WaimaiTwo';
     export default {
         name: "Waimai",
-        components:{WaiOne}
+        components:{WaiOne,WaimaiTwo}
     }
 </script>
 

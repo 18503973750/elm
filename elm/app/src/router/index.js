@@ -66,7 +66,6 @@ export default new Router({
             component: City
         },
         {
-<<<<<<< HEAD
             path: '/login',
             name: 'login',
             component: Login
@@ -80,8 +79,8 @@ export default new Router({
             path: '/forget',
             name: 'forget',
             component: Forget
-        }
-=======
+        },
+        {
             path: '/balance',
             name: 'Balance',
             component: Balance
@@ -105,8 +104,6 @@ export default new Router({
             path: '/chome',
             name: 'Chome',
             component: Chome,
->>>>>>> d6af991fa9d716c2e77bc225c769c4fabcde5641
-
         },
         {
             path: '/header',

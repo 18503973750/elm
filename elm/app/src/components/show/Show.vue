@@ -1,7 +1,7 @@
 <template>
   <div class="head">
     <ul>
-      <li v-for="message in messages">
+      <li v-for="message in messages" >
           <router-link :to="message.to">
               <img :src="messages.pic" alt="">
               <p>{{message.name}}</p>
@@ -41,6 +41,7 @@ ul li {
     align-items: center;
     display: flex;
     text-align: center;
+
 }
 ul li a {
     display: block;
@@ -48,12 +49,16 @@ ul li a {
 ul li a p {
     font-size: .56rem;
 
+
 }
 .head{
+
     position: fixed;
-    bottom: 0px;
+    bottom:0;
     left: 0;
     right: 0;
+    background-color: whitesmoke;
+    z-index: 1;
 
 
 }

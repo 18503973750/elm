@@ -1,47 +1,60 @@
 <template>
     <v-touch v-on:swipeleft="onSwipeLeft" v-on:swiperight="onSwipeRight" class="heard1">
         <div class="top3">
-            <div class="top2">
-                <div class="oo" v-for="message in first2">
+            <!--<router-link to="/title">-->
+                <div class="top2">
+                <!--<router-link to="/title">-->
+                <div class="oo" v-for="message in first2" @click="tr(message)">
                     <div class="page1">
                         <img :src="url+message.image_url" alt="">
                         <div class="text">{{message.title}}</div>
                     </div>
                 </div>
+                <!--</router-link>-->
             </div>
-            <div class="top1">
-                <div class="oo" v-for="message in first">
+                <div class="top1">
+                <!--<router-link to="/title">-->
+                <div class="oo" v-for="message in first"  @click="send(message)">
                     <div class="page1">
                         <img :src="url+message.image_url" alt="">
                         <div class="text">{{message.title}}</div>
                     </div>
                 </div>
+                <!--</router-link>-->
             </div>
-            <div class="top2">
-                <div class="oo" v-for="message in first2">
+                <div class="top2">
+                <!--<router-link to="/title">-->
+                <div class="oo" v-for="message in first2" @click="tr(message)">
                     <div class="page1">
                         <img :src="url+message.image_url" alt="">
                         <div class="text">{{message.title}}</div>
                     </div>
                 </div>
+                <!--</router-link>-->
             </div>
-            <div class="top1">
-                <div class="oo" v-for="message in first">
+                <div class="top1">
+                <!--<router-link to="/title">-->
+                <div class="oo" v-for="message in first" @click="tr(message)">
                     <div class="page1">
+
                         <img :src="url+message.image_url" alt="">
                         <div class="text">{{message.title}}</div>
                     </div>
                 </div>
+                <!--</router-link>-->
+
             </div>
+            <!--</router-link>-->
 
 
         </div>
 
-            <div class="DD"></div>
-            <div class="DD1"></div>
+            <div :class="page==1?'DD blue':DD"></div>
+            <div :class="page == 2?'DD1 blue': 'DD1'"></div>
 
 
     </v-touch>
+
 </template>
 
 <script>
@@ -52,15 +65,15 @@
         data: function () {
             return {
                 messages: [],
-                url: 'https://fuss10.elemecdn.com'
+                url: 'https://fuss10.elemecdn.com',
+                page: 1
             }
         },
         created() {
             this.$http.get(api).then((response) => {
 
                 this.messages = response.data;
-                // console.log(response.data)
-                // console.log(response.data[0].image_url)
+
             })
         },
         computed: {
@@ -74,6 +87,12 @@
         },
         methods: {
             onSwipeRight() {
+                if(this.page==1){
+                    this.page==2
+                }else{
+                    this.page==1
+                }
+
                 var top3 = document.getElementsByClassName('top3')[0];
                 move(top3,375)
 
@@ -96,6 +115,11 @@
                 }
             },
             onSwipeLeft() {
+                if (this.page == 1)  {
+                    this.page ==2
+                }else {
+                    this.page == 1
+                }
                 var top3 = document.getElementsByClassName('top3')[0];
                 move(top3,375)
 
@@ -121,7 +145,11 @@
 
                 }
 
+            },
+            send(message){
+                this.$router.push({name:'Title',params:message})
             }
+
 
 
 
@@ -159,7 +187,7 @@ ul {
     .page1 {
 
         width: 3.5rem;
-        padding-left: 0.5rem;
+        padding-left: 0.3rem;
         text-align: center;
 
     }
@@ -189,22 +217,29 @@ ul {
         height: 7.5rem;
         overflow: hidden;
         position: relative;
-        padding-bottom: 2rem;
+        padding-bottom: 0.8rem;
+        border-bottom:1px #e4e4e4 solid;
 
     }
     .DD,.DD1{
         height:0.27rem;
         width: 0.27rem;
         border-radius: 100%;
-        background-color: blue;
+        background-color:darkgray;
         position: absolute;
     }
     .DD{
         top:7.5rem;
         left:7.8rem;
+
     }
     .DD1{
         top:7.5rem;
         left:8.8rem;
+
+
+    }
+    .blue {
+        background: blue;
     }
 </style>

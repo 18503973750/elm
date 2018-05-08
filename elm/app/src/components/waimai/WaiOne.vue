@@ -1,39 +1,39 @@
 <template>
     <v-touch v-on:swipeleft="onSwipeLeft" v-on:swiperight="onSwipeRight" class="heard1">
         <div class="top3">
-            <!--<router-link to="/title">-->
+
                 <div class="top2">
-                <!--<router-link to="/title">-->
+
                 <div class="oo" v-for="message in first2" @click="tr(message)">
                     <div class="page1">
                         <img :src="url+message.image_url" alt="">
                         <div class="text">{{message.title}}</div>
                     </div>
                 </div>
-                <!--</router-link>-->
+
             </div>
                 <div class="top1">
-                <!--<router-link to="/title">-->
-                <div class="oo" v-for="message in first"  @click="send(message)">
+
+                <div class="oo" v-for="message in first"  @click="tr(message)">
                     <div class="page1">
                         <img :src="url+message.image_url" alt="">
                         <div class="text">{{message.title}}</div>
                     </div>
                 </div>
-                <!--</router-link>-->
+
             </div>
                 <div class="top2">
-                <!--<router-link to="/title">-->
+
                 <div class="oo" v-for="message in first2" @click="tr(message)">
                     <div class="page1">
                         <img :src="url+message.image_url" alt="">
                         <div class="text">{{message.title}}</div>
                     </div>
                 </div>
-                <!--</router-link>-->
+
             </div>
                 <div class="top1">
-                <!--<router-link to="/title">-->
+
                 <div class="oo" v-for="message in first" @click="tr(message)">
                     <div class="page1">
 
@@ -41,15 +41,15 @@
                         <div class="text">{{message.title}}</div>
                     </div>
                 </div>
-                <!--</router-link>-->
+
 
             </div>
-            <!--</router-link>-->
+
 
 
         </div>
 
-            <div :class="page==1?'DD blue':DD"></div>
+            <div :class="page==1?'DD blue':'DD'"></div>
             <div :class="page == 2?'DD1 blue': 'DD1'"></div>
 
 
@@ -88,9 +88,9 @@
         methods: {
             onSwipeRight() {
                 if(this.page==1){
-                    this.page==2
+                    this.page=2
                 }else{
-                    this.page==1
+                    this.page=1
                 }
 
                 var top3 = document.getElementsByClassName('top3')[0];
@@ -116,9 +116,9 @@
             },
             onSwipeLeft() {
                 if (this.page == 1)  {
-                    this.page ==2
+                    this.page =2
                 }else {
-                    this.page == 1
+                    this.page =1
                 }
                 var top3 = document.getElementsByClassName('top3')[0];
                 move(top3,375)
@@ -146,7 +146,7 @@
                 }
 
             },
-            send(message){
+            tr(message){
                 this.$router.push({name:'Title',params:message})
             }
 

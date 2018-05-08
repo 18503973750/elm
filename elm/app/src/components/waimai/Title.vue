@@ -1,23 +1,42 @@
 <template>
 <div>
     <div class="title">
-        <i class="el-icon-arrow-left"></i>
+        <router-link to="/">
+             <i class="el-icon-arrow-left"></i>
+        </router-link>
         <span>商超便利</span>
 
     </div>
     <div class="title2">
         <div @click="plash1">
-            <span >{{this.$route.params.title}}</span>
-            <i class="el-icon-caret-bottom"></i>
+            <span v-show="show4" >{{mss.title}}</span>
+            <span style="color: #90B4FC" v-show="show5">分类</span>
+            <i v-show="show4" class="el-icon-caret-bottom"></i>
+            <i v-show="show5" class="el-icon-caret-bottom ff" ></i>
         </div>
-        <div>
-            <span>排序</span>
-            <i class="el-icon-caret-bottom"></i>
+
+        <div @click="plash2">
+            <span v-show="show6" >排序</span>
+            <span style="color: #90B4FC"  v-show="show7">排序</span>
+            <i v-show="show6" class="el-icon-caret-bottom"></i>
+            <i v-show="show7" class="el-icon-caret-bottom ff"></i>
         </div>
-        <div>
-            <span>筛选</span>
-            <i class="el-icon-caret-bottom"></i>
+        <div @click="plash3">
+            <span v-show="show8" >筛选</span>
+            <span style="color: #90B4FC"  v-show="show9">筛选</span>
+            <i v-show="show8" class="el-icon-caret-bottom"></i>
+            <i v-show="show9" class="el-icon-caret-bottom ff"></i>
         </div>
+    </div>
+
+    <div v-show="show">
+        <Title1></Title1>
+    </div>
+    <div v-show="show2">
+        <Title2></Title2>
+    </div>
+    <div v-show="show3">
+        <Title3></Title3>
     </div>
     <WaimaiTwo></WaimaiTwo>
 </div>
@@ -25,22 +44,58 @@
 
 <script>
     import Title1 from './Title1'
-    import WaimaiTwo from './WaimaiTwo'
+    import WaimaiTwo from './WaimaiTwo';
+    import Title2 from './Title2'
+    import Title3 from './Title3'
     export default {
         name: "Title",
-        components:{WaimaiTwo,Title1},
+        components:{WaimaiTwo,Title1,Title2,Title3},
         data(){
             return{
-                plash:true,
+                show:false,
+                show2:false,
+                show3:false,
+                show4:true,
+                show5:false,
+                show6:true,
+                show7:false,
+                show8:true,
+                show9:false,
+
+                mss:{}
+
 
             }
         },
         methods:{
             plash1(){
-                this.plash=!this.plash;
+                this.show=!this.show;
+                this.show4=!this.show4
+                this.show5=!this.show5
+            },
+
+            plash2(){
+                this.show2=!this.show2;
+                this.show6=!this.show6;
+                this.show7=!this.show7;
+
+            },
+            plash3(){
+                this.show3=!this.show3;
+                this.show8=!this.show8;
+                this.show9=!this.show9;
             }
 
         },
+        created(){
+
+            if(Object.keys(this.$route.params).length){
+                this.mss=this.$route.params
+                localStorage.mss=JSON.stringify(this.$route.params)
+            }else {
+                this.mss=JSON.parse(localStorage.mss)
+            }
+        }
 
     }
 </script>
@@ -71,5 +126,13 @@
     padding-bottom:0.6rem;
 
 }
+.ff{
+   animation: tt 0.3s forwards;
 
+}
+@keyframes tt {
+       0%{transform: rotateZ(60deg)}
+        50%{transform: rotateZ(120deg)}
+       100%{transform: rotateZ(180deg)}
+}
 </style>

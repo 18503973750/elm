@@ -2,32 +2,33 @@
     <div>
         <header class="top">
             <router-link to="/home"><i class="el-icon-arrow-left"></i></router-link>
-            <span>{{ cityName.name }}</span>
+            <span>{{ cityName }}</span>
             <router-link to="/home" class="tabCity">
                 <span>切换城市</span>
             </router-link>
         </header>
-        <form action="" class="search-box">{{ searchTxt }}
+        <form action="" class="search-box">
             <input v-model="searchTxt" type="text" required="required" placeholder="输入学校、商务楼、地址">
             <span class="button" @click="search">提交</span>
         </form>
         <div class="search-history">
             <h3>搜索历史</h3>
-            <ul>
-                <li v-for="item in list">
-                    <router-link :to="{name:'msite', query:{geohash:item.geohash}}">
-                        <h4>{{ item.name }} {{ item.geohash }}</h4>
-                        <div>{{ item.address }}</div>
-                    </router-link>
-                </li>
-            </ul>
+            <keep-alive include="City">   
+                <ul>
+                    <li v-for="item in list">
+                        <router-link :to="{name:'Waimai', query:{geohash:item.geohash}}">
+                            <h4>{{ item.name }} {{ item.geohash }}</h4>
+                            <div>{{ item.address }}</div>
+                        </router-link>
+                    </li>
+                </ul>
+            </keep-alive>
             <div class="clear-all">清空所有</div>
         </div>
     </div>
 </template>
 
 <script>
-
 
     export default {
         name: "City",
@@ -41,10 +42,9 @@
         created() {
             //获取id所对应的城市
             this.$http.get(`http://cangdu.org:8001/v1/cities/${this.$route.params.id}`).then((response) => {
-                // console.log(response.data.name);
-                this.cityName = response.data;
+                console.log(response.data);
+                this.cityName = response.data.name;
             });
-
         },
         methods: {
             search:function(){

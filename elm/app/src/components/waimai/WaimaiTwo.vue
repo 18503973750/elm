@@ -69,7 +69,7 @@
             ).then((response) => {
 
                 this.messages = response.data;
-                console.log(response.data)
+                // console.log(response.data)
 
 
 
@@ -182,13 +182,13 @@ transform: scale(0.8);
     .text4 div:nth-child(1){
         position: absolute;
         top: 3rem;
-        right:2.8rem ;
+        right:3.8rem ;
         transform: scale(0.9);
     }
 .text4 div:nth-child(2){
     position: absolute;
     top: 3rem;
-    right:1.3rem ;
+    right:0.8rem ;
     transform: scale(0.9);
 }
     .block{

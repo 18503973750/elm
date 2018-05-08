@@ -130,6 +130,16 @@ export default new Router({
             path: '/balance/detail',
             name: 'Detail',
             component: Detail
+        },
+        {
+            path: '/title',
+            name: 'Title',
+            component: Title
+        },
+        {
+            path: '/',
+            name: 'Title',
+            component: Title
         }
     ]
 

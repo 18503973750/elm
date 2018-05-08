@@ -1,39 +1,39 @@
 <template>
     <v-touch v-on:swipeleft="onSwipeLeft" v-on:swiperight="onSwipeRight" class="heard1">
         <div class="top3">
-            <!--<router-link to="/title">-->
+
                 <div class="top2">
-                <!--<router-link to="/title">-->
+
                 <div class="oo" v-for="message in first2" @click="tr(message)">
                     <div class="page1">
                         <img :src="url+message.image_url" alt="">
                         <div class="text">{{message.title}}</div>
                     </div>
                 </div>
-                <!--</router-link>-->
+
             </div>
                 <div class="top1">
-                <!--<router-link to="/title">-->
-                <div class="oo" v-for="message in first"  @click="send(message)">
+
+                <div class="oo" v-for="message in first"  @click="tr(message)">
                     <div class="page1">
                         <img :src="url+message.image_url" alt="">
                         <div class="text">{{message.title}}</div>
                     </div>
                 </div>
-                <!--</router-link>-->
+
             </div>
                 <div class="top2">
-                <!--<router-link to="/title">-->
+
                 <div class="oo" v-for="message in first2" @click="tr(message)">
                     <div class="page1">
                         <img :src="url+message.image_url" alt="">
                         <div class="text">{{message.title}}</div>
                     </div>
                 </div>
-                <!--</router-link>-->
+
             </div>
                 <div class="top1">
-                <!--<router-link to="/title">-->
+
                 <div class="oo" v-for="message in first" @click="tr(message)">
                     <div class="page1">
 
@@ -41,10 +41,10 @@
                         <div class="text">{{message.title}}</div>
                     </div>
                 </div>
-                <!--</router-link>-->
+
 
             </div>
-            <!--</router-link>-->
+
 
 
         </div>
@@ -146,7 +146,7 @@
                 }
 
             },
-            send(message){
+            tr(message){
                 this.$router.push({name:'Title',params:message})
             }
 

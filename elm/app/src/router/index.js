@@ -135,11 +135,11 @@ export default new Router({
             component: Detail
         },
         {
-<<<<<<< HEAD
             path: '/waimai',
             name: 'waimai',
             component: Waimai
-=======
+        },
+        {
             path: '/title',
             name: 'Title',
             component: Title
@@ -148,7 +148,6 @@ export default new Router({
             path: '/',
             name: 'Title',
             component: Title
->>>>>>> 01a9f55476472f512b9d47711aecfe1b2505c7d7
         }
     ]
 })

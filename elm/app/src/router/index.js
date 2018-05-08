@@ -155,8 +155,8 @@ export default new Router({
             path:'/exchange',
             name:'Exchange',
             component:Exchange
-        },{
-
+        },
+        {
             path: '/waimai',
             name: 'waimai',
             component: Waimai

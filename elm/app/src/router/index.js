@@ -8,9 +8,8 @@ import Order from '@/components/order/Order'
 import Profile from '@/components/profile/Profile'
 import Waimai from '@/components/waimai/Waimai'
 import Home from '@/components/Home/home'
-import City from '@/components/City/city'
+import City from '@/components/City/City'
 import Login from '@/components/login'
-import Msite from '@/components/msite'
 import Forget from '@/components/forget'
 
 import Balance from '@/components/profile/Balance'
@@ -29,32 +28,39 @@ import Title from '@/components/waimai/Title'
 Vue.use(Router)
 
 export default new Router({
-    routes: [{
-        path: '/',
-        name: 'Heard',
-        component: Heard,
-        children: [{
-            path: '/',
-            name: 'Waimai',
-            component: Waimai,
+    routes: [
+        {
+            path: '/waimai',
+            name: 'Heard',
+            component: Heard,
+            children: [
+                {
+                    path: '/waimai',
+                    name: 'waimai',
+                    component: Waimai
+                },
+                {
+                    path: '/search',
+                    name: 'Search',
+                    component: Search
+                },
+                {
+                    path: '/order',
+                    name: 'Order',
+                    component: Order
+                },
+                {
+                    path: '/profile',
+                    name: 'Profile',
+                    component: Profile
+                }
+            ]
         },
-            {
-                path: '/search',
-                name: 'Search',
-                component: Search
-            },
-            {
-                path: '/order',
-                name: 'Order',
-                component: Order
-            },
-            {
-                path: '/profile',
-                name: 'Profile',
-                component: Profile
-            }
-        ]
-    },
+        {
+            path: '/',
+            name: 'Home',
+            component: Home
+        },
         {
             path: '/home',
             name: 'Home',
@@ -63,17 +69,15 @@ export default new Router({
         {
             path: '/city/:id',
             name: 'City',
-            component: City
+            component: City,
+            meta: {
+                keepAlive: true
+            }
         },
         {
             path: '/login',
             name: 'login',
             component: Login
-        },
-        {
-            path: '/msite',
-            name: 'msite',
-            component: Msite
         },
         {
             path: '/forget',
@@ -121,7 +125,6 @@ export default new Router({
             component: Vip
         },
         {
-
             path: '/orderlist',
             name: 'Orderlist',
             component: Orderlist
@@ -130,7 +133,11 @@ export default new Router({
             path: '/balance/detail',
             name: 'Detail',
             component: Detail
+        },
+        {
+            path: '/waimai',
+            name: 'waimai',
+            component: Waimai
         }
     ]
-
 })

@@ -60,7 +60,7 @@
 
     .content {
         margin-top: 2rem;
-        
+
     }
 
     .content form {

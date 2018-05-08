@@ -137,8 +137,7 @@ export default new Router({
             component: Detail
         },
         {
-<<<<<<< HEAD
-            path: '/Benefit/Hbhistory',
+          path: '/Benefit/Hbhistory',
             name: 'Hbhistory',
             component: Hbhistory
         },
@@ -153,10 +152,11 @@ export default new Router({
           component:b2
         },
         {
-            path:'/exchange',
-            name:'Exchange',
+            path: '/exchange',
+            name: 'Exchange',
             component:Exchange
-=======
+        },
+        {
             path: '/waimai',
             name: 'waimai',
             component: Waimai
@@ -170,7 +170,6 @@ export default new Router({
             path: '/',
             name: 'Title',
             component: Title
->>>>>>> 8822e888b8c568beb3e6b8fdb3675a5ea39bcc0d
         }
     ]
 })

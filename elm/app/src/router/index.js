@@ -23,9 +23,11 @@ import Header from '@/components/profile/Header'
 import Download from '@/components/profile/Download'
 import Vip from '@/components/profile/Vip'
 import Orderlist from '@/components/profile/Orderlist'
-
+import Hbhistory from '@/components/profile/Hbhistory'
 import Title from '@/components/waimai/Title'
-
+import city1 from "@/components/profile/city"
+import  b2 from"@/components/profile/Benefit1"
+import  Exchange from"@/components/profile/Exchange"
 Vue.use(Router)
 
 export default new Router({
@@ -130,6 +132,26 @@ export default new Router({
             path: '/balance/detail',
             name: 'Detail',
             component: Detail
+        },
+        {
+            path: '/Benefit/Hbhistory',
+            name: 'Hbhistory',
+            component: Hbhistory
+        },
+        {
+            path:'/city1',
+            name:'city1',
+            component:city1
+        },
+        {
+          path:'/b2',
+          name:'b2',
+          component:b2
+        },
+        {
+            path:'/exchange',
+            name:'Exchange',
+            component:Exchange
         }
     ]
 

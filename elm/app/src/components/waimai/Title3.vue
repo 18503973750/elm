@@ -15,8 +15,9 @@
         <div class="select">
             <div @click="plash(index)" class="fist1" v-for="(mess,index) in messag">
                     <i  class="fist2">{{mess.icon_name}}</i>
-                <i v-show="show" class="el-icon-success"></i>
+                    <i v-show="show" class="ico "></i>
                      {{mess.name}}
+                <!--el-icon-success-->
             </div>
 
         </div>
@@ -31,7 +32,6 @@
 
 <script>
     var api = 'http://cangdu.org:8001/shopping/v1/restaurants/activity_attributes'
-
     export default {
         name: 'Title3',
         data() {
@@ -40,7 +40,7 @@
                 count:'',
                 show:false,
                 show1:false,
-                index:''
+                index:'',
 
             }
         },
@@ -58,10 +58,13 @@
         },
         methods:{
             plash(index){
+                var icon = document.getElementsByClassName('ico')[0];
                 this.count++
                 this.show=!this.show
                  this.index=index;
-                console.log(index)
+                console.log(index);
+
+                icon.className = "el-icon-success"
             },
             pls(){
                 this.show1=!this.show1
@@ -77,6 +80,7 @@
 </script>
 
 <style scoped>
+
     .head{position: absolute;
         height:10.3rem ;
         width: 16.2rem;
@@ -192,15 +196,11 @@
     .el-icon-success.one{
         color: dodgerblue;
         font-size:0.1rem;
-
-
-
     }
 
     .el-icon-success{
         color: dodgerblue;
         font-size: 1rem;
-
     }
 
 </style>

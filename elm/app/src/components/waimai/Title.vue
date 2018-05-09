@@ -1,7 +1,7 @@
 <template>
 <div>
     <div class="title">
-        <router-link to="/">
+        <router-link to="/waimai">
              <i class="el-icon-arrow-left"></i>
         </router-link>
         <span>商超便利</span>

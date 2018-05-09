@@ -128,6 +128,7 @@
 }
 .ff{
    animation: tt 0.3s forwards;
+    color: #3190e8;
 
 }
 @keyframes tt {

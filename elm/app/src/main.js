@@ -9,6 +9,8 @@ Vue.config.productionTip = false
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 
+import store from "./store";
+
 
 import 'element-ui/lib/theme-chalk/index.css';
 
@@ -30,6 +32,7 @@ Vue.use(Vuex)
 new Vue({
   el: '#app',
   router,
+    store,
   components: { App },
   template: '<App/>'
 })

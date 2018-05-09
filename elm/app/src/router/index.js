@@ -8,9 +8,8 @@ import Order from '@/components/order/Order'
 import Profile from '@/components/profile/Profile'
 import Waimai from '@/components/waimai/Waimai'
 import Home from '@/components/Home/home'
-import City from '@/components/City/city'
+import City from '@/components/City/City'
 import Login from '@/components/login'
-import Msite from '@/components/msite'
 import Forget from '@/components/forget'
 
 import Balance from '@/components/profile/Balance'
@@ -23,38 +22,47 @@ import Header from '@/components/profile/Header'
 import Download from '@/components/profile/Download'
 import Vip from '@/components/profile/Vip'
 import Orderlist from '@/components/profile/Orderlist'
-
+import Hbhistory from '@/components/profile/Hbhistory'
 import Title from '@/components/waimai/Title'
-
+import city1 from "@/components/profile/city"
+import  b2 from"@/components/profile/Benefit1"
+import  Exchange from"@/components/profile/Exchange"
 Vue.use(Router)
 
 export default new Router({
-    routes: [{
-        path: '/',
-        name: 'Heard',
-        component: Heard,
-        children: [{
-            path: '/',
-            name: 'Waimai',
-            component: Waimai,
+    routes: [
+        {
+            path: '/waimai',
+            name: 'Heard',
+            component: Heard,
+            children: [
+                {
+                    path: '/waimai',
+                    name: 'waimai',
+                    component: Waimai
+                },
+                {
+                    path: '/search',
+                    name: 'Search',
+                    component: Search
+                },
+                {
+                    path: '/order',
+                    name: 'Order',
+                    component: Order
+                },
+                {
+                    path: '/profile',
+                    name: 'Profile',
+                    component: Profile
+                }
+            ]
         },
-            {
-                path: '/search',
-                name: 'Search',
-                component: Search
-            },
-            {
-                path: '/order',
-                name: 'Order',
-                component: Order
-            },
-            {
-                path: '/profile',
-                name: 'Profile',
-                component: Profile
-            }
-        ]
-    },
+        {
+            path: '/',
+            name: 'Home',
+            component: Home
+        },
         {
             path: '/home',
             name: 'Home',
@@ -63,17 +71,15 @@ export default new Router({
         {
             path: '/city/:id',
             name: 'City',
-            component: City
+            component: City,
+            meta: {
+                keepAlive: true
+            }
         },
         {
             path: '/login',
             name: 'login',
             component: Login
-        },
-        {
-            path: '/msite',
-            name: 'msite',
-            component: Msite
         },
         {
             path: '/forget',
@@ -121,7 +127,6 @@ export default new Router({
             component: Vip
         },
         {
-
             path: '/orderlist',
             name: 'Orderlist',
             component: Orderlist
@@ -130,6 +135,31 @@ export default new Router({
             path: '/balance/detail',
             name: 'Detail',
             component: Detail
+        },
+        {
+            path: '/Benefit/Hbhistory',
+            name: 'Hbhistory',
+            component: Hbhistory
+        },
+        {
+            path:'/city1',
+            name:'city1',
+            component:city1
+        },
+        {
+          path:'/b2',
+          name:'b2',
+          component:b2
+        },
+        {
+            path:'/exchange',
+            name:'Exchange',
+            component:Exchange
+        },
+        {
+            path: '/waimai',
+            name: 'waimai',
+            component: Waimai
         },
         {
             path: '/title',
@@ -142,5 +172,4 @@ export default new Router({
             component: Title
         }
     ]
-
 })

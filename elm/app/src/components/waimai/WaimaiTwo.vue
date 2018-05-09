@@ -125,8 +125,10 @@
         padding: 0.6rem 0.4rem;
 
     }
-    li{position: relative;
-        border-bottom:1px lightgrey solid;
+    li{
+        position: relative;
+        background-color: #fff;
+        border-bottom: .025rem lightgrey solid;
     }
     .imgs span{
         height: 2rem;

@@ -2,27 +2,28 @@
     <div >
 
         <ul  class="imgs">
-            <li v-for="message in messages">
+            <router-link to="/elm">
+            <li v-for="message in messages " @click="dj(message)">
                 <img :src="url+message.image_path" alt="">
                 <div class="M">
                     <div>品牌</div>
-                    <div>{{message.name}}</div>
+                    <div style="color: black">{{message.name}}</div>
                 </div>
 
                 <div class="aution">
                     <div>{{message.rating}}</div>
-                    <div>
+                    <div style="color:darkgray">
                         月销售{{message.recent_order_num}}
                     </div>
                 </div>
-                <div class="text1">20￥起送/配送费约5元</div>
+                <div style="color:darkgray" class="text1">20￥起送/配送费约5元</div>
 
                 <div class="text2">保准票</div>
-                <div class="text3">
-                    <p>蜂鸟专送</p>
+                <div style="color:dodgerblue" class="text3">
+                    <p style="padding: 0.1rem 0.2rem">蜂鸟专送</p>
                     <p>准时达</p>
                 </div>
-                <div class="text4">
+                <div style="color:darkgray" class="text4">
                     <div>{{message.distance}}/</div>
                     <div>{{message.order_lead_time
                         }}</div>
@@ -40,6 +41,7 @@
             </li>
 
             <span></span>
+            </router-link>
         </ul>
 
 
@@ -62,6 +64,12 @@
 
 
          }
+
+        },
+        methods:{
+            dj(message){
+                this.$router.push({name:'Cdetail',params:{id:message.id}})
+            }
         },
         created(){
             let params={ latitude: 31.38098,longitude: 121.50146}

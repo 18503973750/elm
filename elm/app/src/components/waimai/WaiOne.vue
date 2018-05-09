@@ -1,6 +1,7 @@
 <template>
-    <v-touch v-on:swipeleft="onSwipeLeft" v-on:swiperight="onSwipeRight" class="heard1">
-        <div class="top3">
+    <v-touch  v-on:swipeleft="onSwipeLeft" v-on:swiperight="onSwipeRight" class="heard1">
+        <router-link to="/title">
+        <div style="color: #666" class="top3">
 
                 <div class="top2">
 
@@ -52,7 +53,7 @@
             <div :class="page==1?'DD blue':'DD'"></div>
             <div :class="page == 2?'DD1 blue': 'DD1'"></div>
 
-
+        </router-link>
     </v-touch>
 
 </template>
@@ -148,6 +149,7 @@
             },
             tr(message){
                 this.$router.push({name:'Title',params:message})
+
             }
 
 

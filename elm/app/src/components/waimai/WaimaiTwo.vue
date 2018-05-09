@@ -58,7 +58,8 @@
              messages:'',
              url:'//elm.cangdu.org/img/',
              value1: null,
-             value2: null
+             value2: null,
+
 
          }
         },
@@ -69,11 +70,43 @@
             ).then((response) => {
 
                 this.messages = response.data;
-                // console.log(response.data)
+
+            });
 
 
 
-            })
+        },
+        computed: {
+            order() {
+                return this.$store.state.order;
+            }
+        },
+        watch: {
+            order() {
+                var a = 0;
+                if (this.order==0) {
+                    a = 4;
+                } else if(this.order == 1) {
+                    a = 5;
+                } else if(this.order == 2) {
+                    a = 6;
+                } else if(this.order == 3) {
+                    a = 1;
+                } else if(this.order == 4) {
+                    a = 2;
+                } else if(this.order == 5) {
+                    a = 3;
+                }
+
+                let a1 = {
+                    latitude:31.22967,
+                    longitude:121.4762,
+                    order_by: a
+                };
+                this.$http.get("http://cangdu.org:8001/shopping/restaurants", {params:a1}).then(res=>{
+                    this.messages=res.data
+                });
+            }
         }
 
 

@@ -11,8 +11,8 @@
 </template>
 
 <script>
-    var currentPosition = document.documentElement.scrollTop || document.body.scrollTop;
-    currentPosition -= 10;
+    
+    
     import WaiOne from './WaiOne';
     import WaimaiTwo from './WaimaiTwo';
     export default {
@@ -21,27 +21,42 @@
             WaiOne,
             WaimaiTwo
         },
+        props: {
+            toBottom: {
+                type: Number,
+                default: 0
+            }
+        },
         methods: {
-            toTop(){
-                var gotoTop= function(){
-                    
-                      if (currentPosition > 0) {
-                        window.scrollTo(0, currentPosition);
-                    }
-                    else {
-                        window.scrollTo(0, 0);
-                        clearInterval(timer);
-                        timer = null;
-                    }
+            toTop() {
+                document.documentElement.scrollTop = document.body.scrollTop = 0;
+            },
+            
+            //回到顶部
+            handleScroll () {
+
+                var top = document.getElementsByClassName('top')[0];
+                var scrollTop = document.documentElement.scrollTop || document.body.scrollTop
+
+                if(scrollTop >= 400) {
+                    console.log("超过100");
+                    top.style.display = 'block';  
+                    top.style.opacity = 1; 
+                }else {
+                    top.style.display = 'none'; 
+                    top.style.opacity = 0; 
                 }
-                var timer=setInterval(gotoTop,1);
-            }        
+            }            
+        },
+        mounted() {
+            window.addEventListener('scroll', this.handleScroll)
         }
     }
 </script>
 
 <style scoped>
     .top {
+        display: none;
         position: fixed;
         right: 1rem;
         bottom: 2.5rem;
@@ -52,6 +67,8 @@
         border: 1px solid #3190e8;
         color: #3190e8;
         text-align: center;
+        transition: all .5s linear;
+        opacity: 0;
     }
     .top::before {
         display: block;

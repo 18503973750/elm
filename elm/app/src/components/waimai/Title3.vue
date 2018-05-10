@@ -43,13 +43,12 @@
             }
         },
         created() {
-            console.log(this.messag);
+
 
             this.$http.get(api
             ).then((response) => {
-                console.log(response);
+
                 this.messag = response.data;
-                console.log(this.messag);
 
 
             })

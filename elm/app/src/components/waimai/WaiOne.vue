@@ -148,7 +148,8 @@
 
             },
             tr(message){
-                this.$router.push({name:'Title',params:message})
+                this.$router.push({name:'Title',params:{message}})
+
 
             }
 

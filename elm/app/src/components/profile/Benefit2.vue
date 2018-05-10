@@ -1,3 +1,33 @@
+<style>
+    .el-tabs--top {
+        width: 100%;
+    }
+    .el-tabs__item {
+        padding: 0;
+    }
+    .el-tabs__nav {
+        text-align: center;
+        overflow: hidden;
+        float: none;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 2rem;
+        background-color: #fff;
+    }
+    .el-tabs__active-bar {
+        display: none;
+    }
+    .is-top {
+        border-bottom: .1rem solid #fff;
+        text-align: center;
+        margin: 0 ;
+    }
+
+    .is-active {
+        border-bottom-color: #3190e8;
+    }
+</style>
 <template>
     <div class="out">
         <div class="top">
@@ -9,62 +39,62 @@
 
         </div>
         <div class="top2">
-            <div class="top2_left">
-                <span @click="HB" class="redbag" v-bind:class="{black:orchange}">红包</span>
-            </div>
-            <div class="top2_right">
-                <span @click="dj" class="shop" v-bind:class="{green:orchange1}">商家代金券</span>
-            </div>
-        </div>
-        <div class="SHOW" v-if="orshow">
-            <div class="top3">
-                <div class="top3_left">
-                    有<span>3</span>个红包即将到期
-                </div>
-                <div class="top3_right el-icon-more">
-                    红包说明
-                </div>
-            </div>
-            <ul class="content-box">
-                <li class="content" v-for="ar in arr">
-                    <div class="cont_left">
-                        <span>¥</span>
-                        <span>{{ar.amount}}</span>
-                        <p>满{{ar.sum_condition}}元可用</p>
+            <el-tabs v-model="activeName" @tab-click="handleClick">
+                <el-tab-pane label="红包" name="first" style="">
+                    <div class="top3">
+                        <div class="top3_left">
+                            有<span>3</span>个红包即将到期
+                        </div>
+                        <div class="top3_right el-icon-more">
+                            红包说明
+                        </div>
                     </div>
-                    <div class="cont_mid">
-                        <h4>分享红包</h4>
-                        <p>2017-05-23到期</p>
-                        <p>限收货手机号为 {{ar.phone}}</p>
+                    <ul class="content-box">
+                        <li class="content" v-for="ar in arr">
+                            <div class="cont_left">
+                                <span>¥</span>
+                                <span>{{ar.amount}}</span>
+                                <p>满{{ar.sum_condition}}元可用</p>
+                            </div>
+                            <div class="cont_mid">
+                                <h4>分享红包</h4>
+                                <p>2017-05-23到期</p>
+                                <p>限收货手机号为 {{ar.phone}}</p>
+                            </div>
+                            <div class="cont_right">
+                                剩3日
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="foot1">
+                        <p>限品类：快餐便当、特色菜系、小吃夜宵、甜品饮品、异国料理</p>
                     </div>
-                    <div class="cont_right">
-                        剩3日
+                    <p class="foot2" @click="history">查看历史红包 <span class="el-icon-arrow-right"></span></p>
+                    <div class="foot3">
+                        <div class="foot3_left" @click="change">兑换红包</div>
+                        <div class="foot3_right" @click="T">推荐有奖</div>
                     </div>
-                </li>
-            </ul>
-            <div class="foot1">
-                <p>限品类：快餐便当、特色菜系、小吃夜宵、甜品饮品、异国料理</p>
-            </div>
-            <p class="foot2" @click="history">查看历史红包 <span class="el-icon-arrow-right"></span></p>
-            <div class="foot3">
-                <div class="foot3_left" @click="change">兑换红包</div>
-                <div class="foot3_right" @click="T">推荐有奖</div>
-            </div>
-        </div>
-        <div class="benefit2" v-if="orshow1">
-            <div class="P">
-                <p class="el-icon-more
-" @click="SHOP">商家代金券说明</p>
-            </div>
-            <div class="benefit2_con">
-                <img src="../../img/bg.png" alt="">
-                <p>无法使用代金券</p>
-                <p>非客户端或客户端版本过低</p>
-                <p @click="P">下载或升级客户端</p>
-            </div>
+                </el-tab-pane>
+                <el-tab-pane label="商家代金券" name="second" >
+                    <div class="benefit2">
+                        <div class="P">
+                            <p class="el-icon-more
+">商家代金券说明</p>
+                        </div>
+                        <div class="benefit2_con">
+                            <img src="../../img/bg.png" alt="">
+                            <p>无法使用代金券</p>
+                            <p>非客户端或客户端版本过低</p>
+                        </div>
 
 
+                    </div>
+
+                </el-tab-pane>
+            </el-tabs>
         </div>
+
+
     </div>
 
 </template>
@@ -72,13 +102,10 @@
 <script>
     export default {
         name: "Benefit",
-        data: function () {
+        data() {
             return {
                 arr: [],
-                orshow: true,
-                orshow1: false,
-                orchange: true,
-                orchange1: false
+                activeName: 'first'
             }
         },
         created() {
@@ -86,14 +113,7 @@
             this.$http.get(url).then(res => {
                 console.log(res.data);
                 this.arr = res.data;
-            });
-            //控制界面的显示和隐藏和颜色的改变
-            if (this.$route.query.ret == true) {
-                this.orshow = false
-                this.orshow1 = true
-                this.orchange = false
-                this.orchange1 = true
-            }
+            })
         },
         methods: {
             history() {
@@ -112,34 +132,16 @@
                     path: '/Benefit/Commend'
                 })
             },
-
-            HB() {
-                this.orshow = true
-                this.orshow1 = false
-                this.orchange = true
-                this.orchange1 = false
-            },
-            dj() {
-                this.orshow = false
-                this.orshow1 = true
-                this.orchange = false
-                this.orchange1 = true
-            },
-            P() {
-                this.$router.push({
-                    path: '/download'
-                })
-            },
-            SHOP() {
-                this.$router.push({
-                    path: "/Benefit/coupon"
-                })
+            handleClick(tab, event) {
+                console.log(tab, event);
             }
         }
     }
 </script>
 
 <style scoped>
+
+
     .top {
         background: #3190e8;
         border: .05rem solid #3190e8;
@@ -147,6 +149,7 @@
         top: 0;
         left: 0;
         right: 0;
+        z-index: 100;
     }
 
     .top_one {
@@ -169,12 +172,13 @@
         justify-content: space-between;
         display: flex;
         margin-top: 2.2rem;
+
     }
 
     .top2_left {
         background: white;
         /*border-bottom-color: #3190e8;*/
-        /*color: #3190e8;*/
+        color: #3190e8;
         width: 50%;
         text-align: center;
         font-size: .65rem;
@@ -182,18 +186,7 @@
         /*border: .05rem solid red;*/
     }
 
-    /*.top2_left span {*/
-    /*border-bottom: .1rem #3190e8 solid;*/
-    /*padding-bottom: .1rem;*/
-    /*}*/
-    .black {
-        color: #3190e8;
-        border-bottom: .1rem #3190e8 solid;
-        padding-bottom: .1rem;
-    }
-
-    .green {
-        color: #3190e8;
+    .top2_left span {
         border-bottom: .1rem #3190e8 solid;
         padding-bottom: .1rem;
     }
@@ -224,10 +217,6 @@
         color: #3190e8;
     }
 
-    /*.top3_right span {*/
-    /*color: red;*/
-    /*padding: .2rem;*/
-    /*}*/
     .top3_left span {
         color: red;
         padding: .2rem;
@@ -370,46 +359,18 @@
         color: #555;
     }
 
-    .P p {
+    .P {
         color: #3190e8;
-        font-size: .6rem;
+        font-size: .5rem;
         line-height: 1rem;
         margin-left: 10.8rem;
         padding-right: .5rem;
     }
-
     .benefit2_con {
-        margin-top: 4rem;
-        text-align: center;
-        font-size: .7rem;
-        color: #555;
+        margin: 0 auto;
     }
-
-    .benefit2_con img {
+    .benefit2_con img{
         width: 6rem;
         height: 3.4rem;
-    }
-
-    .benefit2_con p:nth-child(2) {
-        font-size: .7rem;
-        color: #666;
-        margin-top: .4rem;
-    }
-
-    .benefit2_con p:nth-child(3) {
-        font-size: .5rem;
-        color: #999;
-        margin-top: .3rem;
-        margin-bottom: .3rem;
-    }
-
-    .benefit2_con p:nth-child(4) {
-        background-color: #56d176;
-        font-size: .65rem;
-        color: #fff;
-        padding: .3rem;
-        border-radius: .15rem;
-        width: 6rem;
-        margin-left: 4.8rem;
     }
 </style>

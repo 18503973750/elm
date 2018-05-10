@@ -16,7 +16,7 @@
             <keep-alive include="City">   
                 <ul>
                     <li v-for="item in list">
-                        <router-link :to="{name:'Waimai', query:{geohash:item.geohash}}">
+                        <router-link to="/waimai">
                             <h4>{{ item.name }} {{ item.geohash }}</h4>
                             <div>{{ item.address }}</div>
                         </router-link>
@@ -25,6 +25,30 @@
             </keep-alive>
             <div class="clear-all">清空所有</div>
         </div>
+        
+        <!-- 左边菜单类别 -->
+        <div class="menu-title-list">
+            <div class="menu-title-item"
+                v-for='(menuItem, index) in menuList'
+                :class='isActive === index ? "active":"" '
+                v-if='menuItem.category && menuItem.dishes'
+                @click='jump(index)'></div>
+                {{ menuItem.category.categoryName }}
+            <div class="current" v-show='isActive === index'></div>
+        </div>
+        <!-- //右边菜品列表 -->
+        <div class="cate-list" :scrollTop.prop='scrollTop'>
+            <div class="cate-translate-container">
+                <div class="cate-item" v-for='menuItem in menuList' v-if=""></div>
+            </div>
+        </div>
+
+        <dl>
+           <dd @click="da">A</dd>
+           <dd @click="db">B</dd>
+       </dl>   
+       <p v-show="showA">a页面</p>  
+       <p v-show="showB">b页面</p>
     </div>
 </template>
 
@@ -36,7 +60,9 @@
             return {
                 cityName: null,
                 searchTxt:null,
-                list: null
+                list: null,
+                showA: true,
+                showB: false
             }
         },
         created() {
@@ -53,6 +79,14 @@
                     console.log(response.data);
                     this.list = response.data;
                 });
+            },
+            da() {
+                this.showA = true,
+                this.showB = false
+            },
+            db() {
+                this.showB = true,
+                this.showA = false
             }
         }
 

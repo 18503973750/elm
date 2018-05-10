@@ -29,9 +29,13 @@ import Title from '@/components/waimai/Title'
 import city1 from "@/components/profile/city"
 import  b2 from"@/components/profile/Benefit1"
 import  Exchange from"@/components/profile/Exchange"
+
 import  Commend from"@/components/profile/Commend"
 import Coupon from "@/components/profile/Coupon"
 import Payment from "@/components/profile/Payment"
+
+import Cdetail from '@/components/waimai/Cdetail'
+
 Vue.use(Router)
 
 export default new Router({
@@ -182,6 +186,7 @@ export default new Router({
             component: Title
         },
         {
+
             path: '/Benefit/Commend',
             name: 'Commend',
             component: Commend
@@ -195,6 +200,11 @@ export default new Router({
             path:'/Payment',
             name:'Payment',
             component:Payment
-        }
+        },
+        {
+            path: '/elm',
+            name: 'Cdetail',
+            component: Cdetail
+        },
     ]
 })

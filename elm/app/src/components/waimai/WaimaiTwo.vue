@@ -2,27 +2,28 @@
     <div >
 
         <ul  class="imgs">
-            <li v-for="message in messages">
+            <router-link to="/elm">
+            <li v-for="message in messages " @click="dj(message)">
                 <img :src="url+message.image_path" alt="">
                 <div class="M">
                     <div>品牌</div>
-                    <div>{{message.name}}</div>
+                    <div style="color: black">{{message.name}}</div>
                 </div>
 
                 <div class="aution">
                     <div>{{message.rating}}</div>
-                    <div>
+                    <div style="color:darkgray">
                         月销售{{message.recent_order_num}}
                     </div>
                 </div>
-                <div class="text1">20￥起送/配送费约5元</div>
+                <div style="color:darkgray" class="text1">20￥起送/配送费约5元</div>
 
                 <div class="text2">保准票</div>
-                <div class="text3">
-                    <p>蜂鸟专送</p>
+                <div style="color:dodgerblue" class="text3">
+                    <p style="padding: 0.1rem 0.2rem">蜂鸟专送</p>
                     <p>准时达</p>
                 </div>
-                <div class="text4">
+                <div style="color:darkgray" class="text4">
                     <div>{{message.distance}}/</div>
                     <div>{{message.order_lead_time
                         }}</div>
@@ -40,6 +41,7 @@
             </li>
 
             <span></span>
+            </router-link>
         </ul>
 
 
@@ -58,9 +60,16 @@
              messages:'',
              url:'//elm.cangdu.org/img/',
              value1: null,
-             value2: null
+             value2: null,
+
 
          }
+
+        },
+        methods:{
+            dj(message){
+                this.$router.push({name:'Cdetail',params:{id:message.id}})
+            }
         },
         created(){
             let params={ latitude: 31.38098,longitude: 121.50146}
@@ -69,11 +78,43 @@
             ).then((response) => {
 
                 this.messages = response.data;
-                // console.log(response.data)
+
+            });
 
 
 
-            })
+        },
+        computed: {
+            order() {
+                return this.$store.state.order;
+            }
+        },
+        watch: {
+            order() {
+                var a = 0;
+                if (this.order==0) {
+                    a = 4;
+                } else if(this.order == 1) {
+                    a = 5;
+                } else if(this.order == 2) {
+                    a = 6;
+                } else if(this.order == 3) {
+                    a = 1;
+                } else if(this.order == 4) {
+                    a = 2;
+                } else if(this.order == 5) {
+                    a = 3;
+                }
+
+                let a1 = {
+                    latitude:31.22967,
+                    longitude:121.4762,
+                    order_by: a
+                };
+                this.$http.get("http://cangdu.org:8001/shopping/restaurants", {params:a1}).then(res=>{
+                    this.messages=res.data
+                });
+            }
         }
 
 

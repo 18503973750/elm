@@ -35,13 +35,10 @@ import Coupon from "@/components/profile/Coupon"
 import Payment from "@/components/profile/Payment"
 
 import Cdetail from '@/components/waimai/Cdetail'
-<<<<<<< HEAD
 import ConfirmOrder from '@/components/confirmOrder'
-=======
 
 import ConfirmOrder from '@/components/confirmOrder'
 
->>>>>>> develop
 
 Vue.use(Router)
 

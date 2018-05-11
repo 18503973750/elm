@@ -1,7 +1,7 @@
 <template>
    <div>
        <div class="heard">
-           <router-link to="/search"><i class="el-icon-search"></i></router-link>   
+           <router-link to="/search"><i class="el-icon-search"></i></router-link>
            <span class="span1">进水区花园城</span> <span class="span2"><router-link to="/login">登录/注册</router-link></span>
        </div>
        <WaiOne></WaiOne>
@@ -11,8 +11,8 @@
 </template>
 
 <script>
-    
-    
+
+
     import WaiOne from './WaiOne';
     import WaimaiTwo from './WaimaiTwo';
     export default {
@@ -31,7 +31,7 @@
             toTop() {
                 document.documentElement.scrollTop = document.body.scrollTop = 0;
             },
-            
+
             //回到顶部
             handleScroll () {
 
@@ -39,13 +39,19 @@
                 var scrollTop = document.documentElement.scrollTop || document.body.scrollTop
 
                 if(scrollTop >= 400) {
+<<<<<<< HEAD
                     top.style.display = 'block';  
                     top.style.opacity = 1; 
+=======
+
+                    // top.style.display = 'block';
+                    // top.style.opacity = 1;
+>>>>>>> develop
                 }else {
-                    top.style.display = 'none'; 
-                    top.style.opacity = 0; 
+                    // top.style.display = 'none';
+                    // top.style.opacity = 0;
                 }
-            }            
+            }
         },
         mounted() {
             window.addEventListener('scroll', this.handleScroll)

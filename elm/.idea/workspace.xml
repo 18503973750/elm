@@ -14,48 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Waimai.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/components/waimai/Waimai.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="67">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-              <folding>
-                <element signature="e#544#574#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Title.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/components/waimai/Title.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
-              <folding>
-                <element signature="n#style#0;n#span#1;n#div#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#div#1;n#div#1;n#div#0;n#template#0;n#!!top" />
-                <element signature="n#style#0;n#span#1;n#div#1;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#div#2;n#div#1;n#div#0;n#template#0;n#!!top" />
-                <element signature="n#style#0;n#span#1;n#div#2;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="e#1959#2090#0" />
-                <element signature="e#2113#2249#0" />
-                <element signature="e#2271#2406#0" />
-                <element signature="e#2745#2841#0" />
-                <element signature="e#2853#2900#0" />
-                <element signature="e#2924#2999#0" />
-                <element signature="e#3007#3178#0" />
-                <element signature="e#3182#3238#0" />
-                <element signature="e#3239#3373#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Title3.vue" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Title3.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/components/waimai/Title3.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+            <state relative-caret-position="264">
+              <caret line="23" column="61" lean-forward="true" selection-start-line="23" selection-start-column="61" selection-end-line="23" selection-end-column="61" />
               <folding>
                 <element signature="n#div#0;n#div#0;n#template#0;n#!!top" />
                 <element signature="n#div#2;n#div#0;n#div#0;n#template#0;n#!!top" />
@@ -67,8 +30,8 @@
       <file leaf-file-name="Title1.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/components/waimai/Title1.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-865">
-              <caret line="48" column="18" lean-forward="true" selection-start-line="48" selection-start-column="18" selection-end-line="48" selection-end-column="18" />
+            <state relative-caret-position="990">
+              <caret line="48" column="18" selection-start-line="48" selection-start-column="18" selection-end-line="48" selection-end-column="18" />
               <folding>
                 <element signature="n#div#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#template#0;n#!!top" />
               </folding>
@@ -79,8 +42,8 @@
       <file leaf-file-name="WaiOne.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/components/waimai/WaiOne.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8">
-              <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+            <state relative-caret-position="77">
+              <caret line="45" selection-start-line="45" selection-end-line="45" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#router-link#0;n#v-touch#0;n#template#0;n#!!top" expanded="true" />
               </folding>
@@ -91,7 +54,7 @@
       <file leaf-file-name="WaimaiTwo.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/components/waimai/WaimaiTwo.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-35">
+            <state relative-caret-position="2090">
               <caret line="95" column="26" selection-start-line="95" selection-start-column="26" selection-end-line="95" selection-end-column="26" />
             </state>
           </provider>
@@ -100,8 +63,8 @@
       <file leaf-file-name="Title2.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/components/waimai/Title2.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="13" lean-forward="true" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+            <state relative-caret-position="59">
+              <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -109,39 +72,86 @@
       <file leaf-file-name="Cdetail.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/components/waimai/Cdetail.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1980">
-              <caret line="175" column="5" lean-forward="true" selection-start-line="175" selection-start-column="5" selection-end-line="175" selection-end-column="5" />
+            <state relative-caret-position="262">
+              <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
               <folding>
-                <element signature="n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" />
                 <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" />
                 <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" />
                 <element signature="n#div#3;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" />
-                <element signature="n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" />
-                <element signature="n#style#0;n#span#1;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="e#1522#1538#0" />
-                <element signature="e#1209#1313#0" />
-                <element signature="e#1326#1482#0" />
-                <element signature="e#1498#1605#0" />
-                <element signature="e#1615#1772#0" />
-                <element signature="e#1783#1973#0" />
-                <element signature="e#1984#2140#0" />
-                <element signature="e#2164#2314#0" />
-                <element signature="e#2339#2440#0" />
-                <element signature="e#2969#2985#0" />
-                <element signature="e#3040#3056#0" />
-                <element signature="e#3245#3261#0" />
+                <element signature="e#1349#1388#0" expanded="true" />
+                <element signature="e#2312#2416#0" />
+                <element signature="e#2430#2586#0" />
+                <element signature="e#2604#2713#0" />
+                <element signature="e#2725#2882#0" />
+                <element signature="e#2895#3085#0" />
+                <element signature="e#3098#3255#0" />
+                <element signature="e#3281#3432#0" />
+                <element signature="e#3459#3560#0" />
+                <element signature="e#3569#3626#0" />
+                <element signature="e#3640#3675#0" />
+                <element signature="e#3683#3750#0" />
+                <element signature="e#3762#3945#0" />
+                <element signature="e#3961#4017#0" />
+                <element signature="e#4027#4113#0" />
+                <element signature="e#4121#4197#0" />
+                <element signature="e#4276#4311#0" />
+                <marker date="1526036808000" expanded="true" signature="1901:1918" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CdetailLeft.vue" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CdetailS.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/components/waimai/CdetailS.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1710">
+              <caret line="185" column="8" lean-forward="true" selection-start-line="185" selection-start-column="8" selection-end-line="185" selection-end-column="8" />
+              <folding>
+                <element signature="n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" />
+                <element signature="n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" />
+                <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" />
+                <element signature="n#div#2;n#div#0;n#div#0;n#template#0;n#!!top" />
+                <element signature="n#div#0;n#div#2;n#div#0;n#div#0;n#template#0;n#!!top" />
+                <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#3;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="e#161#173#0" />
+                <element signature="e#1260#1276#0" />
+                <element signature="e#1405#1421#0" />
+                <element signature="e#1456#1472#0" />
+                <element signature="e#1531#1547#0" />
+                <element signature="e#1580#1596#0" />
+                <element signature="e#1692#1708#0" />
+                <element signature="e#1838#1940#0" />
+                <element signature="e#1951#2027#0" />
+                <element signature="e#2031#2047#0" />
+                <element signature="e#3017#3206#0" />
+                <element signature="e#3211#3376#0" />
+                <element signature="e#3384#3426#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CdetailLeft.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/components/waimai/CdetailLeft.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
-              <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="30" />
+            <state relative-caret-position="191">
+              <caret line="15" column="26" lean-forward="true" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+              <folding>
+                <element signature="e#1337#1676#0" />
+                <element signature="n#style#0;n#!!top" />
+                <element signature="e#1724#1757#0" />
+                <element signature="e#1774#1806#0" />
+                <element signature="e#1822#1890#0" />
+                <element signature="e#1902#1988#0" />
+                <element signature="e#2001#2123#0" />
+                <element signature="e#2149#2232#0" />
+                <element signature="e#2245#2312#0" />
+                <element signature="e#2324#2424#0" />
+                <element signature="e#2436#2565#0" />
+                <element signature="e#2634#2719#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -181,7 +191,6 @@
         <option value="$PROJECT_DIR$/app/src/components/heard/Heard.vue" />
         <option value="$PROJECT_DIR$/app/index.html" />
         <option value="$PROJECT_DIR$/app/static/js/base.js" />
-        <option value="$PROJECT_DIR$/app/src/components/waimai/Waimai.vue" />
         <option value="$PROJECT_DIR$/app/src/components/waimai/Start.vue" />
         <option value="$PROJECT_DIR$/app/src/components/show/Show.vue" />
         <option value="$PROJECT_DIR$/app/src/components/waimai/title.vue" />
@@ -189,13 +198,15 @@
         <option value="$PROJECT_DIR$/app/src/main.js" />
         <option value="$PROJECT_DIR$/app/src/store/index.js" />
         <option value="$PROJECT_DIR$/app/src/components/waimai/Title2.vue" />
-        <option value="$PROJECT_DIR$/app/src/router/index.js" />
         <option value="$PROJECT_DIR$/app/src/components/waimai/WaimaiTwo.vue" />
         <option value="$PROJECT_DIR$/app/src/components/waimai/WaiOne.vue" />
         <option value="$PROJECT_DIR$/app/src/components/waimai/Title.vue" />
         <option value="$PROJECT_DIR$/app/src/components/waimai/Title3.vue" />
-        <option value="$PROJECT_DIR$/app/src/components/waimai/Cdetail.vue" />
+        <option value="$PROJECT_DIR$/app/src/router/index.js" />
+        <option value="$PROJECT_DIR$/app/src/components/waimai/Waimai.vue" />
         <option value="$PROJECT_DIR$/app/src/components/waimai/CdetailLeft.vue" />
+        <option value="$PROJECT_DIR$/app/src/components/waimai/CdetailS.vue" />
+        <option value="$PROJECT_DIR$/app/src/components/waimai/Cdetail.vue" />
       </list>
     </option>
   </component>
@@ -209,10 +220,10 @@
     <handled-path value="$PROJECT_DIR$/app/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="244" />
-    <option name="y" value="41" />
-    <option name="width" value="1545" />
-    <option name="height" value="1057" />
+    <option name="x" value="639" />
+    <option name="y" value="67" />
+    <option name="width" value="1391" />
+    <option name="height" value="976" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -359,25 +370,26 @@
       <workItem from="1525737594738" duration="5247000" />
       <workItem from="1525743584756" duration="30894000" />
       <workItem from="1525823220525" duration="36620000" />
-      <workItem from="1525909346946" duration="23205000" />
+      <workItem from="1525909346946" duration="23522000" />
+      <workItem from="1525998380605" duration="23045000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="175857000" />
+    <option name="totallyTimeSpent" value="199219000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="244" y="41" width="1545" height="1057" extended-state="0" />
+    <frame x="496" y="42" width="1391" height="976" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16338582" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11240876" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50037456" side_tool="true" weight="0.020111732" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49962547" visible="true" weight="0.067708336" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49962547" weight="0.0" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -392,19 +404,19 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20057513" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18759124" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49962547" weight="0.0" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50037456" side_tool="true" weight="0.020111732" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49962547" visible="true" weight="0.0" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50037456" side_tool="true" weight="0.020111732" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Favorites" order="2" side_tool="true" />
     </layout-to-restore>
   </component>
@@ -469,21 +481,25 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/app/src/components/waimai/Title.vue</url>
           <line>119</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="13" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/app/src/components/waimai/CdetailS.vue</url>
+          <line>13</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/app/src/components/waimai/CdetailS.vue</url>
+          <line>38</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="15" />
+      <option name="time" value="18" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
@@ -697,23 +713,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/router/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
-          <caret line="171" column="26" lean-forward="true" selection-start-line="171" selection-start-column="26" selection-end-line="171" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/waimai/Title2.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="13" lean-forward="true" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/store/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
@@ -724,110 +723,160 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/waimai/Waimai.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <element signature="e#544#574#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/components/waimai/WaimaiTwo.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-35">
+        <state relative-caret-position="2090">
           <caret line="95" column="26" selection-start-line="95" selection-start-column="26" selection-end-line="95" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/waimai/Title3.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
-          <folding>
-            <element signature="n#div#0;n#div#0;n#template#0;n#!!top" />
-            <element signature="n#div#2;n#div#0;n#div#0;n#template#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/waimai/Title.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
-          <folding>
-            <element signature="n#style#0;n#span#1;n#div#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#div#1;n#div#0;n#template#0;n#!!top" />
-            <element signature="n#style#0;n#span#1;n#div#1;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#div#2;n#div#1;n#div#0;n#template#0;n#!!top" />
-            <element signature="n#style#0;n#span#1;n#div#2;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="e#1959#2090#0" />
-            <element signature="e#2113#2249#0" />
-            <element signature="e#2271#2406#0" />
-            <element signature="e#2745#2841#0" />
-            <element signature="e#2853#2900#0" />
-            <element signature="e#2924#2999#0" />
-            <element signature="e#3007#3178#0" />
-            <element signature="e#3182#3238#0" />
-            <element signature="e#3239#3373#0" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/components/waimai/Title1.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-865">
-          <caret line="48" column="18" lean-forward="true" selection-start-line="48" selection-start-column="18" selection-end-line="48" selection-end-column="18" />
+        <state relative-caret-position="990">
+          <caret line="48" column="18" selection-start-line="48" selection-start-column="18" selection-end-line="48" selection-end-column="18" />
           <folding>
             <element signature="n#div#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#template#0;n#!!top" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/router/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="47" lean-forward="true" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/waimai/Waimai.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="50" column="19" lean-forward="true" selection-start-line="50" selection-start-column="19" selection-end-line="50" selection-end-column="19" />
+          <folding>
+            <element signature="e#438#468#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/waimai/Title.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="102" selection-start-line="102" selection-end-line="102" />
+          <folding>
+            <element signature="n#style#0;n#span#1;n#div#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#1;n#div#0;n#template#0;n#!!top" />
+            <element signature="n#style#0;n#span#1;n#div#1;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#div#2;n#div#1;n#div#0;n#template#0;n#!!top" />
+            <element signature="n#style#0;n#span#1;n#div#2;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/components/waimai/WaiOne.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8">
-          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+        <state relative-caret-position="77">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
           <folding>
             <element signature="n#style#0;n#div#0;n#router-link#0;n#v-touch#0;n#template#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/waimai/Cdetail.vue">
+    <entry file="file://$PROJECT_DIR$/app/src/components/waimai/CdetailLeft.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1980">
-          <caret line="175" column="5" lean-forward="true" selection-start-line="175" selection-start-column="5" selection-end-line="175" selection-end-column="5" />
+        <state relative-caret-position="191">
+          <caret line="15" column="26" lean-forward="true" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
           <folding>
-            <element signature="n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" />
-            <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" />
-            <element signature="n#div#3;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" />
-            <element signature="n#style#0;n#span#1;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="e#1522#1538#0" />
-            <element signature="e#1209#1313#0" />
-            <element signature="e#1326#1482#0" />
-            <element signature="e#1498#1605#0" />
-            <element signature="e#1615#1772#0" />
-            <element signature="e#1783#1973#0" />
-            <element signature="e#1984#2140#0" />
-            <element signature="e#2164#2314#0" />
-            <element signature="e#2339#2440#0" />
-            <element signature="e#2969#2985#0" />
-            <element signature="e#3040#3056#0" />
-            <element signature="e#3245#3261#0" />
+            <element signature="e#1337#1676#0" />
+            <element signature="n#style#0;n#!!top" />
+            <element signature="e#1724#1757#0" />
+            <element signature="e#1774#1806#0" />
+            <element signature="e#1822#1890#0" />
+            <element signature="e#1902#1988#0" />
+            <element signature="e#2001#2123#0" />
+            <element signature="e#2149#2232#0" />
+            <element signature="e#2245#2312#0" />
+            <element signature="e#2324#2424#0" />
+            <element signature="e#2436#2565#0" />
+            <element signature="e#2634#2719#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/waimai/CdetailLeft.vue">
+    <entry file="file://$PROJECT_DIR$/app/src/components/waimai/CdetailS.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="30" />
+        <state relative-caret-position="1710">
+          <caret line="185" column="8" lean-forward="true" selection-start-line="185" selection-start-column="8" selection-end-line="185" selection-end-column="8" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" />
+            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" />
+            <element signature="n#div#2;n#div#0;n#div#0;n#template#0;n#!!top" />
+            <element signature="n#div#0;n#div#2;n#div#0;n#div#0;n#template#0;n#!!top" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#3;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="e#161#173#0" />
+            <element signature="e#1260#1276#0" />
+            <element signature="e#1405#1421#0" />
+            <element signature="e#1456#1472#0" />
+            <element signature="e#1531#1547#0" />
+            <element signature="e#1580#1596#0" />
+            <element signature="e#1692#1708#0" />
+            <element signature="e#1838#1940#0" />
+            <element signature="e#1951#2027#0" />
+            <element signature="e#2031#2047#0" />
+            <element signature="e#3017#3206#0" />
+            <element signature="e#3211#3376#0" />
+            <element signature="e#3384#3426#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/waimai/Cdetail.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" />
+            <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" />
+            <element signature="n#div#3;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" />
+            <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="e#1349#1388#0" expanded="true" />
+            <element signature="e#2312#2416#0" />
+            <element signature="e#2430#2586#0" />
+            <element signature="e#2604#2713#0" />
+            <element signature="e#2725#2882#0" />
+            <element signature="e#2895#3085#0" />
+            <element signature="e#3098#3255#0" />
+            <element signature="e#3281#3432#0" />
+            <element signature="e#3459#3560#0" />
+            <element signature="e#3569#3626#0" />
+            <element signature="e#3640#3675#0" />
+            <element signature="e#3683#3750#0" />
+            <element signature="e#3762#3945#0" />
+            <element signature="e#3961#4017#0" />
+            <element signature="e#4027#4113#0" />
+            <element signature="e#4121#4197#0" />
+            <element signature="e#4276#4311#0" />
+            <marker date="1526036808000" expanded="true" signature="1901:1918" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/waimai/Title2.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="59">
+          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/waimai/Title3.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="23" column="61" lean-forward="true" selection-start-line="23" selection-start-column="61" selection-end-line="23" selection-end-column="61" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#template#0;n#!!top" />
+            <element signature="n#div#2;n#div#0;n#div#0;n#template#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>

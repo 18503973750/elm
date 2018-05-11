@@ -20,16 +20,12 @@
                         <span class="text1"> 月销售{{m.month_sales}}份</span>
 
                         <span class="text2">好评率{{m.satisfy_rate}}%</span>
-                        <!--<div v-for="mm in m.specfoods">-->
-                            <!--<span class="text3">￥{{mm.price}}起</span>-->
-                            <!--&lt;!&ndash;<span class="text3">￥20起</span>&ndash;&gt;-->
-                        <!--</div>-->
+
                         <div>
                             <span class="text3">￥{{m.specfoods[0].price}}起</span>
-                            <!--<span class="text3">￥20起</span>-->
                             <div>
-                                <span v-if="m.specfoods.length>0">选规格</span>
-                                <span v-else>+</span>
+                                <span class="text5" v-if="m.specfoods.length>1">选规格</span>
+                                <i class="el-icon-circle-plus"  @click="DD"></i>
                             </div>
                         </div>
                     </div>
@@ -48,7 +44,8 @@
         data() {
             return {
                 mess: '',
-                url: '//elm.cangdu.org/img/'
+                url: '//elm.cangdu.org/img/',
+                count:''
             }
         },
         created() {
@@ -61,6 +58,11 @@
 
 
             })
+        },
+        methods:{
+            DD(){
+                this.count++
+            }
         }
 
     }
@@ -141,13 +143,21 @@
         color:#ff9163 ;
         font-size: 0.6rem;
     }
-    .text4{
-        position: absolute;
-        margin-left: 5rem;
-        padding: -0.4rem 0;
-        background-color: lime;
-        border: 1px lime solid;
-        border-radius: 50%;
+.text5{
+    display: block;
+    font-size: 0.5rem;
+    margin-left:6.7rem;
+    background-color: #178ee4;
+    width: 1.8rem;
+    height:1rem;
+   color: white;
+    padding-left: 0.2rem ;
+    line-height: 1rem;
+    border-radius: 15%;
+}
+    .el-icon-circle-plus{
+        margin-left:7.8rem;
 
+        color: #178ee4;
     }
 </style>

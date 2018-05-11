@@ -19,14 +19,14 @@
                 </div>
             </div>
             <div class="xia">
-                <span class="xia1 " @click="plash">商品</span>
-                <span class="xia2" style="margin-right:0.2rem" @click="plash">评价</span>
+                <span v-for="(mess,index) in messages" :class="{kk:index==count}" @click="pulsh(index)">{{mess.name}}</span>
             </div>
-            >
+
         </div>
-        <div class="bottom" >
+        <div class="bottom">
             <div>
-                <img style="width: 1.5rem" src="./33.jpg" alt="">
+                <img src="./购物车.png" alt="">
+
             </div>
             <div class="L1">
                 <div>￥0.00</div>
@@ -34,32 +34,41 @@
             </div>
             <div class="yuan" style="font-size:1rem">还差20起送</div>
         </div>
+        <div class="tex">
+            <CdetailS v-show="show"></CdetailS>
+
+        </div>
+
         <CdetailLeft></CdetailLeft>
     </div>
 </template>
 
 <script>
     import CdetailLeft from './CdetailLeft'
+    import CdetailS from './CdetailS'
 
     export default {
         name: "Cdetail",
-        components: {CdetailLeft},
+        components: {CdetailLeft,CdetailS},
 
         data() {
             return {
                 mess: "",
                 messs: "",
                 url: '//elm.cangdu.org/img/',
+                count:0,
+                messages:[{ name:'商品'},{name:'评价'}],
+                show:false
 
             }
-
 
         },
-        methods:{
-            plash(){
-                // var  xia2=document.getElementsByClassName('xia2')[0];
-                // xia2.className='kk'
-            }
+        methods: {
+            pulsh(index) {
+                this.count=index;
+                this.show=!this.show;
+            },
+
         },
 
         created() {
@@ -81,7 +90,10 @@
         left: 0;
         right: 0;
         background-color: #fff;
+
+        height: 6rem;
     }
+
     .head {
         height: 4rem;
         width: 100%;
@@ -149,46 +161,69 @@
         right: 0.2rem;
         color: white;
     }
-    .xia{
-        padding: 0.5rem;
-     text-align: center;
+
+    .xia {
+        margin-left: 3.5rem;
+        padding: 0.4rem;
+        text-align: center;
+
     }
-    .xia span{
+
+    .xia span {
+
+        font-size:0.8rem;
         margin-right: 4rem;
     }
-    .kk{
+
+    .kk {
         color: blue;
         border-bottom: 2px blue solid;
     }
-    .bottom{
+
+    .bottom {
         position: fixed;
-        top:27rem;
+        top: 27rem;
         display: flex;
-        right:0;
+        right: 0;
         z-index: 1;
         left: 0;
         bottom: 0;
-        background-color:limegreen;
+        background-color: #3d3d3f;
     }
-    .bottom div{
+
+    .bottom div {
         color: white;
         font-size: 0.6rem;
     }
-    .yuan{
-        margin-left: 8rem;
-      padding: 0.4rem;
-        margin-top: 0.2rem;
+
+    .yuan {
+        margin-left: 10.9rem;
+        padding: 0.5rem 0.2rem;
+        background-color: #535356;
+        font-family: STKaiti;
 
     }
-    .L1{
+
+    .L1 {
         position: absolute;
-        left:2rem ;
+        left: 3.5rem;
         top: 0.4rem;
     }
-    .L1 div:nth-child(1){
+
+    .L1 div:nth-child(1) {
         margin-bottom: 0.3rem;
     }
-    .bottom img{
-       margin-bottom: 4rem;
+
+    .bottom img {
+        position: absolute;
+        top: -0.5rem;
+        width: 2rem;
+        height: 2rem;
+        background-color: #535356;
+        padding: 0.2rem 0.2rem;
+        margin-left: 0.5rem;
+        border-radius: 50%;
     }
+
+
 </style>

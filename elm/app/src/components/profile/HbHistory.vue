@@ -17,7 +17,7 @@ position: absolute;
     <div class="out">
         <div class="top">
             <div class="top_one">
-                <router-link to="/Profile" class="el-icon-arrow-left">
+                <router-link to="/Benefit" class="el-icon-arrow-left">
                 </router-link>
                 <span>历史红包</span>
             </div>

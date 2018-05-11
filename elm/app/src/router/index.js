@@ -35,10 +35,9 @@ import Coupon from "@/components/profile/Coupon"
 import Payment from "@/components/profile/Payment"
 
 import Cdetail from '@/components/waimai/Cdetail'
-<<<<<<< HEAD
+
 import ConfirmOrder from '@/components/confirmOrder'
-=======
->>>>>>> 3720f008c34976d496c1d19cb46bb04116fe5f63
+
 
 Vue.use(Router)
 
@@ -210,13 +209,12 @@ export default new Router({
             name: 'Cdetail',
             component: Cdetail
         },
-<<<<<<< HEAD
+
         {
             path: '/confirmOrder',
             name: 'confirmOrder',
             component: ConfirmOrder
         }
-=======
->>>>>>> 3720f008c34976d496c1d19cb46bb04116fe5f63
+
     ]
 })

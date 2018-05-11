@@ -210,18 +210,10 @@ export default new Router({
             name: 'Cdetail',
             component: Cdetail
         },
-<<<<<<< HEAD
-=======
-
->>>>>>> develop
         {
             path: '/confirmOrder',
             name: 'confirmOrder',
             component: ConfirmOrder
         }
-<<<<<<< HEAD
-=======
-
->>>>>>> develop
     ]
 })

@@ -20,14 +20,24 @@
                         <span class="text1"> 月销售{{m.month_sales}}份</span>
 
                         <span class="text2">好评率{{m.satisfy_rate}}%</span>
-                        <div v-for="mm in m.specfoods">
-                            <span class="text3">￥{{mm.price}}起</span>
+                        <!--<div v-for="mm in m.specfoods">-->
+                            <!--<span class="text3">￥{{mm.price}}起</span>-->
+                            <!--&lt;!&ndash;<span class="text3">￥20起</span>&ndash;&gt;-->
+                        <!--</div>-->
+                        <div>
+                            <span class="text3">￥{{m.specfoods[0].price}}起</span>
                             <!--<span class="text3">￥20起</span>-->
+                            <div>
+                                <span v-if="m.specfoods.length>0">选规格</span>
+                                <span v-else>+</span>
+                            </div>
                         </div>
                     </div>
 
                 </div>
             </div>
+
+            
         </div>
     </div>
 </template>

@@ -16,6 +16,8 @@ import Balance from '@/components/profile/Balance'
 import Detail from '@/components/profile/Detail'
 import Integral from '@/components/profile/Integral'
 import Benefit from '@/components/profile/Benefit'
+import Benefit2 from '@/components/profile/Benefit2'
+
 import Service from '@/components/profile/Service'
 import Chome from '@/components/profile/Chome'
 import Header from '@/components/profile/Header'
@@ -27,8 +29,16 @@ import Title from '@/components/waimai/Title'
 import city1 from "@/components/profile/city"
 import  b2 from"@/components/profile/Benefit1"
 import  Exchange from"@/components/profile/Exchange"
+
+import  Commend from"@/components/profile/Commend"
+import Coupon from "@/components/profile/Coupon"
+import Payment from "@/components/profile/Payment"
+
 import Cdetail from '@/components/waimai/Cdetail'
+<<<<<<< HEAD
 import ConfirmOrder from '@/components/confirmOrder'
+=======
+>>>>>>> 3720f008c34976d496c1d19cb46bb04116fe5f63
 
 Vue.use(Router)
 
@@ -105,6 +115,11 @@ export default new Router({
             component: Benefit
         },
         {
+            path: '/benefit2',
+            name: 'Benefit2',
+            component: Benefit2
+        },
+        {
             path: '/service',
             name: 'Service',
             component: Service
@@ -155,7 +170,7 @@ export default new Router({
           component:b2
         },
         {
-            path:'/exchange',
+            path:'/Benefit/exchange',
             name:'Exchange',
             component:Exchange
         },
@@ -175,14 +190,33 @@ export default new Router({
             component: Title
         },
         {
+
+            path: '/Benefit/Commend',
+            name: 'Commend',
+            component: Commend
+        },
+        {
+            path: '/Benefit/coupon',
+            name: 'Coupon',
+            component: Coupon
+        },
+        {
+            path:'/Payment',
+            name:'Payment',
+            component:Payment
+        },
+        {
             path: '/elm',
             name: 'Cdetail',
             component: Cdetail
         },
+<<<<<<< HEAD
         {
             path: '/confirmOrder',
             name: 'confirmOrder',
             component: ConfirmOrder
         }
+=======
+>>>>>>> 3720f008c34976d496c1d19cb46bb04116fe5f63
     ]
 })

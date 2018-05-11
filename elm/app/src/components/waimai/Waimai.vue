@@ -39,7 +39,6 @@
                 var scrollTop = document.documentElement.scrollTop || document.body.scrollTop
 
                 if(scrollTop >= 400) {
-                    console.log("超过100");
                     top.style.display = 'block';  
                     top.style.opacity = 1; 
                 }else {

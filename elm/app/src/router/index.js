@@ -28,6 +28,8 @@ import city1 from "@/components/profile/city"
 import  b2 from"@/components/profile/Benefit1"
 import  Exchange from"@/components/profile/Exchange"
 import Cdetail from '@/components/waimai/Cdetail'
+import ConfirmOrder from '@/components/confirmOrder'
+
 Vue.use(Router)
 
 export default new Router({
@@ -177,6 +179,10 @@ export default new Router({
             name: 'Cdetail',
             component: Cdetail
         },
-
+        {
+            path: '/confirmOrder',
+            name: 'confirmOrder',
+            component: ConfirmOrder
+        }
     ]
 })

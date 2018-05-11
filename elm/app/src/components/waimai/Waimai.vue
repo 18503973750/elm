@@ -39,17 +39,11 @@
                 var scrollTop = document.documentElement.scrollTop || document.body.scrollTop
 
                 if(scrollTop >= 400) {
-<<<<<<< HEAD
                     top.style.display = 'block';  
                     top.style.opacity = 1; 
-=======
-
-                    // top.style.display = 'block';
-                    // top.style.opacity = 1;
->>>>>>> develop
                 }else {
-                    // top.style.display = 'none';
-                    // top.style.opacity = 0;
+                    top.style.display = 'none';
+                    top.style.opacity = 0;
                 }
             }
         },

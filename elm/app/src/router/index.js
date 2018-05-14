@@ -36,6 +36,12 @@ import Payment from "@/components/profile/Payment"
 
 import Cdetail from '@/components/waimai/Cdetail'
 import ConfirmOrder from '@/components/confirmOrder'
+import ChooseAddress from '@/components/chooseAddress'
+import AddAddress from '@/components/addAddress'
+ 
+ 
+
+
 
 
 Vue.use(Router)
@@ -211,7 +217,21 @@ export default new Router({
         {
             path: '/confirmOrder',
             name: 'confirmOrder',
-            component: ConfirmOrder
-        }
+            component: ConfirmOrder,
+            
+        },
+        {
+            path: '/confirmOrder/chooseAddress',
+            name: 'chooseAddress',
+            component: ChooseAddress,                    
+        },
+        {
+            path: '/confirmOrder/chooseAddress/addAddress',
+            name: 'addAddress',
+            component: AddAddress
+        }        
+        
+      
+
     ]
 })

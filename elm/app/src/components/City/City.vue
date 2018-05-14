@@ -25,13 +25,6 @@
             </keep-alive>
             <div class="clear-all">清空所有</div>
         </div>
-
-        <dl>
-           <dd @click="da">A</dd>
-           <dd @click="db">B</dd>
-       </dl>   
-       <p v-show="showA">a页面</p>  
-       <p v-show="showB">b页面</p>
     </div>
 </template>
 
@@ -62,14 +55,6 @@
                     console.log(response.data);
                     this.list = response.data;
                 });
-            },
-            da() {
-                this.showA = true,
-                this.showB = false
-            },
-            db() {
-                this.showB = true,
-                this.showA = false
             }
         }
 

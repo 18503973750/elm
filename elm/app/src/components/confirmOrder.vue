@@ -5,7 +5,7 @@
 			<span>确认订单</span>
 			<router-link to="/login"><i class="right el-icon-bell"></i></router-link>
 		</header>	
-		<router-link class="mb4 add-address alignment-at-both-ends" to="" :style="{background:'#fff url('+pic+') 0 bottom repeat-x',0:'1.2rem'}">
+		<router-link class="mb4 add-address alignment-at-both-ends" to="/confirmOrder/chooseAddress" :style="{background:'#fff url('+pic+') 0 bottom repeat-x',0:'1.2rem'}">
 			<span><i class="el-icon-location-outline"></i>请添加一个收货地址</span>
 			<i class="el-icon-arrow-right"></i>	
 		</router-link>	
@@ -13,7 +13,7 @@
 		<section class="mb4 deliveryTime bgc-fff alignment-at-both-ends">
 			<h3>送达时间</h3>
 			<div>
-				<h4>尽快送达 | 预计</h4>
+				<h4>{{ info.deliver_time }} | 预计 {{datetime}} </h4>
 				<span>蜂鸟专送</span>
 			</div>
 		</section>
@@ -46,15 +46,15 @@
 				<li><span></span><span class="orange">&yen;999</span></li>
 			</ol>
 		</section>
-		<div class="remarks">
-			<div class="alignment-at-both-ends">
+		<div class="remarks bgc-fff">
+			<router-link to="" class="alignment-at-both-ends">
 				<p>订单备注</p>
-				<p><i class="el-icon-arrow-right"></i></p>
-			</div>
-			<div class="alignment-at-both-ends">
+				<p>口味偏好<i class="el-icon-arrow-right"></i></p>
+			</router-link>
+			<router-link to="" class="alignment-at-both-ends">
 				<p>发票抬头</p>
 				<p>不需要开发票<i class="el-icon-arrow-right"></i></p>
-			</div>			
+			</router-link>			
 		</div>
 		<div class="confrim_order">
 			<p>待支付&yen;15112</p>
@@ -79,13 +79,20 @@
 				</ul>
 			</div>
 		</transition>
-
+	
+		<!-- <router-view/> -->
 	</div>
 </template>
 
 <script>
+
 	let api = "http://cangdu.org:8001/bos/v1/users/1/orders/1/snapshot";
 	const bgImg = require("../img/borderBottom.png");
+
+	//获取两个小时之后的时间
+	var date = new Date();
+	const time = date.getHours()+2+":"+date.getMinutes();
+
 	export default {
 		name: "confirmOrder",
 		data() {
@@ -93,7 +100,9 @@
 				pic: bgImg,
 				info: "",
 				show1: false,
-				show2: false	
+				show2: false,
+				datetime: time
+
 			}
 		},
 		created() {

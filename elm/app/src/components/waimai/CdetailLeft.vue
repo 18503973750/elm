@@ -54,7 +54,7 @@
             </div>
             <div>
                 <div class="ms1" v-for="ms in messa">
-                  
+
                 </div>
             </div>
 

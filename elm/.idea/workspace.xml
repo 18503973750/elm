@@ -18,7 +18,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/components/waimai/Title3.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="152">
-              <caret line="73" column="24" lean-forward="true" selection-start-line="73" selection-start-column="24" selection-end-line="73" selection-end-column="24" />
+              <caret line="73" column="24" selection-start-line="73" selection-start-column="24" selection-end-line="73" selection-end-column="24" />
               <folding>
                 <element signature="e#1231#1373#0" />
                 <element signature="e#1716#1772#0" />
@@ -64,7 +64,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/components/waimai/Title.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="560">
-              <caret line="99" lean-forward="true" selection-start-line="99" selection-end-line="99" />
+              <caret line="99" selection-start-line="99" selection-end-line="99" />
               <folding>
                 <element signature="n#style#0;n#span#1;n#div#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="n#div#1;n#div#1;n#div#0;n#template#0;n#!!top" />
@@ -89,7 +89,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/components/waimai/Cdetail.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="690">
-              <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+              <caret line="52" selection-start-line="52" selection-end-line="52" />
               <folding>
                 <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" />
                 <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" />
@@ -104,7 +104,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/components/waimai/CdetailS.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="460">
-              <caret line="56" column="45" lean-forward="true" selection-start-line="56" selection-start-column="45" selection-end-line="56" selection-end-column="45" />
+              <caret line="56" column="45" selection-start-line="56" selection-start-column="45" selection-end-line="56" selection-end-column="45" />
               <folding>
                 <element signature="n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" />
                 <element signature="n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" />
@@ -117,11 +117,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CdetailLeft.vue" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CdetailLeft.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/components/waimai/CdetailLeft.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="362">
-              <caret line="56" column="18" lean-forward="true" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
+              <caret line="56" selection-start-line="56" selection-end-line="56" />
               <folding>
                 <element signature="n#div#1;n#div#1;n#div#0;n#template#0;n#!!top" />
                 <element signature="e#2095#2964#0" />
@@ -145,6 +145,18 @@
                 <element signature="e#5856#5872#0" />
                 <element signature="e#5860#5913#0" />
                 <element signature="e#6500#6508#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/router/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="775">
+              <caret line="246" lean-forward="true" selection-start-line="246" selection-end-line="246" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -195,12 +207,12 @@
         <option value="$PROJECT_DIR$/app/src/components/waimai/WaimaiTwo.vue" />
         <option value="$PROJECT_DIR$/app/src/components/waimai/WaiOne.vue" />
         <option value="$PROJECT_DIR$/app/src/components/waimai/Title.vue" />
-        <option value="$PROJECT_DIR$/app/src/router/index.js" />
         <option value="$PROJECT_DIR$/app/src/components/waimai/Waimai.vue" />
         <option value="$PROJECT_DIR$/app/src/components/waimai/CdetailS.vue" />
         <option value="$PROJECT_DIR$/app/src/components/waimai/Cdetail.vue" />
         <option value="$PROJECT_DIR$/app/src/components/waimai/Title3.vue" />
         <option value="$PROJECT_DIR$/app/src/components/waimai/CdetailLeft.vue" />
+        <option value="$PROJECT_DIR$/app/src/router/index.js" />
       </list>
     </option>
   </component>
@@ -212,10 +224,11 @@
   </component>
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/app/node_modules" />
+    <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="426" />
-    <option name="y" value="31" />
+    <option name="x" value="297" />
+    <option name="y" value="23" />
     <option name="width" value="1509" />
     <option name="height" value="1054" />
   </component>
@@ -369,24 +382,24 @@
       <workItem from="1525823220525" duration="36620000" />
       <workItem from="1525909346946" duration="23522000" />
       <workItem from="1525998380605" duration="23283000" />
-      <workItem from="1526083941328" duration="42898000" />
+      <workItem from="1526083941328" duration="43034000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="242355000" />
+    <option name="totallyTimeSpent" value="242491000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="426" y="31" width="1509" height="1054" extended-state="0" />
+    <frame x="297" y="23" width="1509" height="1054" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.9195402" visible="true" weight="0.17741935" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.9195402" visible="true" weight="0.17741935" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.1061828" side_tool="true" visible="true" weight="0.0" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" id="Structure" order="1" sideWeight="0.08045977" side_tool="true" visible="true" weight="0.17741935" />
+      <window_info id="Structure" order="1" sideWeight="0.08045977" side_tool="true" visible="true" weight="0.17741935" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.8938172" visible="true" weight="0.0" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
@@ -758,13 +771,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/router/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="47" lean-forward="true" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/components/waimai/Waimai.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -788,7 +794,7 @@
     <entry file="file://$PROJECT_DIR$/app/src/components/waimai/CdetailS.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
-          <caret line="56" column="45" lean-forward="true" selection-start-line="56" selection-start-column="45" selection-end-line="56" selection-end-column="45" />
+          <caret line="56" column="45" selection-start-line="56" selection-start-column="45" selection-end-line="56" selection-end-column="45" />
           <folding>
             <element signature="n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" />
             <element signature="n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" />
@@ -803,7 +809,7 @@
     <entry file="file://$PROJECT_DIR$/app/src/components/waimai/Title3.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
-          <caret line="73" column="24" lean-forward="true" selection-start-line="73" selection-start-column="24" selection-end-line="73" selection-end-column="24" />
+          <caret line="73" column="24" selection-start-line="73" selection-start-column="24" selection-end-line="73" selection-end-column="24" />
           <folding>
             <element signature="e#1231#1373#0" />
             <element signature="e#1716#1772#0" />
@@ -835,7 +841,7 @@
     <entry file="file://$PROJECT_DIR$/app/src/components/waimai/Cdetail.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="690">
-          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
           <folding>
             <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" />
             <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" />
@@ -872,7 +878,7 @@
     <entry file="file://$PROJECT_DIR$/app/src/components/waimai/Title.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="560">
-          <caret line="99" lean-forward="true" selection-start-line="99" selection-end-line="99" />
+          <caret line="99" selection-start-line="99" selection-end-line="99" />
           <folding>
             <element signature="n#style#0;n#span#1;n#div#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
             <element signature="n#div#1;n#div#1;n#div#0;n#template#0;n#!!top" />
@@ -886,7 +892,7 @@
     <entry file="file://$PROJECT_DIR$/app/src/components/waimai/CdetailLeft.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="362">
-          <caret line="56" column="18" lean-forward="true" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
           <folding>
             <element signature="n#div#1;n#div#1;n#div#0;n#template#0;n#!!top" />
             <element signature="e#2095#2964#0" />
@@ -910,6 +916,16 @@
             <element signature="e#5856#5872#0" />
             <element signature="e#5860#5913#0" />
             <element signature="e#6500#6508#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/router/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="775">
+          <caret line="246" lean-forward="true" selection-start-line="246" selection-end-line="246" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
           </folding>
         </state>
       </provider>

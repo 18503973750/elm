@@ -244,24 +244,3 @@ export default new Router({
 	]
 })
 
-{
-	path: '/Benefit/Commend',
-	name: 'Commend',
-	component: Commend
-}, {
-	path: '/Benefit/coupon',
-	name: 'Coupon',
-	component: Coupon
-}, {
-	path: '/Payment',
-	name: 'Payment',
-	component: Payment
-}, {
-	path: '/elm',
-	name: 'Cdetail',
-	component: Cdetail
-}, {
-	path: '/confirmOrder',
-	name: 'confirmOrder',
-	component: ConfirmOrder
-}

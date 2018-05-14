@@ -14,15 +14,20 @@
         </div>
         <div class="select">
             <div @click="plash(index)" class="fist1" v-for="(mess,index) in messag">
-                <i v-show="show" class="ico "></i>
-                <i class="fist2">{{mess.icon_name}}</i>
+
+                <i class="ico1" v-if="mess.height">
+                    <i class="el-icon-success"></i>
+                </i>
+                <i class="fist2" v-else>{{mess.icon_name}}</i>
                 {{mess.name}}
             </div>
+
         </div>
         <div class="bottom1">
             <div class="bottom">
                 <span class="text1" @click="clearC">清空</span>
                 <span class="text2">确定{{count}}</span>
+
             </div>
         </div>
     </div>
@@ -38,7 +43,8 @@
                 count: '',
                 show: false,
                 show1: false,
-                index: '',
+                index: ''
+
 
             }
         },
@@ -53,22 +59,46 @@
 
             })
         },
+
         methods: {
             plash(index) {
-                var icon = document.getElementsByClassName('ico')[0];
-                this.count++
-                this.show = !this.show
-                this.index = index;
-                console.log(index);
 
-                icon.className = "el-icon-success"
+
+                if (this.messag[index].height == true) {
+                    this.messag[index].height = false
+                    // this.count--
+                    // if (this.count==0) {
+                    //     this.count = "";
+                    // }
+
+                } else {
+                    this.messag[index].height = true
+                    // this.count++
+                }
+
+                 let num = '';
+                this.messag.map((value,index)=>{
+
+
+                    value.height == true?num++:0
+                })
+                 this.count=num
+                // this.$forceUpdate()
+                // this.$nextTick(() => {
+                //     var ff = document.querySelectorAll('.ico1');
+                //     this.count = ff.length
+                // })
             },
             pls() {
                 this.show1 = !this.show1
             },
-            clearC() {
+            clearC(index) {
                 this.count = ''
                 this.show = false
+                this.messag.map((value ,index)=>{
+                    value.height==true?value.height=false:0
+                })
+
             }
 
 
@@ -216,5 +246,6 @@
         color: dodgerblue;
         font-size: 1rem;
     }
+
 
 </style>

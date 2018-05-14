@@ -148,7 +148,6 @@
         left: 0;
         right: 0;
     }
-
     .top_one {
         color: white;
         padding: .5rem;
@@ -156,15 +155,12 @@
         font-size: .8rem;
 
     }
-
     .top_one .el-icon-arrow-left {
         color: white;
     }
-
     .top_one span {
         padding-left: 5rem;
     }
-
     .top2 {
         justify-content: space-between;
         display: flex;

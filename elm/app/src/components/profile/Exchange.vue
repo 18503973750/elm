@@ -67,6 +67,7 @@
                 var sure = document.getElementsByClassName('sure')[0];
                 sure.style.display = 'none';
             },
+            //换一张按钮
             P(){
                 var url = 'http://cangdu.org:8001/v1/captchas';
                 this.$http.post(url).then(res => {
@@ -76,6 +77,7 @@
             },
         },
         created() {
+        	//获取后台接口数据
             var url = 'http://cangdu.org:8001/v1/captchas';
             this.$http.post(url).then(res => {
                 this.VerificationCodeImg = res.data;

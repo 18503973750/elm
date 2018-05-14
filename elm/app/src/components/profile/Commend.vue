@@ -41,6 +41,7 @@
             <img src="../../img/hb.png" alt="">
             <p>还不赶紧去邀请好友</p>
         </div>
+        <!--弹框-->
         <div class="sure" @click="ok">
             <div class="sure1">
                 <span class="span1"></span>
@@ -178,6 +179,7 @@
         text-align: center;
         margin-top: .5rem;
     }
+    /*弹框的样式*/
     .sure {
         /*border: .1rem white solid;*/
         display: none;

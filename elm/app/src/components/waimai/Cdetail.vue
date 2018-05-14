@@ -68,14 +68,10 @@
                 this.count=index;
                 this.show=!this.show;
             },
-
         },
-
         created() {
             this.mess = this.$route.params.id
             var api99 = `http://cangdu.org:8001/shopping/restaurant/${this.mess}`
-
-
             this.axios.get(api99).then((response) => {
                 this.messs = response.data;
             })

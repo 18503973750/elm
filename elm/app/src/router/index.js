@@ -38,12 +38,14 @@ import Cdetail from '@/components/waimai/Cdetail'
 
 import ConfirmOrder from '@/components/confirmOrder'
 
-import ConfirmOrder from '@/components/confirmOrder'
+
 import Infor from '@/components/profile/Infor'
 import Address from '@/components/profile/Address'
 import add from '@/components/profile/add'
 import addDetail from '@/components/profile/addDetail'
 import forget1 from '@/components/profile/forget1'
+import elm from '@/components/waimai/elm'
+import setusername from '@/components/profile/setusername'
 Vue.use(Router)
 
 export default new Router({
@@ -240,28 +242,16 @@ export default new Router({
 			path: '/forget1',
 			name: 'forget1',
 			component: forget1
+		},
+		{
+			path:'/elm',
+			name:'elm',
+			component:elm
+		},
+		{
+			path:'/setusername',
+			name:'setusername',
+			component:setusername
 		}
 	]
 })
-
-{
-	path: '/Benefit/Commend',
-	name: 'Commend',
-	component: Commend
-}, {
-	path: '/Benefit/coupon',
-	name: 'Coupon',
-	component: Coupon
-}, {
-	path: '/Payment',
-	name: 'Payment',
-	component: Payment
-}, {
-	path: '/elm',
-	name: 'Cdetail',
-	component: Cdetail
-}, {
-	path: '/confirmOrder',
-	name: 'confirmOrder',
-	component: ConfirmOrder
-}

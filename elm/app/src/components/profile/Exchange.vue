@@ -61,7 +61,6 @@
                 }else {
                     sure.style.display = 'block';
                 }
-
             },
             ok() {
                 var sure = document.getElementsByClassName('sure')[0];

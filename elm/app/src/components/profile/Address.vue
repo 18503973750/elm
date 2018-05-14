@@ -11,7 +11,8 @@
 		<!--线-->
 		<ul>
 			<li>
-
+				<p>{{code.ressCode}}</p>
+				<p>{{code.msg}}</p>
 			</li>
 		</ul>
 		<div class="line">
@@ -29,7 +30,10 @@
                 </span>
 			</div>
 		</div>
-
+		
+      <!--  	接收来自下一个页面的数据-->
+        	<div>{{code.ressCode}}</div>
+        <div>{{code.msg}}</div>
 	</div>
 </template>
 
@@ -38,7 +42,8 @@
 		name: 'Address',
 		data() {
 			return {
-				msg: ""//默认为空
+				msg: "", //默认为空
+				addCode: "",
 			}
 		},
 		methods: {
@@ -48,14 +53,15 @@
 				})
 			}
 		},
-		cerated() {
+		created() {
 			console.log(this.$route.params);
-			if(Object.keys(this.$route.params).length) {
-				this.msg = this.$route.params
-				localStorage.msg = JSON.stringify(this.$route.params)
-			} else {
-				this.msg = JSON.parse(localStorage.msg)
-			}
+			this.code = this.$route.params;
+//			if(this.$route.params.ressCode) {
+//				this.code = this.$route.params.ressCode
+//				localStorage.code = JSON.stringify(this.$route.params.ressCode)
+//			} else {
+//				this.code = JSON.parse(localStorage.ressCode)
+//			}
 		}
 	}
 </script>

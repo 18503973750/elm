@@ -2,7 +2,7 @@
     <div class="out">
         <div class="top">
             <div class="top_one">
-                <router-link to="/Profile" class="el-icon-arrow-left">
+                <router-link to="/profile" class="el-icon-arrow-left">
                 </router-link>
                 <span>会员中心</span>
             </div>
@@ -37,7 +37,7 @@
                     <div class="bottom3-P1"><p>开通会员</p></div>
                     <div class="bottom3-P2">
                         <p>1个月 <span>¥20</span></p>
-                        <p>购买</p>
+                        <p @click="PAY">购买</p>
                     </div>
                 </div>
             </div>
@@ -85,7 +85,15 @@
                     }
                 ]
             }
+        },methods:{
+            PAY(){
+                this.$router.push({
+                    path:"/payment"
+                })
+
+            }
         }
+
     }
 </script>
 

@@ -8,7 +8,7 @@
                 <span>我的</span>
             </div>
             <div class="top_two">
-                <router-link to="/">
+                <router-link to="/infor">
                     <div></div>
                     <ul>
                         <li>登录/注册</li>

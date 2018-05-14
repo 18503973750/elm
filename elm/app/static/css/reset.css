@@ -16,11 +16,36 @@ time, mark, audio, video, input {
     padding: 0;
     border: 0;
     font-weight: normal;
+    font-style: normal;
     vertical-align: baseline;
 }
 .MarginTop {
     margin-top: 2.5rem;
 }
+
+/* 超出省略号 */
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* 两端对齐 */
+.alignment-at-both-ends{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 页面切换动画 */
+.router-slid-enter-active,.router-slid-leave-active{
+    -webkit-transition:all .4s;
+    transition:all .4s
+}
+.router-slid-enter,.router-slid-leave-active{
+    -webkit-transform:translate3d(2rem, 0, 0);
+    :translate3d(2rem, 0, 0);opacity:0
+}
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, menu, nav, section {

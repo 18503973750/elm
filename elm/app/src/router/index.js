@@ -37,6 +37,8 @@ import Payment from "@/components/profile/Payment"
 import Cdetail from '@/components/waimai/Cdetail'
 
 import ConfirmOrder from '@/components/confirmOrder'
+
+import ConfirmOrder from '@/components/confirmOrder'
 import Infor from '@/components/profile/Infor'
 import Address from '@/components/profile/Address'
 import add from '@/components/profile/add'
@@ -85,9 +87,7 @@ export default new Router({
 			path: '/city/:id',
 			name: 'City',
 			component: City,
-			meta: {
-				keepAlive: true
-			}
+
 		},
 		{
 			path: '/login',
@@ -223,23 +223,45 @@ export default new Router({
 		},
 		{
 			path: '/address',
-			name:'Address',
-			component:Address
+			name: 'Address',
+			component: Address
 		},
 		{
-			path:'/add',
-			name:'add',
-			component:add
+			path: '/add',
+			name: 'add',
+			component: add
 		},
 		{
-			path:'/addDetail',
-			name:'addDetail',
-			component:addDetail
+			path: '/addDetail',
+			name: 'addDetail',
+			component: addDetail
 		},
 		{
-			path:'/forget1',
-			name:'forget1',
-			component:forget1
+			path: '/forget1',
+			name: 'forget1',
+			component: forget1
 		}
 	]
 })
+
+{
+	path: '/Benefit/Commend',
+	name: 'Commend',
+	component: Commend
+}, {
+	path: '/Benefit/coupon',
+	name: 'Coupon',
+	component: Coupon
+}, {
+	path: '/Payment',
+	name: 'Payment',
+	component: Payment
+}, {
+	path: '/elm',
+	name: 'Cdetail',
+	component: Cdetail
+}, {
+	path: '/confirmOrder',
+	name: 'confirmOrder',
+	component: ConfirmOrder
+}

@@ -10,31 +10,57 @@
 
         <div class="right-box">
             <div class="right" v-for=" me in mess">
-                <div v-for="m in me.foods" class="list-box">
+                <div v-for="(m,index) in me.foods" class="list-box" @click="mine(m)">
                     <div class="ig">
                         <img class="imgs" :src="url+m.image_path" alt="">
                     </div>
 
                     <div class="left2">
                         <span class="text">{{m.name}}</span><br>
-                        <span class="text1"> 月销售{{m.month_sales}}份</span>
+                        <span class="text1">月销售{{m.month_sales}}份</span>
 
                         <span class="text2">好评率{{m.satisfy_rate}}%</span>
 
                         <div>
                             <span class="text3">￥{{m.specfoods[0].price}}起</span>
                             <div>
-                                <span class="text5" v-if="m.specfoods.length>1">选规格</span>
-                                <i class="el-icon-circle-plus"  @click="DD"></i>
+                                <div class="text5" v-if="m.specfoods.length>1">
+
+                                    <div @click="select(m)">选规格</div>
+                                </div>
+
+                                <i class="el-icon-circle-plus" v-else @click="DD(m,index)">
+
+                                </i>
+                                <i v-show="m.nb" @click="DD1(m,index)" class="el-icon-remove-outline"><span
+                                    class="coun">{{m.nb}}</span></i>
+
                             </div>
                         </div>
                     </div>
 
                 </div>
             </div>
+            <div class="GGBox" v-show="show1">
+                <div class="GG ">
+                    <div class="GG1">{{messages.name}}
+                        <i class="el-icon-close" @click="ck"></i>
+                    </div>
+                    <div class="fg">
+                        <div class="fg1" v-for="(mea,index) in messages.specfoods">{{mea.specs_name }}</div>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <div class="ms1" v-for="ms in messa">
+
+                </div>
+            </div>
 
 
         </div>
+
     </div>
 </template>
 
@@ -43,9 +69,15 @@
         name: "CdetailLeft",
         data() {
             return {
-                mess: '',
+                mess: [],
                 url: '//elm.cangdu.org/img/',
-                count:''
+                count: '',
+                show: false,
+                show1: false,
+                messages: [],
+                messa: []
+
+
             }
         },
         created() {
@@ -53,16 +85,61 @@
             var api = 'http://cangdu.org:8001/shopping/v2/menu?restaurant_id=' + this.mess
             console.log(this.mess)
             this.axios.get(api).then((response) => {
-                this.mess = response.data;
-                console.log(response.data)
+                // this.mess = response.data.map(value => {
+                //     value.foods.map(value => {
+                //         value.number = 0;
+                //         return value;
+                //     })
+                //     return value;
+                // })
+                this.messages = response.data;
 
+                this.mess = response.data.map(value => {
+                    value.foods.map(value => {
+                        value.nb = 0;
+                        // value.number=0;
+                        return value
+                    })
+                    return value
+
+                })
 
             })
         },
-        methods:{
-            DD(){
+        methods: {
+            DD(m, index) {
+                m.nb++;
+                this.$forceUpdate;
                 this.count++
+                this.show = true
+            },
+            DD1(m, index) {
+                m.nb--;
+                this.$forceUpdate;
+                this.show = true
+            },
+
+            select(data) {
+                this.messages = data;
+                if (this.show1 == true) {
+                    this.show1 = false
+                } else {
+                    this.show1 = true
+                }
+
+                console.log(this.messages)
+
+            },
+            ck() {
+                this.show1 = false
+            },
+            mine(dat) {
+                this.messa = dat
+                console.log(dat)
+
             }
+
+
         }
 
     }
@@ -74,7 +151,7 @@
     }
 
     .right-box {
-        margin-top:6rem;
+        margin-top: 6rem;
     }
 
     .headeBar {
@@ -119,7 +196,8 @@
 
     }
 
-    .text {display: inline-block;
+    .text {
+        display: inline-block;
         width: 3rem;
         height: 0.8rem;
         font-size: 0.9rem;
@@ -139,25 +217,102 @@
         padding-left: 3rem;
         margin-top: 0.5rem;
     }
-    .text3{
-        color:#ff9163 ;
+
+    .text3 {
+        color: #ff9163;
         font-size: 0.6rem;
     }
-.text5{
-    display: block;
-    font-size: 0.5rem;
-    margin-left:6.7rem;
-    background-color: #178ee4;
-    width: 1.8rem;
-    height:1rem;
-   color: white;
-    padding-left: 0.2rem ;
-    line-height: 1rem;
-    border-radius: 15%;
-}
-    .el-icon-circle-plus{
-        margin-left:7.8rem;
 
+    .text5 {
+        display: block;
+        font-size: 0.5rem;
+        margin-left: 6.7rem;
+        background-color: #178ee4;
+        width: 1.8rem;
+        height: 1rem;
+        color: white;
+        padding-left: 0.2rem;
+        line-height: 1rem;
+        border-radius: 15%;
+    }
+
+    .el-icon-circle-plus {
+        margin-left: 7.8rem;
+        display: inline-block;
         color: #178ee4;
     }
+
+    .el-icon-remove-outline {
+        display: block;
+        position: absolute;
+        right: 1.6rem;
+        margin-top: -1rem;
+        color: #008ce0;
+    }
+
+    .GG {
+        background-color: #ffffff;
+        width: 11.5rem;
+        height: 8.5rem;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        margin-top: -4.25rem;
+        margin-left: -5.75rem;
+        border-radius: 0.5rem;
+
+    }
+
+    .GG1 {
+        margin-top: 0.4rem;
+        width: 11.5rem;
+        text-align: center;
+
+    }
+
+    .fg {
+        margin-top: 2.5rem;
+        display: flex;
+        justify-content: space-around;
+        font-size: 0.7rem;
+
+    }
+
+    .fg1 {
+        padding: 0.2rem 0.4rem;
+        border: 1px darkgrey solid;
+        border-radius: 15%;
+
+    }
+
+    .fg1:hover {
+        color: #1b9be5;
+        border: 1px #1b9be5 solid;
+        border-radius: 15%;
+    }
+
+    .el-icon-close {
+        position: absolute;
+        right: 0;
+    }
+
+    .GGBox {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.3);
+    }
+    .ms1{
+        position:fixed;
+        left: 0;
+        top: 0;
+        border-bottom: 0;
+        right: 0;
+        height: 100%;
+        background-color:darkgray;
+    }
+
+
 </style>

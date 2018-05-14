@@ -66,7 +66,12 @@
         methods: {
             pulsh(index) {
                 this.count=index;
-                this.show=!this.show;
+               if(index==1){
+                   this.show=true
+               }else {
+                   this.show=false
+               }
+
             },
 
         },
@@ -75,10 +80,10 @@
             this.mess = this.$route.params.id
             var api99 = `http://cangdu.org:8001/shopping/restaurant/${this.mess}`
 
-
             this.axios.get(api99).then((response) => {
                 this.messs = response.data;
             })
+
         }
     }
 </script>

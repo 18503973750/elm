@@ -94,6 +94,7 @@
             this.orshow1 = false
         }
       },
+        //计时器逻辑,创建一个实例
       created(){
         var timer1 = setInterval(()=> {
            this.s--

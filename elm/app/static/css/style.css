@@ -190,6 +190,23 @@
     text-align: center;
 }
 
+.remarks {
+	margin-bottom: 2.95rem;
+}
+.remarks a {
+	padding: 0 .7rem;
+    font-size: .7rem;
+    color: #666;
+    height: 2rem;
+    align-items: center;
+}
+.remarks a p:last-child {
+	font-size: .6rem;
+    color: #aaa;
+}
+.remarks a p i {
+	padding-left: .3rem;
+}
 
 
 

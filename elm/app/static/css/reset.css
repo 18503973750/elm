@@ -19,6 +19,9 @@ time, mark, audio, video, input {
     font-style: normal;
     vertical-align: baseline;
 }
+input,button,textarea {
+    outline: none;
+}
 .MarginTop {
     margin-top: 2.5rem;
 }
@@ -37,14 +40,11 @@ time, mark, audio, video, input {
 }
 
 /* 页面切换动画 */
-.router-slid-enter-active,.router-slid-leave-active{
-    -webkit-transition:all .4s;
-    transition:all .4s
+.router-slid-enter-active,.router-slid-leave-active{-webkit-transition:all .4s;transition:all .4s
 }
-.router-slid-enter,.router-slid-leave-active{
-    -webkit-transform:translate3d(2rem, 0, 0);
-    :translate3d(2rem, 0, 0);opacity:0
+.router-slid-enter,.router-slid-leave-active{-webkit-transform:translate3d(1rem, 0, 0);transform:translate3d(1rem, 0, 0);opacity:0
 }
+
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,

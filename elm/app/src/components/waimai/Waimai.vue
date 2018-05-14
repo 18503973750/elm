@@ -36,11 +36,11 @@
             handleScroll () {
 
                 var top = document.getElementsByClassName('top')[0];
-                var scrollTop = document.documentElement.scrollTop || document.body.scrollTop
+                var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
 
                 if(scrollTop >= 400) {
-                    top.style.display = 'block';  
-                    top.style.opacity = 1; 
+                    top.style.display = 'block';
+                    top.style.opacity = 1;
                 }else {
                     top.style.display = 'none';
                     top.style.opacity = 0;

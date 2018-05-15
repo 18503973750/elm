@@ -12,7 +12,7 @@
             <div class="right" v-for=" me in mess">
                 <div v-for="(m,index) in me.foods" class="list-box">
                     <div class="ig">
-                        <img class="imgs"  @click="mine(m)" :src="url+m.image_path" alt="">
+                        <img class="imgs" @click="mine(m)" :src="url+m.image_path" alt="">
                     </div>
 
                     <div class="left2">
@@ -32,9 +32,10 @@
                                 <i class="el-icon-circle-plus" v-else @click="DD(m,index)">
 
                                 </i>
-                                <i v-show="m.nb" @click="DD1(m,index)" class="el-icon-remove-outline"><span
-                                    class="coun">{{m.nb}}</span></i>
-
+                                <i v-show="m.nb" @click="DD1(m,index)" class="el-icon-remove-outline">
+                                    <span class="coun">{{m.nb}}</span>
+                                </i>
+                                <span>{{m.nb*m.specfoods[0].price}}</span>
                             </div>
                         </div>
                     </div>
@@ -49,12 +50,55 @@
                     <div class="fg">
                         <div class="fg1" v-for="(mea,index) in messages.specfoods">{{mea.specs_name }}</div>
                     </div>
+                    <div class="GW">加入购物车</div>
                 </div>
 
             </div>
-            <div v-if="show2" @click="show2=false">
+            <div v-show="show2">
                 <div class="ms1">
-                    <div >{{messa.name}}!!!</div>
+                    <div class="tp">
+                        <i class="el-icon-arrow-left" @click="show3"></i>
+                        <span class="name">{{messa.name}}</span>
+                        <div></div>
+                    </div>
+                    <div>
+                        <img class="imgs2" :src="url+messa.image_path" alt="">
+                    </div>
+                    <div class="bott">
+                        <div style="margin-bottom: 0.5rem">
+                            <span class="name1">{{messa.description}}</span>
+
+                        </div>
+                        <div style="margin-bottom: 0.5rem">
+                            <span class="name2">{{messa.name}}</span>
+                        </div>
+                        <div>
+                            <span class="txt8">评分</span>
+                            <span class="text9"><el-rate
+                                v-model="value5"
+                                disabled
+                                show-score
+                                text-color="#ff9900"
+                                score-template="{value}">
+                            </el-rate></span>
+                        </div>
+                        <div class="mind">
+                            <div class="moun">
+                                <span>月销售{{messa.month_sales}}</span>
+                            </div>
+
+
+                            <div v-for="(messa1, index) in messa.specfoods">
+                                <div v-if="index == 0" style="color: #ff6e30">售价￥{{messa1.price}}起送</div>
+                            </div>
+                            <div class="pl">
+                                <span style="margin-right: 0.8rem;">评论数{{messa.rating_count}}</span>
+                                <span>好评率{{messa.satisfy_rate}}%</span>
+                            </div>
+
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
@@ -71,12 +115,13 @@
             return {
                 mess: [],
                 url: '//elm.cangdu.org/img/',
-                count:0,
+                count: 0,
                 show: false,
                 show1: false,
                 messages: [],
                 messa: [],
-                show2: false
+                show2: false,
+                value5: 3.7
 
 
             }
@@ -84,39 +129,31 @@
         created() {
             this.mess = this.$route.params.id
             var api = 'http://cangdu.org:8001/shopping/v2/menu?restaurant_id=' + this.mess
-            console.log(this.mess)
-            this.axios.get(api).then((response) => {
-                // this.mess = response.data.map(value => {
-                //     value.foods.map(value => {
-                //         value.number = 0;
-                //         return value;
-                //     })
-                //     return value;
-                // })
-                this.messages = response.data;
 
+            this.axios.get(api).then((response) => {
+                this.messages = response.data;
                 this.mess = response.data.map(value => {
                     value.foods.map(value => {
                         value.nb = 0;
-                        // value.number=0;
                         return value
                     })
                     return value
 
                 })
 
+
             })
         },
         methods: {
-            DD(m, index) {
+            DD(m, index, $event) {
                 m.nb++;
-                this.$forceUpdate;
-                this.count++
+                this.$forceUpdate();
                 this.show = true
+
             },
             DD1(m, index) {
+                this.$forceUpdate();
                 m.nb--;
-                this.$forceUpdate;
                 this.show = true
             },
 
@@ -128,8 +165,9 @@
                 } else {
                     this.show1 = true
                 }
-
-                console.log(this.messages)
+            },
+            show3() {
+                this.show2 = false
 
             },
             ck() {
@@ -137,8 +175,8 @@
             },
             mine(dat) {
                 this.messa = dat
-                console.log(this.messa)
                 this.show2 = true
+                this.value5 = this.messa.rating
             }
 
 
@@ -306,14 +344,96 @@
         right: 0;
         background: rgba(0, 0, 0, 0.3);
     }
-    .ms1{
-        position:fixed;
+    .GW{
+        display:inline-block;
+        font-size: 0.8rem;
+        margin-left: 6rem;
+        margin-top:1.5rem;
+        background-color:#2b99ff;
+        padding: 0.3rem 0.4rem;
+        border-radius:10px;
+    }
+
+    .ms1 {
+        position: fixed;
         left: 0;
         top: 0;
         border-bottom: 0;
         right: 0;
         height: 100%;
-        background-color:darkgray;
+        background-color: darkgray;
+    }
+
+    .el-icon-arrow-left {
+        color: white;
+        margin-top: 0.2rem;
+    }
+
+    .name {
+        color: white;
+    }
+
+    .tp {
+        padding: 0.4rem 0;
+        display: flex;
+        justify-content: space-between;
+        background-color: #178ee4;
+
+    }
+
+    .imgs2 {
+        width: 100%;
+        margin-top: 0;
+        margin-left: 0;
+
+    }
+
+    .bott {
+        margin-top: 1rem;
+        font-size: 0.8rem;
+        margin-left: 0.4rem;
+
+    }
+
+    .name1 {
+        font-size: 0.6rem;
+
+    }
+
+    .name2 {
+
+        font-size: 0.7rem;
+
+    }
+
+    .txt8 {
+        position: absolute;
+        bottom: 6rem;
+
+    }
+
+    .text9 {
+        position: absolute;
+        left: 2.5rem;
+        bottom: 5.8rem;
+    }
+
+    .mind {
+        display: flex;
+        margin-top: 2rem;
+        font-size: 0.7rem;
+
+    }
+
+    .moun {
+        margin-right: 1rem;
+
+    }
+
+    .pl {
+        position: absolute;
+        left: 0.4rem;
+        bottom: 3.5rem;
     }
 
 

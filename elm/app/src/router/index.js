@@ -36,7 +36,7 @@ import Payment from "@/components/profile/Payment"
 
 import Cdetail from '@/components/waimai/Cdetail'
 
-import ConfirmOrder from '@/components/confirmOrder'
+
 
 import ConfirmOrder from '@/components/confirmOrder'
 import Infor from '@/components/profile/Infor'

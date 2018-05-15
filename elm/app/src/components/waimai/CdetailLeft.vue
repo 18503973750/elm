@@ -10,9 +10,9 @@
 
         <div class="right-box">
             <div class="right" v-for=" me in mess">
-                <div v-for="(m,index) in me.foods" class="list-box" @click="mine(m)">
+                <div v-for="(m,index) in me.foods" class="list-box">
                     <div class="ig">
-                        <img class="imgs" :src="url+m.image_path" alt="">
+                        <img class="imgs"  @click="mine(m)" :src="url+m.image_path" alt="">
                     </div>
 
                     <div class="left2">
@@ -52,9 +52,9 @@
                 </div>
 
             </div>
-            <div>
-                <div class="ms1" v-for="ms in messa">
-
+            <div v-if="show2" @click="show2=false">
+                <div class="ms1">
+                    <div >{{messa.name}}!!!</div>
                 </div>
             </div>
 
@@ -71,11 +71,12 @@
             return {
                 mess: [],
                 url: '//elm.cangdu.org/img/',
-                count: '',
+                count:0,
                 show: false,
                 show1: false,
                 messages: [],
-                messa: []
+                messa: [],
+                show2: false
 
 
             }
@@ -121,6 +122,7 @@
 
             select(data) {
                 this.messages = data;
+
                 if (this.show1 == true) {
                     this.show1 = false
                 } else {
@@ -135,8 +137,8 @@
             },
             mine(dat) {
                 this.messa = dat
-                console.log(dat)
-
+                console.log(this.messa)
+                this.show2 = true
             }
 
 

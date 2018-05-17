@@ -2,17 +2,17 @@
     <div>
         <div class="headeBar">
             <div class="headL">
-                <div class="headL1" v-for=" me in mess">
-                    <div class="left">{{me.name}}</div>
+                <div class="headL1" v-for=" (me,index) in mess">
+                    <div class="left" @click="fff(index)">{{me.name}}</div>
                 </div>
             </div>
         </div>
 
         <div class="right-box">
 
-            <div class="right" v-for=" me in mess">
+            <div class="right" v-for=" (me,index) in mess">
                 <div class="title">
-                    <span class="title1">{{me.name}}</span>
+                    <span class="title1" :id="'a'+index">{{me.name}}</span>
                     <span class="title2">{{me.description}}</span>
                     <!--<span class="title3">...</span>-->
                 </div>
@@ -37,9 +37,9 @@
                                 </div>
 
                                 <i class="el-icon-circle-plus" v-else @click="DD(m,index)">
-                                    <div class="ari"> </div>
 
                                 </i>
+                                <div class="ari"></div>
                                 <i v-show="m.nb" @click="DD1(m,index)" class="el-icon-remove-outline">
                                     <span class="coun">{{m.nb}}</span>
                                 </i>
@@ -130,11 +130,10 @@
                 messa: [],
                 show2: false,
                 value5: 3.7,
-                msk1:'',
-                msk2:'',
-                nambers:'',
-                nambers1:''
-
+                msk1: '',
+                msk2: '',
+                msk3: '',
+                msk4: '',
 
 
             }
@@ -144,7 +143,7 @@
             var api = 'http://cangdu.org:8001/shopping/v2/menu?restaurant_id=' + this.mess
 
             this.axios.get(api).then((response) => {
-                console.log(response.data)
+                // console.log(response.data)
                 this.messages = response.data;
                 this.mess = response.data.map(value => {
                     value.foods.map(value => {
@@ -158,41 +157,71 @@
 
             })
 
-            },
-
+        },
 
 
         methods: {
-            DD(m, index) {
-                m.nb++;
+            DD(m, index, $event) {
+                var yy = m.nb++;
                 this.$forceUpdate();
                 this.show = true
-                this.msk1-=m.specfoods[0].price
-                this.nambers=this.msk1
-                this.$store.commit('st',this.msk1)
-                this.$store.commit('st2',m.nb)
-                var air=document.getElementsByClassName('ari')[0];
-                // gg(air)
-                // function gg(mask) {
-                //     var timer=setInterval(function () {
-                //
-                //     },50)
-                // }
+                this.msk1 -= m.specfoods[0].price
+                this.$store.commit('st', this.msk1)
+                this.msk3 = yy + 1
+                this.$store.commit('st3', this.msk3)
+                // 小球操作
+                var div1 = event.target.nextElementSibling;
+                div1.style.display = "inline-block";
+                div1.style.left = event.clientX - div1.offsetWidth / 2 + "px";
+                div1.style.top = event.clientY - div1.offsetHeight / 2 + "px";
+                let step = 30;
+                let beginX = div1.offsetLeft;
+                let beginY = div1.offsetTop;
+                let endX =60;
+                let endY = 600;
+                let count = 0;
+                let speedX = -10;
+                let speedY = -10;
+                // console.log(beginX)
 
+                let time = (endX - beginX) / speedX;
+                let a = (endY - beginY - speedY * time) * 2 / (time * time);
+                let timer = setInterval(() => {
+                    count++;
+                    // console.log(div1);
+                    div1.style.left = beginX + speedX * count + "px";
+                    // console.log(beginX + speedX*count);
+                    // console.log(div1.offsetLeft);
+                    div1.style.top = div1.offsetTop + speedY + "px";
+                    speedY += a;
+                    // console.log(a+'!!!!')
+                    if (count >= step) {
+                        clearInterval(timer);
+                        div1.style.display = "none";
+                    }
+                }, 20);
+            //    、、、、、、、
 
             },
 
             DD1(m, index) {
                 this.$forceUpdate();
-                m.nb--;
+                var tt = m.nb--;
+
                 this.show = true
-                this.msk2-=m.specfoods[0].price
-                 this.nambers1=this.msk2
-                this.$store.commit('st1',this.msk2)
-                this.$store.commit('st3',-m.nb)
+                this.msk2 -= m.specfoods[0].price
+                this.$store.commit('st1', this.msk2)
+                this.msk4 -= tt - (tt - 1)
+                this.$store.commit('st4', this.msk4)
+                // 操作小球
+
+
             },
 
+            fff(index) {
+                var obj = document.getElementById('a' + index).scrollIntoView();
 
+            },
             select(data) {
                 this.messages = data;
 
@@ -381,14 +410,15 @@
         right: 0;
         background: rgba(0, 0, 0, 0.3);
     }
-    .GW{
-        display:inline-block;
+
+    .GW {
+        display: inline-block;
         font-size: 0.8rem;
         margin-left: 6rem;
-        margin-top:1.5rem;
-        background-color:#2b99ff;
+        margin-top: 1.5rem;
+        background-color: #2b99ff;
         padding: 0.3rem 0.4rem;
-        border-radius:10px;
+        border-radius: 10px;
     }
 
     .ms1 {
@@ -472,28 +502,41 @@
         left: 0.4rem;
         bottom: 3.5rem;
     }
-    .ari{
-        width: 20px ;
+
+    .ari {
+        width: 20px;
         height: 20px;
         border-radius: 50%;
-        background-color:#008ce8;
-        /*margin-left: 10rem;*/
+        background-color: #008ce8;
+        position: fixed;
+        left: 0;
+        top: 0;
+        display: none;
+        z-index: 2;
+
 
     }
-    .title1{
+
+    .title1 {
         margin-left: 0.3rem;
-        font-size:0.9rem ;
+        font-size: 0.9rem;
     }
-    .title2{
-        font-size:0.5rem ;
+
+    .title2 {
+        font-size: 0.5rem;
     }
-    .title{
+
+    .title {
 
         padding: 0.5rem 0;
-        background-color:#f5F5F5 ;
+        background-color: #f5F5F5;
     }
-    .title3{
-      margin-left:1.2rem;
+
+    .title3 {
+        margin-left: 1.2rem;
     }
+
+
+
 
 </style>

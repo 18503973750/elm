@@ -1,34 +1,37 @@
 <template>
-    <div>
-        <header class="top">
-            <router-link to="/home"><i class="el-icon-arrow-left"></i></router-link>
-            <span>密码登录</span>
-        </header>
-        <form class="login-box">
-            <ul>
-                <li><input type="number" placeholder="账号" v-model="phone"></li>
-                <li>
-                    <input :type="pwdType"  placeholder="密码" v-model="pswd">
-                    <span class="add-item-status swift-btn right" @click="toggle()">
-                        <input type="checkbox" name="" id='checkbox'/>
-                        <label class="" for='checkbox'></label>
-                    </span>
-                </li>
-                <li>
-                    <input type="text" placeholder="验证码" v-model="yzm">
-                    <img :src="VerificationCodeImg.code" alt="">
-                    <div class="right">
-                        <div>看不清</div>
-                        <div @click="change()">换一张</div>
-                    </div>
-                </li>
-            </ul>
-            <P>温馨提示：未注册过的账号，登录时将自动注册</P>
-            <P>注册过的用户可凭账号密码登录</P>
-            <div class="btn"><span class="button" @click="submit()">登录</span></div>
-        </form>
-        <div class="res-password"><router-link class="right" to="/forget">重置密码？</router-link></div>
-    </div>
+    <transition name="router-slid">
+        <div>
+            <header class="top">
+                <router-link to="/home"><i class="el-icon-arrow-left"></i></router-link>
+                <span>密码登录</span>
+            </header>
+            <form class="login-box">
+                <ul>
+                    <li><input type="number" placeholder="账号" v-model="phone"></li>
+                    <li>
+                        <input :type="pwdType"  placeholder="密码" v-model="pswd">
+                        <span class="add-item-status swift-btn right" @click="toggle()">
+                            <input type="checkbox" name="" id='checkbox'/>
+                            <label class="" for='checkbox'></label>
+                        </span>
+                    </li>
+                    <li>
+                        <input type="text" placeholder="验证码" v-model="yzm">
+                        <img :src="VerificationCodeImg" alt="">
+                        <div class="right">
+                            <div>看不清</div>
+                            <div @click="change()">换一张</div>
+                        </div>
+                    </li>
+                </ul>
+                <P>温馨提示：未注册过的账号，登录时将自动注册</P>
+                <P>注册过的用户可凭账号密码登录</P>
+                <div class="btn"><span class="button" @click="submit()">登录</span></div>
+            </form>
+            <!-- {{isLogin}} -->
+            <div class="res-password"><router-link class="right" to="/forget">重置密码？</router-link></div>
+        </div>
+    </transition>
 </template>
 
 <script>
@@ -44,7 +47,7 @@
                 value1: true,
                 value2: true,
                 pwdType:"password",
-                VerificationCodeImg: {},
+                VerificationCodeImg: null,
                 phone: null,
                 pswd: null,
                 yzm: null
@@ -81,34 +84,58 @@
                     alert("请输入验证码");
                     return
                 }
+                
+                //登录请求
+                let data = {
+                    username: this.phone,
+                    password: this.pswd,
+                    captcha_code: this.yzm                    
+                };
+                Vue.postLogin(loginLink, data, res => {
+                    
+                    console.log(res)
+                    if (res.status == 0) {
+                        alert(res.message);
+                        return                    
+                    } else {
 
-                Vue.axios.post('http://cangdu.org:8001/v2/login', {
-                    username: 'phone',
-                    password: 'pswd',
-                    captcha_code: 'yzm'
+                        //将登录信息传入到 ”我的“ 页面
+                        localStorage.user = JSON.stringify(res);
+                                              
+                        this.$router.push({
+                            name: 'Profile',
+                            params: res
+                        });
+
+                        // loginState = this.$store.commit(‘changeLogin‘,‘1‘)
+                        console.log(res);
+
+                    }   
                 })
-                .then(function (response) {
-                    console.log(response);
-                })
-                this.$router.push({
-                    path:'/profile'
-                })
+                
             },
             //点击更换验证码图片
             change() {
-                this.$http.post(VerificationCode).then((response) => {
-                    console.log(response.data);
-                    this.VerificationCodeImg = response.data;
-                });
+                var data = {};
+                Vue.postLogin(VerificationCode, data, res => {
+                    this.VerificationCodeImg = res.code;
+                    // console.log(this.VerificationCodeImg)
+                })
             }
         },
         created() {
             //图片验证码
-            this.$http.post(VerificationCode).then((response) => {
-                console.log(response.data);
-                this.VerificationCodeImg = response.data;
-            });
-        }
+            var data = {};
+            Vue.postLogin(VerificationCode, data, res => {
+                this.VerificationCodeImg = res.code;
+                // console.log(this.VerificationCodeImg)
+            })
+        },
+        // computed: {
+        //     isLogin () {
+        //         return this.$store.state.isLogin
+        //     }
+        // } 
     }
 </script>
 

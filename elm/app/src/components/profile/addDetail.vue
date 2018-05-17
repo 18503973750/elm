@@ -17,7 +17,7 @@
 		<div class="poisearch-container">
 			<ul>
 				<!--循环列表-->
-				<li v-for="item in list" @click="tr">
+				<li v-for="(item,index) in list" @click="tr(index)">
 					<!--接收list里面的名字和地址-->
 					<p>{{item.name}}</p>
 					<p>{{item.address}}</p>
@@ -40,7 +40,8 @@
 			return {
 				searchTxt: null,
 				list: null,//2.默认为空
-				orshow:true
+				orshow:true,
+				deIndex:""
 			}			
 		},
 		methods: {	
@@ -54,10 +55,14 @@
 				this.orshow = false
 			},
 			//往上个页面传值(点击时传输)点击事件
-			tr(){
+			tr(index){
+				this.deIndex = index
 				this.$router.push({
 					name:'add',
-					params:this.list//4.传输的是list里面的数据(可以在另一个接收)
+					params:{
+						deList:this.list,
+						deID:this.deIndex
+					}//4.传输的是list里面的数据(可以在另一个接收)
 				})
 			}
 		}

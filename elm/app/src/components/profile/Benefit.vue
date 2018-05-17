@@ -9,6 +9,7 @@
 
         </div>
         <div class="top2">
+        	<!--点击时切换颜色-->
             <div class="top2_left">
                 <span @click="HB" class="redbag" v-bind:class="{black:orchange}">红包</span>
             </div>
@@ -147,13 +148,13 @@
         top: 0;
         left: 0;
         right: 0;
+        z-index: 5;
     }
     .top_one {
         color: white;
         padding: .5rem;
         padding-bottom: .8rem;
         font-size: .8rem;
-
     }
     .top_one .el-icon-arrow-left {
         color: white;

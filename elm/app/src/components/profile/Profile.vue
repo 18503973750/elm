@@ -1,95 +1,92 @@
 <template>
-
-    <div class="out">
-        <div class="top">
-            <div class="top_one">
-                <router-link to="/Balance" class="el-icon-arrow-left">
-                </router-link>
-                <span>我的</span>
-            </div>
-            <div class="top_two">
-                <router-link to="/infor">
-                    <div></div>
-                    <ul>
-                        <li>登录/注册</li>
-                        <li class="el-icon-mobile-phone
-">暂无绑定手机号
-                        </li>
-                        <span class="el-icon-arrow-right"></span>
-                    </ul>
-                </router-link>
-            </div>
-        </div>
-        <table border="1">
-            <tr>
-                <router-link to="/balance">
-                    <td>
-						<span class="span1">
-						0.00
-					</span> <span>元</span>
-                        <br/>
-                        <span class="td2">我的余额</span>
-                    </td>
-                </router-link>
-
-                <td>
-                    <router-link to="/Benefit">
-                        <span class="span2">0</span>
-                        <span>个</span>
-                        <br/>
-                        <span class="td2">
-						我的优惠
-					</span>
+        <div class="out">
+            <div class="top">
+                <div class="top_one">
+                    <router-link to="/Balance" class="el-icon-arrow-left">
                     </router-link>
-                </td>
-                <router-link to="/Integral">
+                    <span>我的</span>
+                </div>
+                <div class="top_two">
+                    <strong @click="inforPage" style="display: block;">
+                        <div>
+                            <img :src=" '//elm.cangdu.org/img/' +userInfo.avatar">
+                        </div>
+                        <ul>
+                            <li>登录/注册{{ userInfo.username }}</li>
+                            <li class="el-icon-mobile-phone">暂无绑定手机号</li>
+                            <span class="el-icon-arrow-right"></span>
+                        </ul>
+                    </strong>
+                </div>
+            </div>
+            <table border="1">
+                <tr>
+                    <router-link to="/balance">
+                        <td>
+    						<span class="span1">{{ userInfo.balance }}</span> <span>元</span>
+                            <br/>
+                            <span class="td2">我的余额</span>
+                        </td>
+                    </router-link>
+
                     <td>
-                        <span class="span3">0</span>
-                        <span>分</span>
-                        <br/>
-                        <span class="td2">我的积分</span>
+                        <router-link to="/Benefit">
+                            <span class="span2">{{ userInfo.gift_amount }}</span>
+                            <span>个</span>
+                            <br/>
+                            <span class="td2">
+    						我的优惠
+    					</span>
+                        </router-link>
                     </td>
-                </router-link>
-            </tr>
-        </table>
-        <ul class="my-list firstLi">
-            <li>
-                <router-link to="/Orderlist">
-                    <i class="el-icon-tickets left"></i> 我的订单
-                    <i class="el-icon-arrow-right right"></i>
-                </router-link>
-            </li>
-            <li>
-                <router-link to="/Chome">
-                    <i class="el-icon-goods left"></i> 积分商城
-                    <i class="el-icon-arrow-right right">
-                    </i>
-                </router-link>
-            </li>
+                    <router-link to="/Integral">
+                        <td>
+                            <span class="span3">0</span>
+                            <span>分</span>
+                            <br/>
+                            <span class="td2">我的积分</span>
+                        </td>
+                    </router-link>
+                </tr>
+            </table>
+            <ul class="my-list firstLi">
+                <li>
+                    <router-link to="/Orderlist">
+                        <i class="el-icon-tickets left"></i> 我的订单
+                        <i class="el-icon-arrow-right right"></i>
+                    </router-link>
+                </li>
+                <li>
+                    <router-link to="/Chome">
+                        <i class="el-icon-goods left"></i> 积分商城
+                        <i class="el-icon-arrow-right right">
+                        </i>
+                    </router-link>
+                </li>
 
-            <li>
-                <router-link to="/vip">
-                    <i class="el-icon-star-on left"></i> 饿了么会员
-                    <i class="el-icon-arrow-right right"></i>
-                </router-link>
-            </li>
-        </ul>
-        <ul class="my-list secondLi">
-            <li>
-                <router-link to="/Service">
-                    <i class="el-icon-service left"></i> 服务中心
-                    <i class="el-icon-arrow-right right"></i>
-                </router-link>
-            </li>
-            <li>
-                <router-link to="/download">
-                    <i class="el-icon-download left"></i> 下载饿了么APP
-                    <i class="el-icon-arrow-right right"></i>
-                </router-link>
-            </li>
-        </ul>
-    </div>
-
+                <li>
+                    <router-link to="/vip">
+                        <i class="el-icon-star-on left"></i> 饿了么会员
+                        <i class="el-icon-arrow-right right"></i>
+                    </router-link>
+                </li>
+            </ul>
+            <ul class="my-list secondLi">
+                <li>
+                    <router-link to="/Service">
+                        <i class="el-icon-service left"></i> 服务中心
+                        <i class="el-icon-arrow-right right"></i>
+                    </router-link>
+                </li>
+                <li>
+                    <router-link to="/download">
+                        <i class="el-icon-download left"></i> 下载饿了么APP
+                        <i class="el-icon-arrow-right right"></i>
+                    </router-link>
+                </li>
+            </ul>
+            
+        </div>
 </template>
 
 <script>
@@ -97,14 +94,36 @@
         name: "Profile",
         data: function () {
             return {
-                userinfor: null
+                userinfor: null,
+                userInfo: ""
             }
         },
         created() {
-            this.$http.get('http://cangdu.org:8001/v1/user').then((response) => {
-                 console.log(response.data);
+            //储存res的返回的数据
+            if (Object.keys(this.$route.params).length) {
+                this.userInfo = this.$route.params;
+                localStorage.user = JSON.stringify(this.$route.params);
+            } else {
+                this.userInfo = JSON.parse(localStorage.user);
+            }  
+
+            console.log(this.userInfo); 
+
+            //请求用户信息
+            this.$http.get(`http://cangdu.org:8001/v1/user?user_id=${this.userInfo.id}`).then((response) => {
+                console.log(response.data);
                 this.userinfor = response.data;
-            });
+            });         
+        },
+        methods: {
+            inforPage () {
+                this.$router.push({
+                    name: 'Infor',
+                    params: {
+                        myInfo: this.userInfo
+                    }
+                }) 
+            }
         }
     }
 </script>
@@ -234,12 +253,14 @@
     .top_two div {
         width: 2.5rem;
         height: 2.5rem;
-        border: .05rem solid #f5f5f5;
+        overflow: hidden;
         float: left;
         margin-top: .8rem;
         margin-left: 1rem;
         border-radius: 50%;
-        background: #f5f5f5;
+    }
+    .top_two div img {
+        width: 100%;
     }
 
     .top_two li:nth-child(1) {

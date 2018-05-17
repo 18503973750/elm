@@ -1,71 +1,73 @@
 <template>
-	<div class="out">
-		<div class="top">
-			<div class="top_one">
-				<router-link to="/profile" class="el-icon-arrow-left">
-				</router-link>
-				<span>账户信息</span>
-			</div>
-		</div>
-		<input type="file" />
-		<div class="touxiang MarginTop">
-			<span>头像</span>
-			<div class="IMG">
-				<img src="../../img/touxiang.jpg" alt="" />
-				<span class="el-icon-arrow-right"></span>
-			</div>
-		</div>
-		<ul>
-			<li class="LI1" @click="NAME">
-				<span>用户名</span>
-				<span>
-					<!--接收上个页面传输过来的值-->
-					<i>{{code}}</i>
-					<i class="el-icon-arrow-right"></i>
-				</span>
-
-			</li>
-			<li class="LI2">
-				<span>收货地址</span>
-				<span class="el-icon-arrow-right" @click="DZ"></span>
-			</li>
-		</ul>
-		<p>账号绑定</p>
-		<ul>
-			<li>
-				<div>
-					<img src="" alt="" />
-					<span>手机</span>
+	<transition name="router-slid">
+		<div class="out">
+			<div class="top">
+				<div class="top_one">
+					<router-link to="/profile" class="el-icon-arrow-left">
+					</router-link>
+					<span>账户信息</span>
 				</div>
-				<span class="el-icon-arrow-right"></span>
-			</li>
-		</ul>
-		<p>安全设置</p>
-		<ul>
-			<li @click="DL">
-				<span>登录密码</span>
-				<div>
-					修改
+			</div>
+			<input type="file" />
+			<div class="touxiang MarginTop">
+				<span>头像</span>
+				<div class="IMG">
+					<img src="../../img/touxiang.jpg" alt="" />
 					<span class="el-icon-arrow-right"></span>
 				</div>
-			</li>
-		</ul>
-		<div class="btm" @click="TCDL">
-			退出登录
-		</div>
-		<!--弹框-->
-		<div class="sure">
-			<div class="sure1">
-				<span class="span1"></span>
-				<span></span>
 			</div>
-			<p>是否退出登录</p>
-			<div class="sure2">
-				<span class="Span1" @click="ZDD">再等等</span>
-				<span class="Span2">退出登录</span>
+			<ul>
+				<li class="LI1" @click="NAME">
+					<span>用户名</span>
+					<span>
+						<!--接收上个页面传输过来的值-->
+						<i>{{code}}</i>
+						<i class="el-icon-arrow-right"></i>
+					</span>
+
+				</li>
+				<li class="LI2">
+					<span>收货地址</span>
+					<span class="el-icon-arrow-right" @click="DZ"></span>
+				</li>
+			</ul>
+			<p>账号绑定</p>
+			<ul>
+				<li>
+					<div>
+						<img src="" alt="" />
+						<span>手机</span>
+					</div>
+					<span class="el-icon-arrow-right"></span>
+				</li>
+			</ul>
+			<p>安全设置</p>
+			<ul>
+				<li @click="DL">
+					<span>登录密码</span>
+					<div>
+						修改
+						<span class="el-icon-arrow-right"></span>
+					</div>
+				</li>
+			</ul>
+			<div class="btm" @click="TCDL">
+				退出登录
+			</div>
+			<!--弹框-->
+			<div class="sure">
+				<div class="sure1">
+					<span class="span1"></span>
+					<span></span>
+				</div>
+				<p>是否退出登录</p>
+				<div class="sure2">
+					<span class="Span1" @click="ZDD">再等等</span>
+					<span class="Span2">退出登录</span>
+				</div>
 			</div>
 		</div>
-	</div>
+	</transition>
 </template>
 
 <script>
@@ -75,7 +77,8 @@
 		name: "Infor",
 		data() {
 			return {
-				code: ""
+				code: "",
+				userInfo: ""
 			}
 		},
 		methods: {
@@ -104,15 +107,22 @@
 				})
 			}
 		},
+		//接收另一个页面穿来的值
 		created() {
 			console.log(this.$route.params);
 			//本地缓存(把传过来的值缓存在本地)
 			if(this.$route.params.code) {
+				//接收传过来的code值
 				this.code = this.$route.params.code
+				//把传过来的值转化为字符串然后储存在本地
 				localStorage.code=JSON.stringify(this.$route.params.code)
 			}else {
 				this.code=JSON.parse(localStorage.code)
 			}
+
+			//接收profile页面穿过来的数据
+			this.userInfo = this.$route.params;
+			console.log(this.userInfo);
 		}
 	}
 </script>

@@ -58,6 +58,7 @@
 					name: 'Infor',
 					//传输出去
 					params: {
+						//穿过去的是code值,this.code是本界面用v-model绑定的值
 						code:this.code
 					}
 

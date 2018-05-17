@@ -22,7 +22,6 @@
 						<p>联系电话</p>
 						<p>
 							<em>
-
 								<input type="" name="" placeholder="你的手机号" v-model="phone" style="width: 89%;">
 								<i class="el-icon-plus" @click="sparePhone"></i>
 							</em>
@@ -32,7 +31,7 @@
 					<li>
 						<p>送餐地址</p>
 						<p>
-							<input type="" name="" placeholder="小区/写字楼/学校等" v-model="addAddress">
+							<input type="" name="" placeholder="小区/写字楼/学校等" v-model="addAddress.addList[addAddress.addId].name" @click="searchBtn">
 							<input type="" name="" placeholder="详细地址（如门牌号等）" v-model="addAddress2">
 						</p>
 					</li>
@@ -43,7 +42,6 @@
 				</ul>
 			</div>
 			<div class="determine" @click="btn">确定</div>
-
 			<div class="alet_container" v-if="Txt">
 				<section class="tip_text_container">
 					<div class="tip_icon"><span></span> <span></span></div> 
@@ -57,6 +55,7 @@
 </template>
 
 <script>
+import Vue from 'vue'
 import Loading from '../components/loading'
 export default {
 	name: "addAddress",
@@ -78,8 +77,18 @@ export default {
 			addAddress2: "",
 			tag: "",
 			Txt: "",
-			phoneB: false
+			phoneB: false,
+		}
+	},
+	created () {
+		// console.log(this.$route.params)
+		this.addAddress = this.$route.params;
 
+		if (Object.keys(this.$route.params).length) {
+			this.addAddress = this.$route.params
+			localStorage.addAddress = JSON.stringify(this.$route.params)
+		} else {
+			this.addAddress = JSON.parse(localStorage.addAddress)
 		}
 	},
 	methods: {
@@ -88,36 +97,50 @@ export default {
 		},
 			//判断表单为空
 			btn () {
-				if(this.name) {
-					if(this.phone) {
-						if (this.addAddress) {
-							if (this.addAddress2) {
-								if (this.tag) {
-									this.Txt = "添加成功"
-								}else {
-									this.Txt = "请输入标签"
-								}
-							}else {
-								this.Txt = "请输入详细地址"
-							}
-						}else {
-							this.Txt = "请输入送餐地址"	
-						}
-					}else {
-						this.Txt = "请输入手机号"
-					}
-				} else{
-					this.Txt = "请输入姓名"				
+				if (!this.name) {
+					this.Txt = "请输入姓名";
+				} else if (!this.phone) {
+					this.Txt = "请输入手机号";
+				} else if (!this.phone2) {
+					this.Txt = "请输入备用手机号";
+				} else if (!this.addAddress) {
+					this.Txt = "请选择所在区域";
+				} else if (!this.addAddress2) {
+					this.Txt = "请输入详细地址";
+				} else if (!this.tag) {
+					this.Txt = "请输入标签";
+				} else {
+					this.Txt = "添加成功";
 				}
-				
 			},
 			//关闭弹框按钮
 			ok() {
-				this.Txt = ""
+				this.Txt = "";
+                Vue.axios.post('http://cangdu.org:8001/v1/users/28284/addresses', {
+                    address: 'addAddress',
+                    address_detail: 'addAddress2',
+                    geohash: '45.73538,126.70114',
+                    name: 'name',
+                    phone: 'phone',
+                    phone_bk: 'phone2',
+                    sex: 'todos',
+                    tag_type: 'tag'
+                })
 			},
 			//备用电话
 			sparePhone () {
-				this.phoneB = true
+				this.phoneB = !this.phoneB
+				if(this.phoneB) {
+					this.phoneB = true
+				}else {
+					this.phoneB = false
+				}
+			},
+			//跳转搜索地址页面
+			searchBtn () {
+				this.$router.push({
+					path: '/confirmOrder/chooseAddress/addAddress/searchAddress'
+				})
 			}
 		}
 	}	

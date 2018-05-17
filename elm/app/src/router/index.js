@@ -36,15 +36,18 @@ import Payment from "@/components/profile/Payment"
 
 import Cdetail from '@/components/waimai/Cdetail'
 
-
-
 import ConfirmOrder from '@/components/confirmOrder'
+import ChooseAddress from '@/components/chooseAddress'
+import AddAddress from '@/components/addAddress'
+
 import Infor from '@/components/profile/Infor'
 import Address from '@/components/profile/Address'
 import add from '@/components/profile/add'
 import addDetail from '@/components/profile/addDetail'
 import forget1 from '@/components/profile/forget1'
-// import Cdetail from '@/components/waimai/Cdrtail'
+
+import elmMM from '@/components/waimai/elmMM'
+import setusername from '@/components/profile/setusername'
 Vue.use(Router)
 
 export default new Router({
@@ -88,7 +91,42 @@ export default new Router({
 			path: '/city/:id',
 			name: 'City',
 			component: City,
+		},
+		{
+			path: '/Benefit/Commend',
+			name: 'Commend',
+			component: Commend
+		},
+		{
+			path: '/Benefit/coupon',
+			name: 'Coupon',
+			component: Coupon
+		},
+		{
+			path: '/Payment',
+			name: 'Payment',
+			component: Payment
+		},
+		{
+			path: '/elm',
+			name: 'Cdetail',
+			component: Cdetail
+		},
+		{
+			path: '/confirmOrder',
+			name: 'confirmOrder',
+			component: ConfirmOrder,
 
+		},
+		{
+			path: '/confirmOrder/chooseAddress',
+			name: 'chooseAddress',
+			component: ChooseAddress,
+		},
+		{
+			path: '/confirmOrder/chooseAddress/addAddress',
+			name: 'addAddress',
+			component: AddAddress
 		},
 		{
 			path: '/login',
@@ -211,7 +249,6 @@ export default new Router({
 			name: 'Cdetail',
 			component: Cdetail
 		},
-
 		{
 			path: '/confirmOrder',
 			name: 'confirmOrder',
@@ -242,7 +279,15 @@ export default new Router({
 			name: 'forget1',
 			component: forget1
 		},
-
+		{
+			path: '/elmMM',
+			name: 'elmMM',
+			component: elmMM
+		},
+		{
+			path: '/setusername',
+			name: 'setusername',
+			component: setusername
+		}
 	]
 })
-

@@ -22,6 +22,9 @@ time, mark, audio, video, input {
 input,button,textarea {
     outline: none;
 }
+button {
+    border: none;
+}
 .MarginTop {
     margin-top: 2.5rem;
 }

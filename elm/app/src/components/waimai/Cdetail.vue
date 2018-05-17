@@ -27,9 +27,11 @@
         <div class="bottom">
             <div>
                 <img src="./购物车.png" alt="">
+                <!--<div>{{t2}}</div>-->
             </div>
             <div class="L1">
-                <div>￥{{0}}</div>
+                <div>￥{{st-st1}}</div>
+                <div>{{-st2+st3}}--00</div>
                 <div>配送费￥5</div>
             </div>
             <div class="yuan" style="font-size:1rem">还差20起送</div>
@@ -57,7 +59,10 @@
                 url: '//elm.cangdu.org/img/',
                 count: 0,
                 messages: [{name: '商品'}, {name: '评价'}],
-                show: false
+                show: false,
+                one:110,
+                two:120,
+
 
             }
 
@@ -70,7 +75,6 @@
                 } else {
                     this.show = false
                 }
-
             },
         },
         created() {
@@ -80,11 +84,44 @@
             this.axios.get(api99).then((response) => {
                 this.messs = response.data;
 
+
             })
-            // localStorage.messs = JSON.stringify(this.response.data)
+
+            //
+            // let a1 = {
+            //     latitude:31.22967,
+            //     longitude:121.4762,
+            //     restaurant_id :2,
+            //     entities:[{name:1,price:20,quantity:2}]
+            // };
+            // this.axios.post('http://cangdu.org:8001/v1/carts/checkout',{param:a1}).then((response) => {
+            //    console.log(response.data);
+            //
+            // })
+
+        },
+        computed: {
+            st() {
+
+                return -this.$store.state.st;
+            },
+            st1() {
+
+            return this.$store.state.st1;
+        },
+            st2() {
+
+                return -this.$store.state.st2;
+            },
+            st3() {
+
+                return this.$store.state.st2;
+            },
+
+    },
 
 
-        }
+
     }
 </script>
 

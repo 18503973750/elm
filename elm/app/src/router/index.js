@@ -44,6 +44,7 @@ import Address from '@/components/profile/Address'
 import add from '@/components/profile/add'
 import addDetail from '@/components/profile/addDetail'
 import forget1 from '@/components/profile/forget1'
+// import Cdetail from '@/components/waimai/Cdrtail'
 Vue.use(Router)
 
 export default new Router({
@@ -240,7 +241,8 @@ export default new Router({
 			path: '/forget1',
 			name: 'forget1',
 			component: forget1
-		}
+		},
+
 	]
 })
 

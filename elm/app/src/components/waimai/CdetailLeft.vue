@@ -9,7 +9,14 @@
         </div>
 
         <div class="right-box">
+
             <div class="right" v-for=" me in mess">
+                <div class="title">
+                    <span class="title1">{{me.name}}</span>
+                    <span class="title2">{{me.description}}</span>
+                    <!--<span class="title3">...</span>-->
+                </div>
+
                 <div v-for="(m,index) in me.foods" class="list-box">
                     <div class="ig">
                         <img class="imgs" @click="mine(m)" :src="url+m.image_path" alt="">
@@ -30,12 +37,13 @@
                                 </div>
 
                                 <i class="el-icon-circle-plus" v-else @click="DD(m,index)">
+                                    <div class="ari"> </div>
 
                                 </i>
                                 <i v-show="m.nb" @click="DD1(m,index)" class="el-icon-remove-outline">
                                     <span class="coun">{{m.nb}}</span>
                                 </i>
-                                <span>{{m.nb*m.specfoods[0].price}}</span>
+
                             </div>
                         </div>
                     </div>
@@ -121,7 +129,12 @@
                 messages: [],
                 messa: [],
                 show2: false,
-                value5: 3.7
+                value5: 3.7,
+                msk1:'',
+                msk2:'',
+                nambers:'',
+                nambers1:''
+
 
 
             }
@@ -131,6 +144,7 @@
             var api = 'http://cangdu.org:8001/shopping/v2/menu?restaurant_id=' + this.mess
 
             this.axios.get(api).then((response) => {
+                console.log(response.data)
                 this.messages = response.data;
                 this.mess = response.data.map(value => {
                     value.foods.map(value => {
@@ -143,19 +157,41 @@
 
 
             })
-        },
+
+            },
+
+
+
         methods: {
-            DD(m, index, $event) {
+            DD(m, index) {
                 m.nb++;
                 this.$forceUpdate();
                 this.show = true
+                this.msk1-=m.specfoods[0].price
+                this.nambers=this.msk1
+                this.$store.commit('st',this.msk1)
+                this.$store.commit('st2',m.nb)
+                var air=document.getElementsByClassName('ari')[0];
+                // gg(air)
+                // function gg(mask) {
+                //     var timer=setInterval(function () {
+                //
+                //     },50)
+                // }
+
 
             },
+
             DD1(m, index) {
                 this.$forceUpdate();
                 m.nb--;
                 this.show = true
+                this.msk2-=m.specfoods[0].price
+                 this.nambers1=this.msk2
+                this.$store.commit('st1',this.msk2)
+                this.$store.commit('st3',-m.nb)
             },
+
 
             select(data) {
                 this.messages = data;
@@ -180,7 +216,8 @@
             }
 
 
-        }
+        },
+
 
     }
 </script>
@@ -435,6 +472,28 @@
         left: 0.4rem;
         bottom: 3.5rem;
     }
+    .ari{
+        width: 20px ;
+        height: 20px;
+        border-radius: 50%;
+        background-color:#008ce8;
+        /*margin-left: 10rem;*/
 
+    }
+    .title1{
+        margin-left: 0.3rem;
+        font-size:0.9rem ;
+    }
+    .title2{
+        font-size:0.5rem ;
+    }
+    .title{
+
+        padding: 0.5rem 0;
+        background-color:#f5F5F5 ;
+    }
+    .title3{
+      margin-left:1.2rem;
+    }
 
 </style>

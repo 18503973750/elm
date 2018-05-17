@@ -69,6 +69,7 @@ this.arr = res.data
         top: 0;
         left: 0;
         right: 0;
+        z-index: 5;
     }
 
     .top_one {

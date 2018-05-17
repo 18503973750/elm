@@ -8,7 +8,7 @@
     <div>
         <div class="head">
             <div class="top">
-                <div class="te1">4.7</div>
+                <div class="te1">{{messs.rating}}</div>
                 <div class="te2">综合评价</div>
                 <div class="te3">高于周边商家</div>
             </div>
@@ -16,7 +16,7 @@
                 <div class="right">
                     <span class="te4">服务态度</span>
                     <el-rate class="te5"
-                             v-model="value5"
+                             v-model="messs.rating"
                              disabled
                              show-score
                              text-color="#ff9900"
@@ -46,7 +46,7 @@
                 <div style="margin-left: 1rem">
                     <div class="M1">4****b</div>
                     <div class="block">
-                        <el-rate v-model="value1"></el-rate>
+                        <el-rate v-model="messs.rating"></el-rate>
                         <span class="M3"> 按时送达</span>
                     </div>
                     <div>
@@ -76,8 +76,9 @@
                 value5: 4.5,
                 messages: [{name: '全部（473)'}, {name: '满意（453)'}, {name: '不满意（20)'}, {name: '有图（2)'}, {name: '味道好（47)'}, {name: '送货快（32)'}, {name: '分量足（18)'}, {name: '包装精美（15)'}, {name: '干净卫生（15)'}, {name: '食材新（15)'}],
                count:0,
-                value1: null,
-                value2: null
+                value1:null,
+                value2:null,
+                messs:[]
             }
 
         },
@@ -85,7 +86,20 @@
             add(index){
                this.count=index
             }
-        }
+        },
+        created(){
+            this.mess = this.$route.params.id
+            var api99 = `http://cangdu.org:8001/shopping/restaurant/${this.mess}`
+
+            this.axios.get(api99).then((response) => {
+                this.messs = response.data;
+                // console.log( this.messs)
+
+
+            })
+    }
+
+
 
 
     }

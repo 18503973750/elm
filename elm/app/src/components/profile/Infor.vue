@@ -107,11 +107,14 @@
 				})
 			}
 		},
+		//接收另一个页面穿来的值
 		created() {
 			console.log(this.$route.params);
 			//本地缓存(把传过来的值缓存在本地)
 			if(this.$route.params.code) {
+				//接收传过来的code值
 				this.code = this.$route.params.code
+				//把传过来的值转化为字符串然后储存在本地
 				localStorage.code=JSON.stringify(this.$route.params.code)
 			}else {
 				this.code=JSON.parse(localStorage.code)

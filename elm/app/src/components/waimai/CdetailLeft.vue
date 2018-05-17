@@ -1,5 +1,6 @@
 <template>
     <div>
+    	<!--+左面的列表-->
         <div class="headeBar">
             <div class="headL">
                 <div class="headL1" v-for=" me in mess">

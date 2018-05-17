@@ -39,267 +39,257 @@ import Cdetail from '@/components/waimai/Cdetail'
 import ConfirmOrder from '@/components/confirmOrder'
 import ChooseAddress from '@/components/chooseAddress'
 import AddAddress from '@/components/addAddress'
- 
-
-import ConfirmOrder from '@/components/confirmOrder'
-
 
 import Infor from '@/components/profile/Infor'
 import Address from '@/components/profile/Address'
 import add from '@/components/profile/add'
 import addDetail from '@/components/profile/addDetail'
 import forget1 from '@/components/profile/forget1'
-import elm from '@/components/waimai/elm'
+import elmMM from '@/components/waimai/elmMM'
 import setusername from '@/components/profile/setusername'
 Vue.use(Router)
 
 export default new Router({
-	routes: [{
-			path: '/waimai',
-			name: 'Heard',
-			component: Heard,
-			children: [{
-					path: '/waimai',
-					name: 'waimai',
-					component: Waimai
-				},
-				{
-					path: '/search',
-					name: 'Search',
-					component: Search
-				},
-				{
-					path: '/order',
-					name: 'Order',
-					component: Order
-				},
-				{
-					path: '/profile',
-					name: 'Profile',
-					component: Profile
-				}
-			]
-		},
-		{
-			path: '/',
-			name: 'Home',
-			component: Home
-		},
-		{
-			path: '/home',
-			name: 'Home',
-			component: Home
-		},
-		{
-			path: '/city/:id',
-			name: 'City',
-			component: City,
-},{
+			routes: [{
+						path: '/waimai',
+						name: 'Heard',
+						component: Heard,
+						children: [
+						    {
+								path: '/waimai',
+								name: 'waimai',
+								component: Waimai
+							},
+							{
+								path: '/search',
+								name: 'Search',
+								component: Search
+							},
+							{
+								path: '/order',
+								name: 'Order',
+								component: Order
+							},
+							{
+								path: '/profile',
+								name: 'Profile',
+								component: Profile
+							}
+						]
+					},
+					{
+						path: '/',
+						name: 'Home',
+						component: Home
+					},
+					{
+						path: '/home',
+						name: 'Home',
+						component: Home
+					},
+					{
+						path: '/city/:id',
+						name: 'City',
+						component: City,
+					},
+					{
+						path: '/Benefit/Commend',
+						name: 'Commend',
+						component: Commend
+					},
+					{
+						path: '/Benefit/coupon',
+						name: 'Coupon',
+						component: Coupon
+					},
+					{
+						path: '/Payment',
+						name: 'Payment',
+						component: Payment
+					},
+					{
+						path: '/elm',
+						name: 'Cdetail',
+						component: Cdetail
+					},
+					{
+						path: '/confirmOrder',
+						name: 'confirmOrder',
+						component: ConfirmOrder,
 
-            path: '/Benefit/Commend',
-            name: 'Commend',
-            component: Commend
-        },
-        {
-            path: '/Benefit/coupon',
-            name: 'Coupon',
-            component: Coupon
-        },
-        {
-            path:'/Payment',
-            name:'Payment',
-            component:Payment
-        },
-        {
-            path: '/elm',
-            name: 'Cdetail',
-            component: Cdetail
-        },
-        {
-            path: '/confirmOrder',
-            name: 'confirmOrder',
-            component: ConfirmOrder,
-            
-        },
-        {
-            path: '/confirmOrder/chooseAddress',
-            name: 'chooseAddress',
-            component: ChooseAddress,                    
-        },
-        {
-            path: '/confirmOrder/chooseAddress/addAddress',
-            name: 'addAddress',
-            component: AddAddress
-        }        
-        
-      
+					},
+					{
+						path: '/confirmOrder/chooseAddress',
+						name: 'chooseAddress',
+						component: ChooseAddress,
+					},
+					{
+						path: '/confirmOrder/chooseAddress/addAddress',
+						name: 'addAddress',
+						component: AddAddress
+					},
+					{
+						path: '/login',
+						name: 'login',
+						component: Login
+					},
+					{
+						path: '/forget',
+						name: 'forget',
+						component: Forget
+					},
+					{
+						path: '/balance',
+						name: 'Balance',
+						component: Balance
+					},
+					{
+						path: '/integral',
+						name: 'Integral',
+						component: Integral
+					},
+					{
+						path: '/benefit',
+						name: 'Benefit',
+						component: Benefit
+					},
+					{
+						path: '/benefit2',
+						name: 'Benefit2',
+						component: Benefit2
+					},
+					{
+						path: '/service',
+						name: 'Service',
+						component: Service
+					},
+					{
+						path: '/chome',
+						name: 'Chome',
+						component: Chome,
+					},
+					{
+						path: '/header',
+						name: 'Header',
+						component: Header
+					},
+					{
+						path: '/download',
+						name: 'Download',
+						component: Download
+					},
+					{
+						path: '/vip',
+						name: 'Vip',
+						component: Vip
+					},
+					{
+						path: '/orderlist',
+						name: 'Orderlist',
+						component: Orderlist
+					},
+					{
+						path: '/balance/detail',
+						name: 'Detail',
+						component: Detail
+					},
+					{
+						path: '/Benefit/Hbhistory',
+						name: 'Hbhistory',
+						component: Hbhistory
+					},
+					{
+						path: '/city1',
+						name: 'city1',
+						component: city1
+					},
+					{
+						path: '/b2',
+						name: 'b2',
+						component: b2
+					},
+					{
+						path: '/Benefit/exchange',
+						name: 'Exchange',
+						component: Exchange
+					},
+					{
+						path: '/waimai',
+						name: 'waimai',
+						component: Waimai
+					},
+					{
+						path: '/title',
+						name: 'Title',
+						component: Title
+					},
+					{
+						path: '/',
+						name: 'Title',
+						component: Title
+					},
+					{
 
-    ]
+						path: '/Benefit/Commend',
+						name: 'Commend',
+						component: Commend
+					},
+					{
+						path: '/Benefit/coupon',
+						name: 'Coupon',
+						component: Coupon
+					},
+					{
+						path: '/Payment',
+						name: 'Payment',
+						component: Payment
+					},
+					{
+						path: '/elm',
+						name: 'Cdetail',
+						component: Cdetail
+					},
 
-		},
-		{
-			path: '/login',
-			name: 'login',
-			component: Login
-		},
-		{
-			path: '/forget',
-			name: 'forget',
-			component: Forget
-		},
-		{
-			path: '/balance',
-			name: 'Balance',
-			component: Balance
-		},
-		{
-			path: '/integral',
-			name: 'Integral',
-			component: Integral
-		},
-		{
-			path: '/benefit',
-			name: 'Benefit',
-			component: Benefit
-		},
-		{
-			path: '/benefit2',
-			name: 'Benefit2',
-			component: Benefit2
-		},
-		{
-			path: '/service',
-			name: 'Service',
-			component: Service
-		},
-		{
-			path: '/chome',
-			name: 'Chome',
-			component: Chome,
-		},
-		{
-			path: '/header',
-			name: 'Header',
-			component: Header
-		},
-		{
-			path: '/download',
-			name: 'Download',
-			component: Download
-		},
-		{
-			path: '/vip',
-			name: 'Vip',
-			component: Vip
-		},
-		{
-			path: '/orderlist',
-			name: 'Orderlist',
-			component: Orderlist
-		},
-		{
-			path: '/balance/detail',
-			name: 'Detail',
-			component: Detail
-		},
-		{
-			path: '/Benefit/Hbhistory',
-			name: 'Hbhistory',
-			component: Hbhistory
-		},
-		{
-			path: '/city1',
-			name: 'city1',
-			component: city1
-		},
-		{
-			path: '/b2',
-			name: 'b2',
-			component: b2
-		},
-		{
-			path: '/Benefit/exchange',
-			name: 'Exchange',
-			component: Exchange
-		},
-		{
-			path: '/waimai',
-			name: 'waimai',
-			component: Waimai
-		},
-		{
-			path: '/title',
-			name: 'Title',
-			component: Title
-		},
-		{
-			path: '/',
-			name: 'Title',
-			component: Title
-		},
-		{
-
-			path: '/Benefit/Commend',
-			name: 'Commend',
-			component: Commend
-		},
-		{
-			path: '/Benefit/coupon',
-			name: 'Coupon',
-			component: Coupon
-		},
-		{
-			path: '/Payment',
-			name: 'Payment',
-			component: Payment
-		},
-		{
-			path: '/elm',
-			name: 'Cdetail',
-			component: Cdetail
-		},
-
-		{
-			path: '/confirmOrder',
-			name: 'confirmOrder',
-			component: ConfirmOrder
-		},
-		{
-			path: '/infor',
-			name: 'Infor',
-			component: Infor
-		},
-		{
-			path: '/address',
-			name: 'Address',
-			component: Address
-		},
-		{
-			path: '/add',
-			name: 'add',
-			component: add
-		},
-		{
-			path: '/addDetail',
-			name: 'addDetail',
-			component: addDetail
-		},
-		{
-			path: '/forget1',
-			name: 'forget1',
-			component: forget1
-		},
-		{
-			path:'/elm',
-			name:'elm',
-			component:elm
-		},
-		{
-			path:'/setusername',
-			name:'setusername',
-			component:setusername
-		}
-	
-
-
-
+					{
+						path: '/confirmOrder',
+						name: 'confirmOrder',
+						component: ConfirmOrder
+					},
+					{
+						path: '/infor',
+						name: 'Infor',
+						component: Infor
+					},
+					{
+						path: '/address',
+						name: 'Address',
+						component: Address
+					},
+					{
+						path: '/add',
+						name: 'add',
+						component: add
+					},
+					{
+						path: '/addDetail',
+						name: 'addDetail',
+						component: addDetail
+					},
+					{
+						path: '/forget1',
+						name: 'forget1',
+						component: forget1
+					},
+					{
+						path: '/elmMM',
+						name: 'elmMM',
+						component: elmMM
+					},
+					{
+						path: '/setusername',
+						name: 'setusername',
+						component: setusername
+					}
+					]
+	})
+				

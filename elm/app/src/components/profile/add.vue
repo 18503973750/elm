@@ -15,7 +15,7 @@
                 <input type="text" placeholder="请填写你的姓名"/>
             </div>
             <div class="Name">
-                <input type="text" placeholder="小区/写字楼/学校等" @click="Add" v-model="msg[0].name" class="input1"/>
+                <input type="text" placeholder="小区/写字楼/学校等" @click="Add" v-model="msg.deList[msg.deID].name" class="input1"/>
             </div>
             <div class="Name">
                 <input type="text" placeholder="请填写详细送餐地址"/>
@@ -31,8 +31,7 @@
         <div class="add">
             <button @click="New">新增地址</button>
         </div>
-        <div>{{this.ressCode}}</div>
-        <div>{{this.msg[0].name}}</div>
+        {{msg.deList[msg.deID].name}}
     </div>
 </template>
 
@@ -58,15 +57,17 @@
                     name: 'Address',
                     params: {
                         ressCode: this.ressCode,
-                        msg:this.msg[0].name
+                        msg:this.msg
                     }
                 })
-                console.log(this.ressCode);
+//              console.log(this.ressCode);
+//              console.log(this.msg.deList[msg.deID].name);
             }
         },
             created() {
                 //接收从另一个页面传过来的值
                 console.log(this.$route.params)
+                //存储到本地，刷新的时候传过来的值还在
                 if (Object.keys(this.$route.params).length) {
                     this.msg = this.$route.params
                     localStorage.msg = JSON.stringify(this.$route.params)

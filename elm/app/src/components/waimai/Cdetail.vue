@@ -81,11 +81,6 @@
             this.mess = this.$route.params.id
             var api99 = `http://cangdu.org:8001/shopping/restaurant/${this.mess}`
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> e6cfe5492d80ce9516f09cb51eb57a6d0cbaae8b
             this.axios.get(api99).then((response) => {
                 this.messs = response.data;
 

@@ -36,21 +36,9 @@ import Payment from "@/components/profile/Payment"
 
 import Cdetail from '@/components/waimai/Cdetail'
 
-
-<<<<<<< HEAD
-=======
 import ConfirmOrder from '@/components/confirmOrder'
 import ChooseAddress from '@/components/chooseAddress'
 import AddAddress from '@/components/addAddress'
-
-
-
-
->>>>>>> 7d4fe0786e8e43006f3fd6c22acd7a0f4c0b7db0
-import ConfirmOrder from '@/components/confirmOrder'
-import ChooseAddress from '@/components/chooseAddress'
-import AddAddress from '@/components/addAddress'
-import SearchAddress from '@/components/searchAddress'
 
 import Infor from '@/components/profile/Infor'
 import Address from '@/components/profile/Address'
@@ -60,210 +48,6 @@ import forget1 from '@/components/profile/forget1'
 
 import elmMM from '@/components/waimai/elmMM'
 import setusername from '@/components/profile/setusername'
-Vue.use(Router)
-
-export default new Router({
-			routes: [{
-						path: '/waimai',
-						name: 'Heard',
-						component: Heard,
-						children: [
-						    {
-								path: '/waimai',
-								name: 'waimai',
-								component: Waimai
-							},
-							{
-								path: '/search',
-								name: 'Search',
-								component: Search
-							},
-							{
-								path: '/order',
-								name: 'Order',
-								component: Order
-							},
-							{
-								path: '/profile',
-								name: 'Profile',
-								component: Profile
-							}
-						]
-					},
-					{
-						path: '/',
-						name: 'Home',
-						component: Home
-					},
-					{
-						path: '/home',
-						name: 'Home',
-						component: Home
-					},
-					{
-						path: '/city/:id',
-						name: 'City',
-						component: City,
-					},
-					{
-						path: '/Benefit/Commend',
-						name: 'Commend',
-						component: Commend
-					},
-					{
-						path: '/Benefit/coupon',
-						name: 'Coupon',
-						component: Coupon
-					},
-					{
-						path: '/Payment',
-						name: 'Payment',
-						component: Payment
-					},
-					{
-						path: '/elm',
-						name: 'Cdetail',
-						component: Cdetail
-					},
-					{
-						path: '/confirmOrder',
-						name: 'confirmOrder',
-						component: ConfirmOrder,
-
-					},
-					{
-						path: '/confirmOrder/chooseAddress',
-						name: 'chooseAddress',
-						component: ChooseAddress,
-					},
-					{
-						path: '/confirmOrder/chooseAddress/addAddress',
-						name: 'addAddress',
-						component: AddAddress
-					},
-					{
-						path: '/login',
-						name: 'login',
-						component: Login
-					},
-					{
-						path: '/forget',
-						name: 'forget',
-						component: Forget
-					},
-					{
-						path: '/balance',
-						name: 'Balance',
-						component: Balance
-					},
-					{
-						path: '/integral',
-						name: 'Integral',
-						component: Integral
-					},
-					{
-						path: '/benefit',
-						name: 'Benefit',
-						component: Benefit
-					},
-					{
-						path: '/benefit2',
-						name: 'Benefit2',
-						component: Benefit2
-					},
-					{
-						path: '/service',
-						name: 'Service',
-						component: Service
-					},
-					{
-						path: '/chome',
-						name: 'Chome',
-						component: Chome,
-					},
-					{
-						path: '/header',
-						name: 'Header',
-						component: Header
-					},
-					{
-						path: '/download',
-						name: 'Download',
-						component: Download
-					},
-					{
-						path: '/vip',
-						name: 'Vip',
-						component: Vip
-					},
-					{
-						path: '/orderlist',
-						name: 'Orderlist',
-						component: Orderlist
-					},
-					{
-						path: '/balance/detail',
-						name: 'Detail',
-						component: Detail
-					},
-					{
-						path: '/Benefit/Hbhistory',
-						name: 'Hbhistory',
-						component: Hbhistory
-					},
-					{
-						path: '/city1',
-						name: 'city1',
-						component: city1
-					},
-					{
-						path: '/b2',
-						name: 'b2',
-						component: b2
-					},
-					{
-						path: '/Benefit/exchange',
-						name: 'Exchange',
-						component: Exchange
-					},
-					{
-						path: '/waimai',
-						name: 'waimai',
-						component: Waimai
-					},
-					{
-						path: '/title',
-						name: 'Title',
-						component: Title
-					},
-					{
-						path: '/',
-						name: 'Title',
-						component: Title
-					},
-					{
-
-						path: '/Benefit/Commend',
-						name: 'Commend',
-						component: Commend
-					},
-					{
-						path: '/Benefit/coupon',
-						name: 'Coupon',
-						component: Coupon
-					},
-					{
-						path: '/Payment',
-						name: 'Payment',
-						component: Payment
-					},
-					{
-						path: '/elm',
-						name: 'Cdetail',
-						component: Cdetail
-					},
-
-// import Cdetail from '@/components/waimai/Cdrtail'
 Vue.use(Router)
 
 export default new Router({
@@ -307,7 +91,42 @@ export default new Router({
 			path: '/city/:id',
 			name: 'City',
 			component: City,
+		},
+		{
+			path: '/Benefit/Commend',
+			name: 'Commend',
+			component: Commend
+		},
+		{
+			path: '/Benefit/coupon',
+			name: 'Coupon',
+			component: Coupon
+		},
+		{
+			path: '/Payment',
+			name: 'Payment',
+			component: Payment
+		},
+		{
+			path: '/elm',
+			name: 'Cdetail',
+			component: Cdetail
+		},
+		{
+			path: '/confirmOrder',
+			name: 'confirmOrder',
+			component: ConfirmOrder,
 
+		},
+		{
+			path: '/confirmOrder/chooseAddress',
+			name: 'chooseAddress',
+			component: ChooseAddress,
+		},
+		{
+			path: '/confirmOrder/chooseAddress/addAddress',
+			name: 'addAddress',
+			component: AddAddress
 		},
 		{
 			path: '/login',
@@ -430,7 +249,6 @@ export default new Router({
 			name: 'Cdetail',
 			component: Cdetail
 		},
-
 		{
 			path: '/confirmOrder',
 			name: 'confirmOrder',
@@ -461,70 +279,15 @@ export default new Router({
 			name: 'forget1',
 			component: forget1
 		},
-<<<<<<< HEAD
 		{
-			path: '/confirmOrder/chooseAddress',
-			name: 'chooseAddress',
-			component: ChooseAddress
+			path: '/elmMM',
+			name: 'elmMM',
+			component: elmMM
 		},
 		{
-			path: '/confirmOrder/chooseAddress/addAddress',
-			name: 'addAddress',
-			component: AddAddress
-		},
-		{
-			path: '/confirmOrder/chooseAddress/addAddress/searchAddress',
-			name: 'searchAddress',
-			component: SearchAddress
-
+			path: '/setusername',
+			name: 'setusername',
+			component: setusername
 		}
-=======
-
->>>>>>> 7d4fe0786e8e43006f3fd6c22acd7a0f4c0b7db0
 	]
 })
-
-
-					{
-						path: '/confirmOrder',
-						name: 'confirmOrder',
-						component: ConfirmOrder
-					},
-					{
-						path: '/infor',
-						name: 'Infor',
-						component: Infor
-					},
-					{
-						path: '/address',
-						name: 'Address',
-						component: Address
-					},
-					{
-						path: '/add',
-						name: 'add',
-						component: add
-					},
-					{
-						path: '/addDetail',
-						name: 'addDetail',
-						component: addDetail
-					},
-					{
-						path: '/forget1',
-						name: 'forget1',
-						component: forget1
-					},
-					{
-						path: '/elmMM',
-						name: 'elmMM',
-						component: elmMM
-					},
-					{
-						path: '/setusername',
-						name: 'setusername',
-						component: setusername
-					}
-					]
-	})
-				

@@ -80,6 +80,10 @@
         created() {
             this.mess = this.$route.params.id
             var api99 = `http://cangdu.org:8001/shopping/restaurant/${this.mess}`
+<<<<<<< HEAD
+=======
+
+>>>>>>> develop
             this.axios.get(api99).then((response) => {
                 this.messs = response.data;
 

@@ -13,16 +13,14 @@
         </form>
         <div class="search-history">
             <h3>搜索历史</h3>
-            <keep-alive include="City">   
-                <ul>
-                    <li v-for="item in list">
-                        <router-link to="/waimai">
-                            <h4>{{ item.name }} {{ item.geohash }}</h4>
-                            <div>{{ item.address }}</div>
-                        </router-link>
-                    </li>
-                </ul>
-            </keep-alive>
+            <ul>
+                <li v-for="item in list">
+                    <router-link to="/waimai">
+                        <h4>{{ item.name }} {{ item.geohash }}</h4>
+                        <div>{{ item.address }}</div>
+                    </router-link>
+                </li>
+            </ul>
             <div class="clear-all">清空所有</div>
         </div>
     </div>

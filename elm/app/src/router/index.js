@@ -37,8 +37,11 @@ import Payment from "@/components/profile/Payment"
 import Cdetail from '@/components/waimai/Cdetail'
 
 
-
 import ConfirmOrder from '@/components/confirmOrder'
+import ChooseAddress from '@/components/chooseAddress'
+import AddAddress from '@/components/addAddress'
+import SearchAddress from '@/components/searchAddress'
+
 import Infor from '@/components/profile/Infor'
 import Address from '@/components/profile/Address'
 import add from '@/components/profile/add'
@@ -240,6 +243,22 @@ export default new Router({
 			path: '/forget1',
 			name: 'forget1',
 			component: forget1
+		},
+		{
+			path: '/confirmOrder/chooseAddress',
+			name: 'chooseAddress',
+			component: ChooseAddress
+		},
+		{
+			path: '/confirmOrder/chooseAddress/addAddress',
+			name: 'addAddress',
+			component: AddAddress
+		},
+		{
+			path: '/confirmOrder/chooseAddress/addAddress/searchAddress',
+			name: 'searchAddress',
+			component: SearchAddress
+
 		}
 	]
 })

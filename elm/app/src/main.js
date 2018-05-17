@@ -18,7 +18,7 @@ import 'element-ui/lib/theme-chalk/index.css';
 
 import ElementUI from 'element-ui'
 
-
+import  {Plugin1} from "../static/js/plugin1";
 
 import Vuex from 'vuex'
 
@@ -26,7 +26,8 @@ var VueTouch=require('vue-touch')
 Vue.use(VueTouch, {name: 'v-touch'})
 Vue.use(VueAxios, axios);
 Vue.use(ElementUI);
-Vue.use(Vuex)
+Vue.use(Vuex);
+Vue.use(Plugin1)
 
 /* eslint-disable no-new */
 new Vue({

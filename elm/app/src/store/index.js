@@ -4,13 +4,11 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
     state: {
-        order: ''
+        isLogin:0, 
     },
     mutations: {
-        order(state, data) {
-            state.order = data;
-            // console.log(data)
-
-        }
+	    changeLogin(state,data){
+	        state.isLogin = data;
+	    }
     }
 })

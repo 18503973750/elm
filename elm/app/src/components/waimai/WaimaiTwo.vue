@@ -11,7 +11,10 @@
                 </div>
 
                 <div class="aution">
-                    <div>{{message.rating}}</div>
+
+                    <div>
+                        {{message.rating}}
+                    </div>
                     <div style="color:darkgray">
                         月销售{{message.recent_order_num}}
                     </div>
@@ -31,12 +34,13 @@
                 </div>
 
                 <div class="block" style="transform: scale(0.6)">
+
                     <el-rate
                         v-model="value2"
                         :colors="['#99A9BF', '#F7BA2A', '#FF9900']">
                     </el-rate>
                 </div>
-                <!--<div>{{message.id}}</div>-->
+
 
             </li>
 
@@ -61,6 +65,7 @@
              url:'//elm.cangdu.org/img/',
              value1: null,
              value2: null,
+             value5: 3.7
 
 
          }

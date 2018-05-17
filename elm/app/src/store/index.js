@@ -5,13 +5,19 @@ Vue.use(Vuex);
 export default new Vuex.Store({
     state: {
         order: '',
+
         codes: []
+
+        st:'',
+        st1:'',
+        st2:'',
+        st3:''
+
+
     },
     mutations: {
         order(state, data) {
             state.order = data;
-            // console.log(data)
-
         },
         codes(state, data) {
         		state.codes.push(data);
@@ -19,5 +25,22 @@ export default new Vuex.Store({
         delete(state,index){
         	state.codes.splice(index,1)
         }
+        },
+        st(state,data){
+            state.st=data
+
+        },
+        st1(state,data){
+            state.st1=data
+        },
+        st2(state,data){
+            state.st2=data
+            console.log(data+'!!!!')
+
+        },
+        st3(state,data){
+            state.st3=data
+            console.log(data+'??????')
+        },
     }
 })

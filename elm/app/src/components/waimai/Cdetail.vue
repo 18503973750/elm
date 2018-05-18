@@ -27,11 +27,11 @@
         <div class="bottom">
             <div>
                 <img src="./购物车.png" alt="">
-                <!--<div>{{t2}}</div>-->
+
             </div>
             <div class="L1">
-                <div>￥{{st-st1}}</div>
-                <div>{{-st2+st3}}--00</div>
+                <div>￥{{st+st1}}</div><div  class="bbv">{{-st3-st4}}</div>
+
                 <div>配送费￥5</div>
             </div>
             <div class="yuan" style="font-size:1rem">还差20起送</div>
@@ -85,19 +85,6 @@
 
 
             })
-
-            //
-            // let a1 = {
-            //     latitude:31.22967,
-            //     longitude:121.4762,
-            //     restaurant_id :2,
-            //     entities:[{name:1,price:20,quantity:2}]
-            // };
-            // this.axios.post('http://cangdu.org:8001/v1/carts/checkout',{param:a1}).then((response) => {
-            //    console.log(response.data);
-            //
-            // })
-
         },
         computed: {
             st() {
@@ -108,14 +95,15 @@
 
             return this.$store.state.st1;
         },
-            st2() {
-
-                return -this.$store.state.st2;
-            },
             st3() {
 
-                return this.$store.state.st2;
+                return -this.$store.state.st3;
             },
+            st4() {
+
+                return -this.$store.state.st4;
+            },
+
 
     },
 
@@ -265,6 +253,19 @@
         margin-left: 0.5rem;
         border-radius: 50%;
     }
+.bbv{
+    position: absolute;
+    left:-1.2rem;
+    bottom: 1.8rem;
+    font-size: 2rem;
+    background-color: red;
+    width: 1rem;
+    height: 0.8rem;
+    padding-top:0.25rem;
+    padding-bottom: -0.25rem;
+    border-radius: 50%;
+    text-align: center;
 
+}
 
 </style>

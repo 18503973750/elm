@@ -8,7 +8,7 @@
 			</div>
 			<div class="top_two">
 				<div class="firstTop">
-					<span>当前余额</span>
+					<span>余额说明</span>
 					<span class="el-icon-more" @click="link()">余额说明</span>
 				</div>
 				<div class="secondTop">
@@ -25,7 +25,7 @@
 		<div class="bottom">
 			<p>交易明细</p>
 			<div>
-<img src="../../img/11.png" alt="" />
+				<img src="../../img/11.png" alt="" />
 			</div>
 			<p class="twoP">暂无交易明细记录</p>
 		</div>
@@ -36,15 +36,22 @@
 	export default {
 		name: "Profile",
 		data: function() {
-			return {}
+			return {
+				id: ""
+			}
 		},
-        methods:{
-		    link(){
-		        this.$router.push({
-                    path:'/Balance/detail'
-                })
-            }
-        }
+		created() {
+			//			this.id=this.$route.params.ids;
+			console.log(this.$route.query);
+			console.log(this.$route.params);
+		},
+		methods: {
+			link() {
+				this.$router.push({
+					path: '/Balance/detail'
+				})
+			}
+		}
 	}
 </script>
 <style scoped>
@@ -52,22 +59,22 @@
 		background: #3190e8;
 		border: .05rem solid #3190e8;
 	}
-
+	
 	.top_one {
 		color: white;
 		padding: .5rem;
 		padding-bottom: 1.5rem;
 		font-size: .8rem;
 	}
-
+	
 	.top_one .el-icon-arrow-left {
 		color: white;
 	}
-
+	
 	.top_one span {
 		padding-left: 5rem;
 	}
-
+	
 	.top_two {
 		border-radius: .5rem;
 		background: white;
@@ -77,25 +84,25 @@
 		margin-left: .35rem;
 		margin-bottom: .4rem;
 	}
-
+	
 	.firstTop {
 		font-size: .55rem;
 		margin: .5rem;
 	}
-
+	
 	.firstTop span:nth-child(2) {
 		margin-left: 9rem;
 		color: #3190e8;
 	}
-
+	
 	.secondTop {
 		margin: 1rem;
 	}
-
+	
 	.secondTop span:nth-child(1) {
 		font-size: 1.8rem;
 	}
-
+	
 	.threeTop div {
 		text-align: center;
 		line-height: 2rem;
@@ -109,20 +116,22 @@
 		background: #ccc;
 		border: 0;
 	}
-
+	
 	.bottom p:nth-child(1) {
 		font-size: .6rem;
 		color: #999;
 		line-height: 2rem;
 		padding-left: .5rem;
 	}
+	
 	.bottom img {
 		margin-left: 1.8rem;
 	}
+	
 	.twoP {
 		margin-top: .5rem;
 		font-size: .7rem;
 		text-align: center;
-		color:#999;
+		color: #999;
 	}
 </style>

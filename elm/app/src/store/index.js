@@ -29,6 +29,14 @@ export default new Vuex.Store({
 			state.st3 = data
 			console.log(data + '??????')
 		},
+		//往address里添加列表
+		codes(state, data) {
+			state.codes.push(data); 
+		},
+		//获取删除下标
+		delete(state, index) {
+			state.codes.splice(index, 1);
+		}
 	},
 
 })

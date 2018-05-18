@@ -2,7 +2,7 @@
         <div class="out">
             <div class="top">
                 <div class="top_one">
-                    <router-link to="/Balance" class="el-icon-arrow-left">
+                    <router-link to='/Balance' class="el-icon-arrow-left">
                     </router-link>
                     <span>我的</span>
                 </div>
@@ -21,7 +21,7 @@
             </div>
             <table border="1">
                 <tr>
-                    <router-link to="/balance">
+                    <router-link to='/Balance'>
                         <td>
     						<span class="span1">{{ userInfo.balance }}</span> <span>元</span>
                             <br/>
@@ -95,7 +95,8 @@
         data: function () {
             return {
                 userinfor: null,
-                userInfo: ""
+                userInfo: "",
+                id:null
             }
         },
         created() {
@@ -112,6 +113,8 @@
             //请求用户信息
             this.$http.get(`http://cangdu.org:8001/v1/user?user_id=${this.userInfo.id}`).then((response) => {
                 console.log(response.data);
+//              this.id=response.data.user_id;
+                console.log(this.id)
                 this.userinfor = response.data;
             });         
         },

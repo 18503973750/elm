@@ -9,6 +9,7 @@ export default new Vuex.Store({
 
         st:'',
         st1:'',
+        st2:'',
         st3:'',
         st4:'',
 

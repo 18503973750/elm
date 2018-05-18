@@ -15,9 +15,9 @@
             <!-- 显示搜索的内容 -->
             <div class="search-history">
                 <ul>
-                    <li v-for="(item, index) in list">
-                        <div @click="waimai">
-                            <h4>{{ item.name }}</h4>
+                    <li v-for="(item, index) in list"  @click="waimai(index)">
+                        <div>
+                            <h4>{{ item.name }} {{ item.geohash }}</h4>
                             <div>{{ item.address }}</div>
                         </div>
                     </li>
@@ -57,7 +57,7 @@
         created() {
             //获取id所对应的城市
             this.$http.get(`http://cangdu.org:8001/v1/cities/${this.$route.params.id}`).then((response) => {
-                console.log(response.data);
+                // console.log(response.data);
                 this.cityName = response.data.name;
             });
 
@@ -68,16 +68,15 @@
             search:function(){
                 //搜索
                 this.$http.get(`http://cangdu.org:8001/v1/pois?city_id=${this.$route.params.id}&keyword=${this.searchTxt}&type=search`).then((response) => {
-                    console.log(response.data);
+                    // console.log(response.data);
                     this.list = response.data;
                 });
             },
-            waimai (e) {
-                console.log(e.target.innerText);
-                // this.$router.push({
-                //     name: "waimai",
-                //     params: this.list
-                // });
+            waimai (index) {
+                this.$router.push({
+                    name: "waimai",
+                    params: this.list
+                });
             },
             cun () {
                 if (typeof(Storage) !== "undefined") {

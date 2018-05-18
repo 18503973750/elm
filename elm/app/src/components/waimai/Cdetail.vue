@@ -16,6 +16,7 @@
 				<div class="text2">
 					<span>公告：{{messs.promotion_info
 }}</span>
+<<<<<<< HEAD
 				</div>
 			</div>
 			<div class="xia">
@@ -254,3 +255,258 @@
 		border-radius: 50%;
 	}
 </style>
+=======
+                </div>
+            </div>
+            <div class="xia">
+                <span v-for="(mess,index) in messages" :class="{kk:index==count}"
+                      @click="pulsh(index)">{{mess.name}}</span>
+            </div>
+
+        </div>
+        <div class="bottom">
+            <div>
+                <img src="./购物车.png" alt="">
+
+            </div>
+            <div class="L1">
+                <div>￥{{st+st1}}</div><div  class="bbv">{{-st3-st4}}</div>
+
+                <div>配送费￥5</div>
+            </div>
+            <div class="yuan" style="font-size:1rem">还差20起送</div>
+        </div>
+        <div class="tex">
+            <CdetailS v-show="show"></CdetailS>
+        </div>
+
+        <CdetailLeft></CdetailLeft>
+    </div>
+</template>
+
+<script>
+    import CdetailLeft from './CdetailLeft'
+    import CdetailS from './CdetailS'
+
+    export default {
+        name: "Cdetail",
+        components: {CdetailLeft, CdetailS},
+
+        data() {
+            return {
+                mess: "",
+                messs: "",
+                url: '//elm.cangdu.org/img/',
+                count: 0,
+                messages: [{name: '商品'}, {name: '评价'}],
+                show: false,
+                one:110,
+                two:120,
+
+
+            }
+
+        },
+        methods: {
+            pulsh(index) {
+                this.count = index;
+                if (index == 1) {
+                    this.show = true
+                } else {
+                    this.show = false
+                }
+            },
+        },
+        created() {
+            this.mess = this.$route.params.id
+            var api99 = `http://cangdu.org:8001/shopping/restaurant/${this.mess}`
+            this.axios.get(api99).then((response) => {
+                this.messs = response.data;
+
+
+            })
+        },
+        computed: {
+            st() {
+
+                return -this.$store.state.st;
+            },
+            st1() {
+
+            return this.$store.state.st1;
+        },
+            st3() {
+
+                return -this.$store.state.st3;
+            },
+            st4() {
+
+                return -this.$store.state.st4;
+            },
+
+
+    },
+
+
+
+    }
+</script>
+
+<style scoped>
+    .head-box {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+
+        height: 6rem;
+    }
+
+    .head {
+        height: 4rem;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .bg-pic {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        width: 100%;
+        z-index: -1;
+        filter: blur(10px);
+    }
+
+    .hd-img img {
+        padding-top: 0.5rem;
+        padding-left: 0.3rem;
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .text {
+        font-size: 0.8rem;
+        position: absolute;
+        top: 0.6rem;
+        left: 3.7rem;
+        color: white;
+        font-family: STKaiti;
+    }
+
+    .text1 {
+        font-size: 0.6rem;
+        position: absolute;
+        left: 3.7rem;
+        top: 1.9rem;
+        color: white;
+        letter-spacing: 0.08rem;
+        font-family: STKaiti;
+    }
+
+    .text2 {
+        color: white;
+        font-size: 0.6rem;
+        position: absolute;
+        top: 3.2rem;
+        left: 3.7rem;
+        font-family: STKaiti;
+    }
+
+    .el-icon-arrow-left {
+        position: absolute;
+        top: 0.1rem;
+        left: 0.2rem;
+        font-size: 1rem;
+        font-weight: 800;
+        color: white;
+    }
+
+    .el-icon-arrow-right {
+        position: absolute;
+        top: 1.6rem;
+        right: 0.2rem;
+        color: white;
+    }
+
+    .xia {
+        margin-left: 3.5rem;
+        padding: 0.4rem;
+        text-align: center;
+
+    }
+
+    .xia span {
+
+        font-size: 0.8rem;
+        margin-right: 4rem;
+    }
+
+    .kk {
+        color: blue;
+        border-bottom: 2px blue solid;
+    }
+
+    .bottom {
+        position: fixed;
+        top: 27rem;
+        display: flex;
+        right: 0;
+        z-index: 1;
+        left: 0;
+        bottom: 0;
+        background-color: #3d3d3f;
+    }
+
+    .bottom div {
+        color: white;
+        font-size: 0.6rem;
+    }
+
+    .yuan {
+        margin-left: 10.9rem;
+        padding: 0.5rem 0.2rem;
+        background-color: #535356;
+        font-family: STKaiti;
+
+    }
+
+    .L1 {
+        position: absolute;
+        left: 3.5rem;
+        top: 0.4rem;
+    }
+
+    .L1 div:nth-child(1) {
+        margin-bottom: 0.3rem;
+    }
+
+    .bottom img {
+        position: absolute;
+        top: -0.5rem;
+        width: 2rem;
+        height: 2rem;
+        background-color: #535356;
+        padding: 0.2rem 0.2rem;
+        margin-left: 0.5rem;
+        border-radius: 50%;
+    }
+.bbv{
+    position: absolute;
+    left:-1.2rem;
+    bottom: 1.8rem;
+    font-size: 2rem;
+    background-color: red;
+    width: 1rem;
+    height: 0.8rem;
+    padding-top:0.25rem;
+    padding-bottom: -0.25rem;
+    border-radius: 50%;
+    text-align: center;
+
+}
+
+</style>
+>>>>>>> d028eacd51eab98b617c085a9ee77f7b8d275aad

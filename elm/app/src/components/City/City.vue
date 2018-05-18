@@ -1,29 +1,43 @@
 <template>
-    <div>
-        <header class="top">
-            <router-link to="/home"><i class="el-icon-arrow-left"></i></router-link>
-            <span>{{ cityName }}</span>
-            <router-link to="/home" class="tabCity">
-                <span>切换城市</span>
-            </router-link>
-        </header>
-        <form action="" class="search-box">
-            <input v-model="searchTxt" type="text" required="required" placeholder="输入学校、商务楼、地址">
-            <span class="button" @click="search">提交</span>
-        </form>
-        <div class="search-history">
-            <h3>搜索历史</h3>
-            <ul>
-                <li v-for="item in list">
-                    <router-link to="/waimai">
-                        <h4>{{ item.name }} {{ item.geohash }}</h4>
-                        <div>{{ item.address }}</div>
-                    </router-link>
-                </li>
-            </ul>
-            <div class="clear-all">清空所有</div>
+    <transition>
+        <div>
+            <header class="top">
+                <router-link to="/home"><i class="el-icon-arrow-left"></i></router-link>
+                <span>{{ cityName }}</span>
+                <router-link to="/home" class="tabCity">
+                    <span>切换城市</span>
+                </router-link>
+            </header>
+            <form action="" class="search-box">
+                <input v-model="searchTxt" type="text" required="required" placeholder="输入学校、商务楼、地址">
+                <span class="button" @click="search">提交</span>
+            </form>
+            <!-- 显示搜索的内容 -->
+            <div class="search-history">
+                <ul>
+                    <li v-for="(item, index) in list">
+                        <div @click="waimai">
+                            <h4>{{ item.name }}</h4>
+                            <div>{{ item.address }}</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- 搜索历史 -->
+            <div class="search-history" id="result" @click="cun()">
+                <h3>搜索历史</h3>
+                <ul>
+                    <!-- <li v-for="item in list">
+                        <router-link to="/waimai">
+                            <h4>{{ item.name }} {{ item.geohash }}</h4>
+                            <div>{{ item.address }}</div>
+                        </router-link>
+                    </li> -->
+                </ul>
+                <div class="clear-all">清空所有</div>
+            </div>        
         </div>
-    </div>
+    </transition>
 </template>
 
 <script>
@@ -35,6 +49,7 @@
                 cityName: null,
                 searchTxt:null,
                 list: null,
+                list2: null,
                 showA: true,
                 showB: false
             }
@@ -45,6 +60,9 @@
                 console.log(response.data);
                 this.cityName = response.data.name;
             });
+
+
+  
         },
         methods: {
             search:function(){
@@ -53,6 +71,23 @@
                     console.log(response.data);
                     this.list = response.data;
                 });
+            },
+            waimai (e) {
+                console.log(e.target.innerText);
+                // this.$router.push({
+                //     name: "waimai",
+                //     params: this.list
+                // });
+            },
+            cun () {
+                if (typeof(Storage) !== "undefined") {
+                    // Store
+                    localStorage.setItem("lastname", this.list);
+                    // Retrieve
+                    document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+                } else {
+                    document.getElementById("result").innerHTML = "抱歉！您的浏览器不支持 Web Storage ...";
+                }   
             }
         }
 

@@ -3,6 +3,7 @@ import Vue from "vue";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
+
 	state: {
 		isLogin: 0,
 		order: '',
@@ -31,12 +32,11 @@ export default new Vuex.Store({
 		},
 		//往address里添加列表
 		codes(state, data) {
-			state.codes.push(data); 
+			state.codes.push(data);
 		},
 		//获取删除下标
 		delete(state, index) {
 			state.codes.splice(index, 1);
 		}
 	},
-
 })

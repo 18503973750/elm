@@ -3,7 +3,6 @@ import Vue from "vue";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-<<<<<<< HEAD
     state: {
         isLogin: 0,
         order: '',
@@ -43,10 +42,6 @@ export default new Vuex.Store({
         },
 
     },
-
-=======
->>>>>>> 4a93e8c42fbb772544433f29dd4959cc5e2e7132
-
 	state: {
 		isLogin: 0,
 		order: '',

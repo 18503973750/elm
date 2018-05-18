@@ -48,6 +48,8 @@ import forget1 from '@/components/profile/forget1'
 
 import elmMM from '@/components/waimai/elmMM'
 import setusername from '@/components/profile/setusername'
+import elmRight from '@/components/waimai/elmRight'
+import elmTop from '@/components/waimai/elmTop'
 Vue.use(Router)
 
 export default new Router({
@@ -268,7 +270,7 @@ export default new Router({
 			path: '/add',
 			name: 'add',
 			component: add
-		},
+		}, 
 		{
 			path: '/addDetail',
 			name: 'addDetail',
@@ -288,6 +290,16 @@ export default new Router({
 			path: '/setusername',
 			name: 'setusername',
 			component: setusername
+		},
+		{
+			path:'/elmRight',
+			name:'elmRight',
+			component:elmRight
+		},
+		{
+		path:'/elmTop',
+		name:'elmTop',
+		component:elmTop
 		}
 	]
 })

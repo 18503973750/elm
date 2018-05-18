@@ -17,8 +17,8 @@
 		<ul v-for="(distance,index) in distances">
 			<li>
 				<p>{{distance.ressCode}}</p>
-				<!--<p>{{distance.msg}}</p>-->		
-				<p>{{distance.msg.deList[distance.msg.deID].name}}</p>
+				<p>{{distance.item.name}}</p>		
+				<!--<p>{{distance.msg.deList[distance.msg.deID].name}}</p>-->
 				<i class="DELETE" v-show="isshow" @click="Delete(index)">x</i>
 			</li>
 		</ul>
@@ -83,7 +83,7 @@
 			}
 		},
 		created() {
-			
+			console.log(this.$route.params)
 			//打印路由传过来的参数是否为空
 			console.log(Object.keys(this.$route.params).length);
 			//刷新或者路由跳转
@@ -101,6 +101,7 @@
 				//直接从本地拉取信息
 				this.distances = JSON.parse(localStorage.codes);
 			}
+			console.log(this.distances)
 		},
 		computed: {
 			...mapState(["codes"]),

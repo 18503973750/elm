@@ -49,7 +49,7 @@
 					<div class="confrim" @click="ok">确认</div>
 				</section>
 			</div>
-			<Loading></Loading>	
+			<!--<Loading></Loading>	-->
 		</div>		
 	</transition>
 </template>

@@ -1,5 +1,5 @@
 <template>
-	<transition name="router-slid">
+	<!--<transition name="router-slid">-->
 		<div class="out">
 			<div class="top">
 				<div class="top_one">
@@ -63,7 +63,7 @@
 				<p>是否退出登录</p>
 				<div class="sure2">
 					<span class="Span1" @click="ZDD">再等等</span>
-					<span class="Span2">退出登录</span>
+					<span class="Span2" @click="OUT">退出登录</span>
 				</div>
 			</div>
 		</div>
@@ -105,6 +105,20 @@
 				this.$router.push({
 					path: '/setusername'
 				})
+			},
+			OUT() {
+				 
+				this.$router.push({
+					path: '/profile',
+					query: {
+						NOname: true
+					}
+				})
+				//退出
+				var outurl = 'http://cangdu.org:8001/v2/signout'
+				this.$http.get(outurl).then(res => {
+					console.log(res.data.message);
+				})
 			}
 		},
 		//接收另一个页面穿来的值
@@ -115,9 +129,9 @@
 				//接收传过来的code值
 				this.code = this.$route.params.code
 				//把传过来的值转化为字符串然后储存在本地
-				localStorage.code=JSON.stringify(this.$route.params.code)
-			}else {
-				this.code=JSON.parse(localStorage.code)
+				localStorage.code = JSON.stringify(this.$route.params.code)
+			} else {
+				this.code = JSON.parse(localStorage.code)
 			}
 
 			//接收profile页面穿过来的数据

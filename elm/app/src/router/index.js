@@ -45,11 +45,12 @@ import Address from '@/components/profile/Address'
 import add from '@/components/profile/add'
 import addDetail from '@/components/profile/addDetail'
 import forget1 from '@/components/profile/forget1'
-
+import OUT from '@/components/profile/OUT'
 import elmMM from '@/components/waimai/elmMM'
 import setusername from '@/components/profile/setusername'
 import elmRight from '@/components/waimai/elmRight'
 import elmTop from '@/components/waimai/elmTop'
+import LOGIN1 from '@/components/profile/LOGIN1'
 Vue.use(Router)
 
 export default new Router({
@@ -300,6 +301,16 @@ export default new Router({
 		path:'/elmTop',
 		name:'elmTop',
 		component:elmTop
+		},
+		{
+			path:'/LOGIN1',
+			name:'LOGIN1',
+			component:LOGIN1
+		},
+		{
+			path:'/OUT',
+			name:'OUT',
+			component:OUT
 		}
 	]
 })

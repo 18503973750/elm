@@ -1,8 +1,8 @@
 <template>
-    <transition name="router-slid">
+    <transition>
         <div>
             <header class="top">
-                <router-link to="/home"><i class="el-icon-arrow-left"></i></router-link>
+                <router-link to="/profile"><i class="el-icon-arrow-left"></i></router-link>
                 <span>密码登录</span>
             </header>
             <form class="login-box">
@@ -57,7 +57,7 @@
             toggle () {
                 this.pwdType = this.pwdType == 'password'?'text':'password'
             },
-            //登录提交判断
+            //登录提交判断(登录按钮)
             submit() {
                 if(this.phone==null) {
                     alert("请输入手机号!");
@@ -95,7 +95,7 @@
                     
                     console.log(res)
                     if (res.status == 0) {
-                        alert(res.message);
+//                      alert(res.message);
                         return                    
                     } else {
 
@@ -111,8 +111,14 @@
                         console.log(res);
 
                     }   
-                })
-                
+                }) 
+                this.$router.push({
+					path: '/profile',
+					query: {
+						name: this.phone,
+						password:this.pswd
+					}
+				})
             },
             //点击更换验证码图片
             change() {

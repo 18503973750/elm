@@ -2,7 +2,7 @@
    <div>
        <div class="heard">
            <router-link to="/search"><i class="el-icon-search"></i></router-link>
-           <span class="span1">进水区花园城</span> <span class="span2"><router-link to="/login">登录/注册</router-link></span>
+           <span class="span1">进水区花园城</span> <span class="span2"><router-link to="/profile">登录/注册</router-link></span>
        </div>
        <WaiOne></WaiOne>
        <WaimaiTwo></WaimaiTwo>

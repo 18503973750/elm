@@ -16,7 +16,7 @@
 				<div class="text2">
 					<span>公告：{{messs.promotion_info
 }}</span>
-<<<<<<< HEAD
+
 				</div>
 			</div>
 			<div class="xia">
@@ -31,7 +31,7 @@
 			</div>
 			<div class="L1">
 				<div>￥{{st-st1}}</div>
-				<div>{{-st2+st3}}--00</div>
+				<!--<div>{{-st2+st3}}</div>-->
 				<div>配送费￥5</div>
 			</div>
 			<div class="yuan" style="font-size:1rem">还差20起送</div>
@@ -107,12 +107,12 @@
 			st1() {
 				return this.$store.state.st1;
 			},
-			st2() {
-				return -this.$store.state.st2;
-			},
-			st3() {
-				return this.$store.state.st2;
-			},
+//			st2() {
+//				return -this.$store.state.st2;
+//			},
+//			st3() {
+//				return this.$store.state.st3;
+//			},
 		},
 	}
 </script>

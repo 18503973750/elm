@@ -29,11 +29,12 @@
 		<ul class="bottom">
 			<li v-for='(arr,index) in arrs' @click="change(index)" :class="{blue:classchange==index}">{{arr.name}}({{arr.count}})</li>
 		</ul>
+		<!--num是下标-->
 		<div class="bottom1" v-for="(arr1,num) in arrs1">
 			<div class="left1">
-				<img src="../../img/TX.jpeg" alt="" />
-
+				<img :src="IMGS4[num]" alt="" />
 			</div>
+			{{IMGS1[num]}}
 			<div class="content1">
 				<div class="Left1" style="flex: 3;">
 					<div class="left1_top">
@@ -53,7 +54,9 @@
 					</div>
 
 					<div class="Img">
+						<!--v-show:判断IMG3里面内容是否为空,如果为空就不展示-->
 						<span v-show="IMGS3[num][index]" v-for="(arr,index) in arr1.item_ratings">
+							
 							<img :src="IMGS3[num][index]" alt="" />
 						</span>
 						
@@ -73,7 +76,7 @@
 </template>
 
 <script>
-	//处理图片链接
+	//处理图片链接,分割字符串
 	function img_path(img) {
 		var a1 = img.split("");
 		if(a1.length > 0) {
@@ -110,7 +113,9 @@
 				arrs: '',
 				arrs1: '',
 				IMGs: 'https://fuss10.elemecdn.com/1/b5/',
-                 IMGS3:''
+                 IMGS3:'',
+                 IMGS1:'',
+                 IMG4:''
 			}
 		},
 		methods: {
@@ -128,15 +133,26 @@
 			this.$http.get(url1).then(res => {
 				console.log(res.data);
 				this.arrs1 = res.data;
+				//每走一次map函数,数组就往里层进一层(获取事物地址,做字符串分割)
 				this.IMGS3=res.data.map(value=>{
-					var IMGS1 = value.item_ratings.map(value=>{
+					var IMGS1 = value.item_ratings.map( value=>{
 						var IMGS = food_path(value.image_hash)
 						return IMGS
-					
+						//IMG3是最外层的数组
+						//IMG1接收的是item_ratings数组中的值
+						//IMG 接收的是IMG1数组里food_path的值			
 					})
 					return IMGS1
 				})
 				console.log(this.IMGS3);
+				//获取头像图片地址,做字符串分割
+				this.IMGS4=res.data.map(value=>{
+						var IMGS5 = img_path(value.avatar)
+						return IMGS5
+						//IMG3是最外层的数组
+						//IMG1接收的是item_ratings数组中的值
+						//IMG 接收的是IMG1数组里food_path的值			
+				})
 				//				this.value2=res.data[0].rating_star
 				//				console.log(res.data[0].rating_star)
 			})

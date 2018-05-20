@@ -8,7 +8,6 @@
 			</div>
 		</div>
 		<div class="Room MarginTop">
-
 		</div>
 		<div class="bottom">
 			<div class="Name">

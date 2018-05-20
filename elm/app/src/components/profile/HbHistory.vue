@@ -6,7 +6,7 @@
         width: 3rem;
         height: 3rem;
         display: block;
-        background: url("../../img/zhang.jpg") no-repeat;
+        background: url("../../img/ygq.png") no-repeat;
         background-size: 3rem 3rem;
 position: absolute;
         top: -.5rem;

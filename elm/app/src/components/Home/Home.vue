@@ -2,7 +2,7 @@
     <div class="">
         <header class="top">
             <span>ele.me</span>
-            <router-link to="/login">
+            <router-link to="/profile">
                 <span>登录|注册</span>
             </router-link>
         </header>

@@ -2,19 +2,21 @@
         <div class="out">
             <div class="top">
                 <div class="top_one">
-                    <router-link to='/Balance' class="el-icon-arrow-left">
+                    <router-link to='/waimai' class="el-icon-arrow-left">
                     </router-link>
                     <span>我的</span>
                 </div>
                 <div class="top_two">
-                    <strong @click="inforPage" style="display: block;">
+                    <strong style="display: block;">
                         <div>
-                            <img :src=" '//elm.cangdu.org/img/' +userInfo.avatar">
+                            <img :src=" '//elm.cangdu.org/img/'+userInfo.avatar">
                         </div>
-                        <ul>
-                            <li>登录/注册{{ userInfo.username }}</li>
+                        <ul>    
+                            <li v-if="this.userInfo.username">{{this.userInfo.username}}</li>
+                            <li v-else>登录/注册</li>
                             <li class="el-icon-mobile-phone">暂无绑定手机号</li>
-                            <span class="el-icon-arrow-right"></span>
+                            <span  @click="inforPage" v-if="this.userInfo.username" class="el-icon-arrow-right"></span>
+                            <span  @click="inforPage" v-else class="el-icon-arrow-right"></span>
                         </ul>
                     </strong>
                 </div>
@@ -23,7 +25,8 @@
                 <tr>
                     <router-link to='/Balance'>
                         <td>
-    						<span class="span1">{{ userInfo.balance }}</span> <span>元</span>
+    						<span class="span1">{{ userInfo.balance }}</span> 
+    						<span>元</span>
                             <br/>
                             <span class="td2">我的余额</span>
                         </td>
@@ -31,7 +34,9 @@
 
                     <td>
                         <router-link to="/Benefit">
-                            <span class="span2">{{ userInfo.gift_amount }}</span>
+                            
+                             <span class="span2" v-if="userInfo==null">0</span>
+                             <span class="span2" v-else>{{ userInfo.gift_amount }}</span>
                             <span>个</span>
                             <br/>
                             <span class="td2">
@@ -96,7 +101,8 @@
             return {
                 userinfor: null,
                 userInfo: "",
-                id:null
+                id:null,
+                name:this.$route.query.name
             }
         },
         created() {
@@ -116,16 +122,30 @@
 //              this.id=response.data.user_id;
                 console.log(this.id)
                 this.userinfor = response.data;
-            });         
+            }); 
+            //退出登录
+            if(this.$route.query.NOname==true){
+				this.userInfo.username=false;
+				this.password = null;
+			}
         },
         methods: {
             inforPage () {
-                this.$router.push({
+            	console.log(this.userInfo.username)
+			
+            	if(this.userInfo != null&&this.userInfo.username!=""){
+            		this.$router.push({
                     name: 'Infor',
+                }) 
+            	}else{
+            		 this.$router.push({
+                    name: 'login',
                     params: {
                         myInfo: this.userInfo
                     }
                 }) 
+            	}
+               
             }
         }
     }

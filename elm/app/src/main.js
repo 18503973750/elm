@@ -13,6 +13,8 @@ import store from "./store";
 
 
 import 'element-ui/lib/theme-chalk/index.css';
+import {Plugin1} from '../static/js/plugin1.js';
+Vue.use(Plugin1)
 
 import {Plugin1} from '../static/js/plugin1.js'
 Vue.use(Plugin1);
